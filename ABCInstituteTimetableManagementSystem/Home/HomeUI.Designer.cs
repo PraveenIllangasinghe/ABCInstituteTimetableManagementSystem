@@ -169,7 +169,7 @@ namespace ABCInstituteTimetableManagementSystem
             this.HomeTMStitle.CustomForeColor = true;
             this.HomeTMStitle.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.HomeTMStitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(157)))), ((int)(((byte)(169)))));
-            this.HomeTMStitle.Location = new System.Drawing.Point(431, 12);
+            this.HomeTMStitle.Location = new System.Drawing.Point(432, 12);
             this.HomeTMStitle.Name = "HomeTMStitle";
             this.HomeTMStitle.Size = new System.Drawing.Size(250, 25);
             this.HomeTMStitle.TabIndex = 1;
