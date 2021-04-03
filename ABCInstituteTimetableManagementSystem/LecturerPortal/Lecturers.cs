@@ -16,5 +16,10 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
         {
             InitializeComponent();
         }
+
+        private void Lecturers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
