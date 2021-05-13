@@ -5,13 +5,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
 {
-    class YearSemesterService
+    class SubGroupNoService
     {
-        public bool update(YearSemester yrSem)
+        public bool update(SubGroupNo sgrp)
         {
             bool temp1 = false;
             try
@@ -20,13 +19,13 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "update  YearSem set year = @year, semester = @semester where id = @id";
+                string q1 = "update SubGroupNo set SubGroupNo = @SubGroupNo where id = @id";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@year", yrSem.year);
-                cmd1.Parameters.AddWithValue("@semester", yrSem.semester);
-                cmd1.Parameters.AddWithValue("@id", yrSem.id);
+                cmd1.Parameters.AddWithValue("@SubGroupNo", sgrp.subGroupNo);
+
+                cmd1.Parameters.AddWithValue("@id", sgrp.id);
 
 
                 cmd1.ExecuteNonQuery();
@@ -39,7 +38,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
             }
             return temp1;
         }
-        public bool save(YearSemester yrSem)
+        public bool save(SubGroupNo SubgrpNo)
         {
 
             bool temp1 = false;
@@ -48,13 +47,13 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "insert into YearSem (year, semester) values (@year,@semester)";
+                string q1 = "insert into SubGroupNo (SubGroupNo) values (@SubGroupNo)";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@year", yrSem.year);
-                cmd1.Parameters.AddWithValue("@semester",yrSem.semester );
-            
+                cmd1.Parameters.AddWithValue("@SubGroupNo", SubgrpNo.subGroupNo);
+
+
 
                 cmd1.ExecuteNonQuery();
                 temp1 = true;
@@ -69,7 +68,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
 
             return temp1;
         }
-        public DataTable fetchYearSemData(string prop, int value)
+        public DataTable fetchSubGropNoData(string prop, int value)
         {
             try
             {
@@ -77,11 +76,11 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = $"select * from YearSem where {prop} = {value}";
+                string q1 = $"select * from SubGroupNo where {prop} = {value}";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-              //  cmd1.Parameters.AddWithValue("@year", yrSem.year);
+
                 SqlDataAdapter ada = new SqlDataAdapter(cmd1);
                 ada.Fill(dt);
                 con1.closeConnection();
@@ -94,7 +93,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 throw;
             }
         }
-        public bool deleteYearSem(int id)
+        public bool deleteSubGroupNo(int id)
         {
             bool temp1 = false;
             try
@@ -102,7 +101,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "delete  YearSem where id = @id";
+                string q1 = "delete  SubGroupNo where id = @id";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 

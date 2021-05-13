@@ -5,13 +5,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
 {
-    class YearSemesterService
+    class ProgrammeService
     {
-        public bool update(YearSemester yrSem)
+        public bool update(Program program)
         {
             bool temp1 = false;
             try
@@ -20,13 +19,12 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "update  YearSem set year = @year, semester = @semester where id = @id";
+                string q1 = "update Progrmme set programme = @programme where id = @id";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@year", yrSem.year);
-                cmd1.Parameters.AddWithValue("@semester", yrSem.semester);
-                cmd1.Parameters.AddWithValue("@id", yrSem.id);
+                cmd1.Parameters.AddWithValue("@programme", program.programme);
+                cmd1.Parameters.AddWithValue("@id", program.id);
 
 
                 cmd1.ExecuteNonQuery();
@@ -39,7 +37,8 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
             }
             return temp1;
         }
-        public bool save(YearSemester yrSem)
+
+        public bool save(Program prgrm)
         {
 
             bool temp1 = false;
@@ -48,15 +47,16 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "insert into YearSem (year, semester) values (@year,@semester)";
+                string q1 = "insert into Progrmme (programme) values (@programme)";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@year", yrSem.year);
-                cmd1.Parameters.AddWithValue("@semester",yrSem.semester );
-            
+                cmd1.Parameters.AddWithValue("@programme", prgrm.programme);
+               
+
 
                 cmd1.ExecuteNonQuery();
+                con1.closeConnection();
                 temp1 = true;
 
             }
@@ -69,7 +69,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
 
             return temp1;
         }
-        public DataTable fetchYearSemData(string prop, int value)
+        public DataTable fetchProgrammeData(string prop, string value)
         {
             try
             {
@@ -77,11 +77,9 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = $"select * from YearSem where {prop} = {value}";
+                string q1 = $"select * from Progrmme where {prop} = '{value}'";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
-
-              //  cmd1.Parameters.AddWithValue("@year", yrSem.year);
                 SqlDataAdapter ada = new SqlDataAdapter(cmd1);
                 ada.Fill(dt);
                 con1.closeConnection();
@@ -94,7 +92,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 throw;
             }
         }
-        public bool deleteYearSem(int id)
+        public bool deleteProgramme(int id)
         {
             bool temp1 = false;
             try
@@ -102,7 +100,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "delete  YearSem where id = @id";
+                string q1 = "delete  Progrmme where id = @id";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 

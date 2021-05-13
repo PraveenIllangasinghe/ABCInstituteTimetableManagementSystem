@@ -5,13 +5,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
+namespace ABCInstituteTimetableManagementSystem.TagPortal.Service
 {
-    class YearSemesterService
+    class TagNameService
     {
-        public bool update(YearSemester yrSem)
+        public bool update(TagName tagName)
         {
             bool temp1 = false;
             try
@@ -20,13 +19,12 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "update  YearSem set year = @year, semester = @semester where id = @id";
+                string q1 = "update  Tags set TagName = @TagName where ID = @ID";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@year", yrSem.year);
-                cmd1.Parameters.AddWithValue("@semester", yrSem.semester);
-                cmd1.Parameters.AddWithValue("@id", yrSem.id);
+                cmd1.Parameters.AddWithValue("@TagName", tagName.tagName);
+                cmd1.Parameters.AddWithValue("@ID", tagName.id);
 
 
                 cmd1.ExecuteNonQuery();
@@ -39,7 +37,8 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
             }
             return temp1;
         }
-        public bool save(YearSemester yrSem)
+
+        public bool save(TagName tagName)
         {
 
             bool temp1 = false;
@@ -48,15 +47,16 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "insert into YearSem (year, semester) values (@year,@semester)";
+                string q1 = "insert into Tags (TagName) values (@TagName)";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@year", yrSem.year);
-                cmd1.Parameters.AddWithValue("@semester",yrSem.semester );
-            
+                cmd1.Parameters.AddWithValue("@TagName", tagName.tagName);
+
+
 
                 cmd1.ExecuteNonQuery();
+                con1.closeConnection();
                 temp1 = true;
 
             }
@@ -69,7 +69,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
 
             return temp1;
         }
-        public DataTable fetchYearSemData(string prop, int value)
+        public DataTable fetchTagData(string prop, string value)
         {
             try
             {
@@ -77,11 +77,9 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = $"select * from YearSem where {prop} = {value}";
+                string q1 = $"select * from Tags where {prop} = '{value}'";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
-
-              //  cmd1.Parameters.AddWithValue("@year", yrSem.year);
                 SqlDataAdapter ada = new SqlDataAdapter(cmd1);
                 ada.Fill(dt);
                 con1.closeConnection();
@@ -94,7 +92,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 throw;
             }
         }
-        public bool deleteYearSem(int id)
+        public bool deleteTag(int id)
         {
             bool temp1 = false;
             try
@@ -102,11 +100,11 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "delete  YearSem where id = @id";
+                string q1 = "delete  Tags where ID = @ID";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
-                cmd1.Parameters.AddWithValue("@id", id);
+                cmd1.Parameters.AddWithValue("@ID", id);
 
 
                 cmd1.ExecuteNonQuery();
