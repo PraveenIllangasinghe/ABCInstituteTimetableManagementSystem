@@ -102,10 +102,10 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.metroComboBox10 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTile8 = new MetroFramework.Controls.MetroTile();
-            this.metroTile9 = new MetroFramework.Controls.MetroTile();
-            this.metroComboBox11 = new MetroFramework.Controls.MetroComboBox();
+            this.sessionRoom_combo_box = new MetroFramework.Controls.MetroComboBox();
+            this.session_allocate_Btn = new MetroFramework.Controls.MetroTile();
+            this.session_clear_Btn = new MetroFramework.Controls.MetroTile();
+            this.session_combo_box = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -232,6 +232,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgLecturers;
             this.pictureBox2.Location = new System.Drawing.Point(21, 104);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 26);
@@ -243,6 +244,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox12.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgMoreOptions;
             this.pictureBox12.Location = new System.Drawing.Point(21, 526);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(30, 26);
@@ -254,6 +256,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox11.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgSessions;
             this.pictureBox11.Location = new System.Drawing.Point(21, 478);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(30, 26);
@@ -265,6 +268,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgTimetables;
             this.pictureBox10.Location = new System.Drawing.Point(21, 571);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(30, 26);
@@ -276,6 +280,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgRooms;
             this.pictureBox9.Location = new System.Drawing.Point(21, 433);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(30, 26);
@@ -371,6 +376,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgStatistics;
             this.pictureBox8.Location = new System.Drawing.Point(21, 387);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(30, 26);
@@ -396,6 +402,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgLocation;
             this.pictureBox7.Location = new System.Drawing.Point(21, 340);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 26);
@@ -407,6 +414,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgTags;
             this.pictureBox6.Location = new System.Drawing.Point(21, 292);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 26);
@@ -446,6 +454,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgWorkingDays;
             this.pictureBox4.Location = new System.Drawing.Point(21, 245);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 26);
@@ -457,6 +466,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgSubjects;
             this.pictureBox5.Location = new System.Drawing.Point(21, 197);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 26);
@@ -468,6 +478,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgStudentGroups;
             this.pictureBox3.Location = new System.Drawing.Point(21, 149);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 26);
@@ -593,6 +604,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(35)))), ((int)(((byte)(64)))));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgHome;
             this.pictureBox1.Location = new System.Drawing.Point(21, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 26);
@@ -675,15 +687,15 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage6);
             this.metroTabControl1.Controls.Add(this.metroTabPage7);
             this.metroTabControl1.Location = new System.Drawing.Point(240, 52);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(824, 552);
             this.metroTabControl1.TabIndex = 13;
             // 
@@ -1065,10 +1077,10 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.MintCream;
-            this.groupBox5.Controls.Add(this.metroComboBox10);
-            this.groupBox5.Controls.Add(this.metroTile8);
-            this.groupBox5.Controls.Add(this.metroTile9);
-            this.groupBox5.Controls.Add(this.metroComboBox11);
+            this.groupBox5.Controls.Add(this.sessionRoom_combo_box);
+            this.groupBox5.Controls.Add(this.session_allocate_Btn);
+            this.groupBox5.Controls.Add(this.session_clear_Btn);
+            this.groupBox5.Controls.Add(this.session_combo_box);
             this.groupBox5.Controls.Add(this.metroLabel6);
             this.groupBox5.Controls.Add(this.metroLabel7);
             this.groupBox5.Controls.Add(this.metroLabel8);
@@ -1078,44 +1090,47 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             // 
-            // metroComboBox10
+            // sessionRoom_combo_box
             // 
-            this.metroComboBox10.FormattingEnabled = true;
-            this.metroComboBox10.ItemHeight = 23;
-            this.metroComboBox10.Location = new System.Drawing.Point(102, 180);
-            this.metroComboBox10.Name = "metroComboBox10";
-            this.metroComboBox10.Size = new System.Drawing.Size(300, 29);
-            this.metroComboBox10.TabIndex = 3;
+            this.sessionRoom_combo_box.FormattingEnabled = true;
+            this.sessionRoom_combo_box.ItemHeight = 23;
+            this.sessionRoom_combo_box.Location = new System.Drawing.Point(102, 180);
+            this.sessionRoom_combo_box.Name = "sessionRoom_combo_box";
+            this.sessionRoom_combo_box.Size = new System.Drawing.Size(300, 29);
+            this.sessionRoom_combo_box.TabIndex = 3;
             // 
-            // metroTile8
+            // session_allocate_Btn
             // 
-            this.metroTile8.Location = new System.Drawing.Point(151, 273);
-            this.metroTile8.Name = "metroTile8";
-            this.metroTile8.Size = new System.Drawing.Size(124, 40);
-            this.metroTile8.TabIndex = 4;
-            this.metroTile8.Text = "Allocate Room";
-            this.metroTile8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile8.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.session_allocate_Btn.Location = new System.Drawing.Point(151, 273);
+            this.session_allocate_Btn.Name = "session_allocate_Btn";
+            this.session_allocate_Btn.Size = new System.Drawing.Size(124, 40);
+            this.session_allocate_Btn.TabIndex = 4;
+            this.session_allocate_Btn.Text = "Allocate Room";
+            this.session_allocate_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.session_allocate_Btn.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.session_allocate_Btn.Click += new System.EventHandler(this.session_allocate_Btn_Click);
             // 
-            // metroTile9
+            // session_clear_Btn
             // 
-            this.metroTile9.Location = new System.Drawing.Point(340, 273);
-            this.metroTile9.Name = "metroTile9";
-            this.metroTile9.Size = new System.Drawing.Size(90, 40);
-            this.metroTile9.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroTile9.TabIndex = 5;
-            this.metroTile9.Text = "Clear";
-            this.metroTile9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile9.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.session_clear_Btn.Location = new System.Drawing.Point(340, 273);
+            this.session_clear_Btn.Name = "session_clear_Btn";
+            this.session_clear_Btn.Size = new System.Drawing.Size(90, 40);
+            this.session_clear_Btn.Style = MetroFramework.MetroColorStyle.Silver;
+            this.session_clear_Btn.TabIndex = 5;
+            this.session_clear_Btn.Text = "Clear";
+            this.session_clear_Btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.session_clear_Btn.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.session_clear_Btn.Click += new System.EventHandler(this.session_clear_Btn_Click);
             // 
-            // metroComboBox11
+            // session_combo_box
             // 
-            this.metroComboBox11.FormattingEnabled = true;
-            this.metroComboBox11.ItemHeight = 23;
-            this.metroComboBox11.Location = new System.Drawing.Point(102, 100);
-            this.metroComboBox11.Name = "metroComboBox11";
-            this.metroComboBox11.Size = new System.Drawing.Size(429, 29);
-            this.metroComboBox11.TabIndex = 3;
+            this.session_combo_box.FormattingEnabled = true;
+            this.session_combo_box.ItemHeight = 23;
+            this.session_combo_box.Location = new System.Drawing.Point(102, 100);
+            this.session_combo_box.Name = "session_combo_box";
+            this.session_combo_box.Size = new System.Drawing.Size(429, 29);
+            this.session_combo_box.TabIndex = 3;
+            this.session_combo_box.SelectedIndexChanged += new System.EventHandler(this.session_combo_box_SelectedIndexChanged);
             // 
             // metroLabel6
             // 
@@ -1491,6 +1506,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             this.Name = "ManageRoomsSessions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageRoomsSessions";
+            this.Load += new System.EventHandler(this.ManageRoomsSessions_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1607,10 +1623,10 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         private MetroFramework.Controls.MetroLabel metroLabel27;
         private MetroFramework.Controls.MetroTabPage metroTabPage5;
         private System.Windows.Forms.GroupBox groupBox5;
-        private MetroFramework.Controls.MetroComboBox metroComboBox10;
-        private MetroFramework.Controls.MetroTile metroTile8;
-        private MetroFramework.Controls.MetroTile metroTile9;
-        private MetroFramework.Controls.MetroComboBox metroComboBox11;
+        private MetroFramework.Controls.MetroComboBox sessionRoom_combo_box;
+        private MetroFramework.Controls.MetroTile session_allocate_Btn;
+        private MetroFramework.Controls.MetroTile session_clear_Btn;
+        private MetroFramework.Controls.MetroComboBox session_combo_box;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;

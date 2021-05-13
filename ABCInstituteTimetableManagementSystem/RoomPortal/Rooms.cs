@@ -42,6 +42,8 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             groupcombo();
             subgroupcombo();
             Roomcombo();
+            sessionpagecombo();
+            sessionRoomcombo();
         }
 
         SqlConnection con = new SqlConnection(@"Data Source = ELECTRA\SQLSERVER; Initial Catalog = LocationDB; Integrated Security = True");
@@ -64,6 +66,11 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         private void button4_Click(object sender, EventArgs e)
         {
                 Application.Exit();
+        }
+
+        private void ManageRoomsSessions_Load(object sender, EventArgs e)
+        {
+            sessionpagecombo();
         }
 
         private void tag_cmb()
@@ -456,6 +463,97 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
 
 
 
+
+        //SUITABLE ROOM FOR A SESSION
+
+        //selecting a session
+
+        private void sessionpagecombo()
+        {
+
+            session_combo_box.Items.Clear();
+            SqlDataAdapter sda = new SqlDataAdapter("select LecturerName, SubjectCode, SubjectName, Tag from Session", con);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                //session_cmb.Items.Add(dataRow["SessionID"].ToString());
+                session_combo_box.Items.Add(dataRow["LecturerName"].ToString() + " - " + dataRow["SubjectCode"].ToString() + " - " + dataRow["SubjectName"].ToString() + " - " + dataRow["Tag"].ToString());
+            }
+
+        }
+
+         private void sessionRoomcombo()
+        {
+
+            session_combo_box.Items.Clear();
+            SqlDataAdapter sda = new SqlDataAdapter("select DISTINCT Room_Name from RoomTable", con);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                sessionRoom_combo_box.Items.Add(dataRow["Room_Name"].ToString());
+            }
+        }
+
+        private void session_allocate_Btn_Click(object sender, EventArgs e)
+        {
+
+
+            String addsession = session_combo_box.SelectedItem.ToString();
+            String addroom = sessionRoom_combo_box.SelectedItem.ToString();
+
+
+            if ((session_combo_box.Text != string.Empty) && (sessionRoom_combo_box.Text != string.Empty))
+            {
+                //check duplicate before save
+                SqlDataAdapter da = new SqlDataAdapter("Select SessionID, Room from Session_Rooms where SessionID= '" + session_combo_box.Text + "' and Room = '" + sessionRoom_combo_box.Text + "' ", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count >= 1)
+                {
+                    MessageBox.Show("The room is already allocated for the selected session");
+                }
+                else if ((session_combo_box.SelectedItem.ToString() != string.Empty) && (sessionRoom_combo_box.SelectedItem.ToString() != string.Empty))
+                {
+
+
+                    sql = "insert into Session_Rooms (SessionID,Room)values(@addsession,@addroom)";
+                    con.Open();
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@addsession", addsession);
+                    cmd.Parameters.AddWithValue("@addroom", addroom);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Room Allocated");
+                    con.Close();
+                    clearRoomFieldForLecturer();
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        //clear Room Field For Session
+        public void clearRoomFieldForSession()
+        {
+            session_combo_box.SelectedIndex = -1;
+        }
+
+        private void session_clear_Btn_Click(object sender, EventArgs e)
+        {
+            session_combo_box.SelectedIndex = -1;
+            sessionRoom_combo_box.SelectedIndex = -1;
+        }
+
+        private void session_combo_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
 
     }
 }
