@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ABCInstituteTimetableManagementSystem.SessionPortal
 {
-    public partial class Sessions : Form
+    public partial class ManageRoomsSessions : Form
     {
-        public Sessions()
+        public ManageRoomsSessions()
         {
             InitializeComponent();
         }

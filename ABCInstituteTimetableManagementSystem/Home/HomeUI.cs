@@ -78,7 +78,7 @@ namespace ABCInstituteTimetableManagementSystem
         private void HomeLocManageBtn_Click(object sender, EventArgs e)
         {
 
-            LocationPortal.Locations navLocPortal = new LocationPortal.Locations();
+            LocationPortal.AddandManageLocations navLocPortal = new LocationPortal.AddandManageLocations();
             navLocPortal.Show();
             this.Hide();
 
@@ -96,7 +96,7 @@ namespace ABCInstituteTimetableManagementSystem
         private void HomeStatManageBtn_Click(object sender, EventArgs e)
         {
 
-            StatisticsPortal.Statistics navStatPortal = new StatisticsPortal.Statistics();
+            StatisticsPortal.Visualizingstatistic navStatPortal = new StatisticsPortal.Visualizingstatistic();
             navStatPortal.Show();
             this.Hide();
 
@@ -105,7 +105,7 @@ namespace ABCInstituteTimetableManagementSystem
         private void HomeRoomManageBtn_Click(object sender, EventArgs e)
         {
 
-            RoomPortal.Rooms navRoomPortal = new RoomPortal.Rooms();
+            RoomPortal.ManageRoomsSessions navRoomPortal = new RoomPortal.ManageRoomsSessions();
             navRoomPortal.Show();
             this.Hide();
 
@@ -114,7 +114,7 @@ namespace ABCInstituteTimetableManagementSystem
         private void HomeSessManageBtn_Click(object sender, EventArgs e)
         {
 
-            SessionPortal.Sessions navSessPortal = new SessionPortal.Sessions();
+            SessionPortal.ManageRoomsSessions navSessPortal = new SessionPortal.ManageRoomsSessions();
             navSessPortal.Show();
             this.Hide();
 
