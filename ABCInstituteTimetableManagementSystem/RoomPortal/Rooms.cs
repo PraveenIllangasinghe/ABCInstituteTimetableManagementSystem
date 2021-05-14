@@ -59,18 +59,20 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
 
         }
         private void button5_Click(object sender, EventArgs e)
-         {
-                this.WindowState = FormWindowState.Minimized;
-         }
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
-                Application.Exit();
+            Application.Exit();
         }
 
         private void ManageRoomsSessions_Load(object sender, EventArgs e)
         {
             sessionpagecombo();
+            RoomForconsecutiveSession();
+            AddRoomForConsecutive();
         }
 
         private void tag_cmb()
@@ -96,7 +98,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         }
         private void Room_combo_box_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Room_combo()
@@ -128,7 +130,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
                 {
                     MessageBox.Show("The selected room is already allocated!");
                 }
-                else if((tag_combo_box.SelectedItem.ToString() != string.Empty) && (Room_combo_box.SelectedItem.ToString() != string.Empty))
+                else if ((tag_combo_box.SelectedItem.ToString() != string.Empty) && (Room_combo_box.SelectedItem.ToString() != string.Empty))
                 {
 
 
@@ -374,12 +376,12 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             sda.Fill(dataTable);
             foreach (DataRow dataRow in dataTable.Rows)
             {
-                group_combo_box.Items.Add(dataRow["groupId"].ToString()); 
+                group_combo_box.Items.Add(dataRow["groupId"].ToString());
             }
 
         }
 
-        private void  subgroupcombo()
+        private void subgroupcombo()
         {
 
             subGroup_combo_box.Items.Clear();
@@ -392,7 +394,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             }
         }
 
-        private void  Roomcombo()
+        private void Roomcombo()
         {
 
             GroupRoom_combo_box.Items.Clear();
@@ -425,7 +427,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
                 da.Fill(dt);
                 if (dt.Rows.Count >= 1)
                 {
-                    MessageBox.Show("The room is already allocated for the selected group and sub group!") ;
+                    MessageBox.Show("The room is already allocated for the selected group and sub group!");
                 }
                 else if ((group_combo_box.SelectedItem.ToString() != string.Empty) && (subGroup_combo_box.SelectedItem.ToString() != string.Empty) && (GroupRoom_combo_box.Text != string.Empty))
                 {
@@ -483,7 +485,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
 
         }
 
-         private void sessionRoomcombo()
+        private void sessionRoomcombo()
         {
 
             session_combo_box.Items.Clear();
@@ -552,8 +554,82 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
 
         private void session_combo_box_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
+
+        public void RoomForconsecutiveSession()
+        {
+
+            consecutiveRoom_combo_box.Items.Clear();
+            SqlDataAdapter sda = new SqlDataAdapter("select DISTINCT Room_Name from RoomTable", con);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                consecutiveRoom_combo_box.Items.Add(dataRow["Room_Name"].ToString());
+            }
+
+        }
+
+        public void AddRoomForConsecutive() {
+
+            Consecutive_session_combo_box.Items.Clear();
+            SqlDataAdapter sda = new SqlDataAdapter("select Id,sessionOne, sessionTwo from consecutive ", con);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                Consecutive_session_combo_box.Items.Add(dataRow["Id"].ToString() + " - " + dataRow["sessionOne"].ToString() + " - " + dataRow["sessionTwo"].ToString());
+
+            }
+
+
+        }
+
+        private void allocate_consecutive_Btn_Click(object sender, EventArgs e)
+        {
+            String addconsecutive = Consecutive_session_combo_box.SelectedItem.ToString();
+            String addroom = consecutiveRoom_combo_box.SelectedItem.ToString();
+
+            if ((consecutiveRoom_combo_box.Text != string.Empty) && (Consecutive_session_combo_box.Text != string.Empty))
+            {
+                //check duplicate before save
+                SqlDataAdapter da = new SqlDataAdapter("Select Room,ConsecutiveSessionId from ConsecutiveSession_Rooms where Room = '" + consecutiveRoom_combo_box.Text + "' and  ConsecutiveSessionId = '" + Consecutive_session_combo_box.Text + "'", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count >= 1)
+                {
+                    MessageBox.Show("Room is already allocated for the selected consecutive session! Please choose another");
+                }
+                else if ((consecutiveRoom_combo_box.SelectedItem.ToString() != string.Empty) && (Consecutive_session_combo_box.SelectedItem.ToString() != string.Empty))
+                {
+
+
+                    sql = "insert into ConsecutiveSession_Rooms (Room,ConsecutiveSessionId)values(@addroom,@addconsecutive)";
+                    con.Open();
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@addconsecutive", addconsecutive);
+                    cmd.Parameters.AddWithValue("@addroom", addroom);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Room Allocated");
+                    con.Close();
+                    clearRoomFieldForLecturer();
+
+                }
+               
+
+            }
+            else
+            {
+                MessageBox.Show("Please fill all the fields", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void clear_consecutive_Btn_Click(object sender, EventArgs e)
+        {
+            consecutiveRoom_combo_box.SelectedIndex = -1;
+            Consecutive_session_combo_box.SelectedIndex = -1;
+        }
     }
 }
