@@ -786,6 +786,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button15.Size = new System.Drawing.Size(188, 42);
             this.button15.TabIndex = 4;
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button14
             // 
@@ -798,6 +799,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button14.Size = new System.Drawing.Size(188, 42);
             this.button14.TabIndex = 4;
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button11
             // 
@@ -810,6 +812,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button11.Size = new System.Drawing.Size(188, 42);
             this.button11.TabIndex = 4;
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -822,6 +825,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button10.Size = new System.Drawing.Size(188, 42);
             this.button10.TabIndex = 4;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -834,6 +838,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button9.Size = new System.Drawing.Size(188, 42);
             this.button9.TabIndex = 4;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // metroLabel13
             // 
@@ -900,6 +905,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button1.Size = new System.Drawing.Size(188, 42);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -912,6 +918,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button3.Size = new System.Drawing.Size(188, 42);
             this.button3.TabIndex = 5;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -924,6 +931,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button2.Size = new System.Drawing.Size(188, 42);
             this.button2.TabIndex = 4;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button12
             // 
@@ -936,6 +944,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button12.Size = new System.Drawing.Size(188, 42);
             this.button12.TabIndex = 4;
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button7
             // 
@@ -948,6 +957,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button7.Size = new System.Drawing.Size(188, 42);
             this.button7.TabIndex = 4;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -960,12 +970,13 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button8.Size = new System.Drawing.Size(188, 42);
             this.button8.TabIndex = 4;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Loc_TabControl
             // 
             this.Loc_TabControl.Controls.Add(this.Add_Location_tab);
-            this.Loc_TabControl.Controls.Add(this.Load_Location_Page);
             this.Loc_TabControl.Controls.Add(this.Manage_Location_tab);
+            this.Loc_TabControl.Controls.Add(this.Load_Location_Page);
             this.Loc_TabControl.Location = new System.Drawing.Point(205, 79);
             this.Loc_TabControl.Name = "Loc_TabControl";
             this.Loc_TabControl.SelectedIndex = 2;
@@ -1247,6 +1258,7 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             this.button6.Size = new System.Drawing.Size(43, 38);
             this.button6.TabIndex = 2;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 

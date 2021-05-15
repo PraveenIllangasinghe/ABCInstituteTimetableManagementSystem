@@ -114,7 +114,7 @@ namespace ABCInstituteTimetableManagementSystem
         private void HomeSessManageBtn_Click(object sender, EventArgs e)
         {
 
-            SessionPortal.ManageRoomsSessions navSessPortal = new SessionPortal.ManageRoomsSessions();
+            SessionPortal.Sessions navSessPortal = new SessionPortal.Sessions();
             navSessPortal.Show();
             this.Hide();
 

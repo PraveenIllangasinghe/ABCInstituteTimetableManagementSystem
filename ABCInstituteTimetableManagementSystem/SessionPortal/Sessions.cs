@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace ABCInstituteTimetableManagementSystem.SessionPortal
 {
-    public partial class ManageRoomsSessions : Form
+    public partial class Sessions : Form
     {
-        public ManageRoomsSessions()
+        public Sessions()
         {
             InitializeComponent();
         }

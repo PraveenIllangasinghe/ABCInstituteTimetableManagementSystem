@@ -653,5 +653,99 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
             visual.ShowDialog();
 
         }
+
+        //Home Nacvigate
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Home Navigate
+        }
+
+        //Navigate Lecture
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LecturerPortal.Lecturers lcbtn = new LecturerPortal.Lecturers();
+            lcbtn.ShowDialog();
+        }
+
+        //Student Groups Navigate
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            StudentGroupPortal.StudentGroups lcbtn = new StudentGroupPortal.StudentGroups();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate Subjects
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SubjectPortal.Subjects lcbtn = new SubjectPortal.Subjects();
+            lcbtn.ShowDialog();
+        }
+        
+        //Navigate Working days
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WorkingDaysPortal.WorkingDays lcbtn = new WorkingDaysPortal.WorkingDays();
+            lcbtn.ShowDialog();
+        }
+
+        //navigate tags
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TagPortal.Tags lcbtn = new TagPortal.Tags();
+            lcbtn.ShowDialog();
+        }
+
+        //navigate location
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LocationPortal.AddandManageLocations lcbtn = new LocationPortal.AddandManageLocations();
+            lcbtn.ShowDialog();
+        }
+
+        //navigate Rooms
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            RoomPortal.ManageRoomsSessions lcbtn = new RoomPortal.ManageRoomsSessions();
+            lcbtn.ShowDialog();
+        }
+    
+
+        //navigate session
+        private void button14_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SessionPortal.Sessions lcbtn = new SessionPortal.Sessions();
+            lcbtn.ShowDialog();
+        }
+
+        //navigate more options
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MoreOptionsPortal.MoreOptions lcbtn = new MoreOptionsPortal.MoreOptions();
+            lcbtn.ShowDialog();
+        }
+
+        //navigate time tables
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GenerateTimetablePortal.GenerateTimetables lcbtn = new GenerateTimetablePortal.GenerateTimetables();
+            lcbtn.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //back button to navigate home
+        }
     }
 }

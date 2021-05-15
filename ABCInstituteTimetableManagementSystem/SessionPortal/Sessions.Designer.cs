@@ -1,7 +1,7 @@
 ﻿
 namespace ABCInstituteTimetableManagementSystem.SessionPortal
 {
-    partial class ManageRoomsSessions
+    partial class Sessions
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
         {
             this.SuspendLayout();
             // 
-            // ManageRoomsSessions
+            // Sessions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 622);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ManageRoomsSessions";
+            this.Name = "Sessions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageRoomsSessions";
             this.ResumeLayout(false);

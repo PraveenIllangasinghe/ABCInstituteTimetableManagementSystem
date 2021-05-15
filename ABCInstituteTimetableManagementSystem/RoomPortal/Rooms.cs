@@ -699,13 +699,120 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         {
             selectDay_Box.Text = " ";
             startTime_Box.Text = " ";
-            endTime_Box.Text = " ";
+            endTime_Box.Text = " "; 
         }
 
         private void clear_time_Btn_Click(object sender, EventArgs e)
         {
             timeRoom_Box.Text = " ";
             clearDayTimeFields();
+        }
+
+
+        //BTN Navigate Home
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+          //home back  
+            
+        }
+
+        //BTN Navigate LEcture
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LecturerPortal.Lecturers lcbtn = new LecturerPortal.Lecturers();
+            lcbtn.ShowDialog();
+
+
+        }
+
+        //Navigate Students
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StudentGroupPortal.StudentGroups lcbtn = new StudentGroupPortal.StudentGroups();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate subjects
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SubjectPortal.Subjects lcbtn = new SubjectPortal.Subjects();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate working days
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WorkingDaysPortal.WorkingDays lcbtn = new WorkingDaysPortal.WorkingDays();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate Tags
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+           TagPortal.Tags lcbtn = new TagPortal.Tags();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate Location
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LocationPortal.AddandManageLocations lcbtn = new LocationPortal.AddandManageLocations();
+            lcbtn.ShowDialog();
+        }
+
+        //Statics Navigation
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+           StatisticsPortal.Visualizingstatistic lcbtn = new StatisticsPortal.Visualizingstatistic();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate Room
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            RoomPortal.ManageRoomsSessions lcbtn = new RoomPortal.ManageRoomsSessions();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate Session
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+             SessionPortal.Sessions lcbtn = new SessionPortal.Sessions();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate More-Option
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MoreOptionsPortal.MoreOptions lcbtn = new MoreOptionsPortal.MoreOptions();
+            lcbtn.ShowDialog();
+        }
+
+        //Navigate Timetables
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+           GenerateTimetablePortal.GenerateTimetables lcbtn = new GenerateTimetablePortal.GenerateTimetables();
+            lcbtn.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //home back
         }
     }
 }
