@@ -44,6 +44,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             Roomcombo();
             sessionpagecombo();
             sessionRoomcombo();
+            AddRoomForRESERVABLETime();
         }
 
         SqlConnection con = new SqlConnection(@"Data Source = ELECTRA\SQLSERVER; Initial Catalog = LocationDB; Integrated Security = True");
@@ -73,6 +74,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             sessionpagecombo();
             RoomForconsecutiveSession();
             AddRoomForConsecutive();
+            clearDayTimeFields();
         }
 
         private void tag_cmb()
@@ -630,6 +632,80 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         {
             consecutiveRoom_combo_box.SelectedIndex = -1;
             Consecutive_session_combo_box.SelectedIndex = -1;
+        }
+
+
+        // ALLOCATING NON RESERVABLE TIME FOR A ROOM
+
+        //drop down for room
+
+        public void AddRoomForRESERVABLETime()
+        {
+
+            timeRoom_Box.Items.Clear();
+            SqlDataAdapter sda = new SqlDataAdapter("select DISTINCT Room_Name from RoomTable", con);
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                timeRoom_Box.Items.Add(dataRow["Room_Name"].ToString());
+            }
+        }
+
+        private void Allocate_time_Btn_Click(object sender, EventArgs e)
+        {
+            String addroom = timeRoom_Box.SelectedItem.ToString();
+            String day = selectDay_Box.SelectedItem.ToString();
+            String starttime = startTime_Box.SelectedItem.ToString();
+            String endtime = endTime_Box.SelectedItem.ToString();
+
+            if ((timeRoom_Box.Text != string.Empty) && (selectDay_Box.Text != string.Empty) && (startTime_Box.Text != string.Empty))
+            {
+                //check duplicate before save
+                SqlDataAdapter da = new SqlDataAdapter("Select Room, Day,StartTime,EndTime from NonReservableTime_Rooms where Room = '" + timeRoom_Box.Text + "' " +
+                    "and  Day = '" + selectDay_Box.Text + "' and StartTime = '" + startTime_Box.Text + "' and EndTime = '" + endTime_Box.Text + "'", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count >= 1)
+                {
+                    MessageBox.Show("Time is already allocated as non reservable!");
+                    clearDayTimeFields();
+                }
+                else if ((timeRoom_Box.SelectedItem.ToString() != string.Empty) && (selectDay_Box.SelectedItem.ToString() != string.Empty) && (startTime_Box.SelectedItem.ToString() != string.Empty))
+                {
+
+
+                    sql = "insert into NonReservableTime_Rooms (Room,Day,StartTime,EndTime)values(@addroom,@day,@starttime,@endtime)";
+                    con.Open();
+                    cmd = new SqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@addroom", addroom);
+                    cmd.Parameters.AddWithValue("@day", day);
+                    cmd.Parameters.AddWithValue("@starttime", starttime);
+                    cmd.Parameters.AddWithValue("@endtime", endtime);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Room Allocated");
+                    con.Close();
+                    clearDayTimeFields();
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void clearDayTimeFields()
+        {
+            selectDay_Box.Text = " ";
+            startTime_Box.Text = " ";
+            endTime_Box.Text = " ";
+        }
+
+        private void clear_time_Btn_Click(object sender, EventArgs e)
+        {
+            timeRoom_Box.Text = " ";
+            clearDayTimeFields();
         }
     }
 }
