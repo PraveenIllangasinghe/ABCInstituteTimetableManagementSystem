@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal.Service
 {
-    class ConsecutiveSession
-    {         
-        public double duration { get; set; }
-        public string startTime { get; set; }
-        public string classDay { get; set; }
-
+    class NonOverlap
+    {
         public string sessionOne { get; set; }
         public string sessionTwo { get; set; }
         public int s1Id { get; set; }
         public int s2Id { get; set; }
+        public bool overlap { get; set; }
+  
     }
 }

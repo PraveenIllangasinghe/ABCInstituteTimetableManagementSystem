@@ -33,12 +33,23 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
                 BindingSource bs = new BindingSource();
                 BindingSource bs2 = new BindingSource();
                 BindingSource bs3 = new BindingSource();
+                BindingSource bs4 = new BindingSource();
+                BindingSource bs5 = new BindingSource();
+                BindingSource bs6 = new BindingSource();
+
                 bs.DataSource = sessionInfo.sessionStringList;
                 bs2.DataSource = sessionInfo.sessionStringList;
                 bs3.DataSource = sessionInfo.sessionStringList;
+                bs4.DataSource = sessionInfo.sessionStringList;
+                bs5.DataSource = sessionInfo.sessionStringList;
+                bs6.DataSource = sessionInfo.sessionStringList;
+
                 SelectSession1Txt.DataSource = bs;
                 SelectSession2Txt.DataSource = bs2;
                 NonOvrlpSesCombo.DataSource = bs3;
+                NonOvrlpSesCombo2.DataSource = bs4;
+                SelctSes1ParaCombo.DataSource = bs5;
+                SelctSes2ParaCombo.DataSource = bs6;
             }
             catch (Exception e)
             {
@@ -138,7 +149,7 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
                 }
 
 
-                if (service.saveConsecutiveSessions(obj))
+                if (service.saveConsecutiveOrParallelSessions(obj, "consecutive"))
                 {
                     MessageBox.Show("Success", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -175,6 +186,117 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void btnAddShoulOver_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Service.MoreOptionService service = new Service.MoreOptionService();
+                Service.NonOverlap obj = new Service.NonOverlap();
+
+                obj.sessionOne = NonOvrlpSesCombo.SelectedItem.ToString();
+                obj.sessionTwo = NonOvrlpSesCombo2.SelectedItem.ToString();
+
+                if(obj.sessionOne == obj.sessionTwo)
+                {
+                    MessageBox.Show("Both sessions cannot be same", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    foreach (DictionaryEntry de in sessionInfo.sessionIdMap)
+                    {
+                        if (de.Value.Equals(obj.sessionOne))
+                        {
+                            obj.s1Id = (int)de.Key;
+                        }
+                        if (de.Value.Equals(obj.sessionTwo))
+                        {
+                            obj.s2Id = (int)de.Key;
+                        }
+                    }
+
+                    if (service.saveNonOverlappingSessions(obj))
+                    {
+                        MessageBox.Show("Success", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+
+         
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void btnParlSes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Service.MoreOptionService service = new Service.MoreOptionService();
+                Service.ConsecutiveSession obj = new Service.ConsecutiveSession();
+
+                if (SelctSes1ParaCombo.SelectedIndex == -1 || SelctSes2ParaCombo.SelectedIndex == -1 || DayParlCombo.SelectedIndex == -1 || StartParlCombo.SelectedIndex == -1)
+                {
+     
+                    MessageBox.Show("Please select all fields", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } else
+                {
+                    obj.sessionOne = SelctSes1ParaCombo.SelectedItem.ToString();
+                    obj.sessionTwo = SelctSes2ParaCombo.SelectedItem.ToString();
+                    obj.startTime = StartParlCombo.SelectedItem.ToString();
+                    obj.classDay = DayParlCombo.SelectedItem.ToString();
+
+
+                    foreach (DictionaryEntry de in sessionInfo.sessionIdMap)
+                    {
+                        if (de.Value.Equals(obj.sessionOne))
+                        {
+                            obj.s1Id = (int)de.Key;
+                        }
+                        if (de.Value.Equals(obj.sessionTwo))
+                        {
+                            obj.s2Id = (int)de.Key;
+                        }
+                    }
+                    foreach (DictionaryEntry de in sessionInfo.durationMap)
+                    {
+                        if (de.Key.ToString().Equals(obj.s1Id.ToString()))
+                        {
+                            obj.duration += Double.Parse(de.Value.ToString());
+                        }
+
+                    }
+
+                    if(service.checkOverlapConditionForParallelSessions(obj.s1Id, obj.s2Id))
+                    {
+                        if (service.saveConsecutiveOrParallelSessions(obj, "parallel"))
+                        {
+                            MessageBox.Show("Success", "Data Insertion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    } else
+                    {
+                        MessageBox.Show("These sessions must not overlap", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+
+                    
+                }
+             
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
         }
     }
 }

@@ -78,7 +78,32 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal.Service
                 throw;
             }
         }
-        public bool saveConsecutiveSessions(ConsecutiveSession cs)
+        public bool checkOverlapConditionForParallelSessions(int sessionOneId, int sessionTwoId)
+        {
+            try
+            {
+
+                Database.dbConnect con1 = new Database.dbConnect();
+                con1.openConnection();
+
+                string q1 = $" select * from NotOverlap where sOneId={sessionOneId} and sTwoId={sessionTwoId} or sOneId={sessionTwoId} and sTwoId={sessionOneId}";
+
+                SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
+                cmd1.ExecuteNonQuery();
+                SqlDataReader dr = cmd1.ExecuteReader();
+
+                // if datareader has no rows it is okay to add new parallel sessions
+                return !dr.HasRows;
+
+            }
+            catch (Exception e)
+            {
+                return false;
+
+                throw;
+            }
+        }
+        public bool saveConsecutiveOrParallelSessions(ConsecutiveSession cs, string table)
         {
 
             bool temp1 = false;
@@ -87,7 +112,8 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-                string q1 = "insert into consecutive (sessionOne, sessionTwo, startTime, endTime, classDay) values (@sessionOne, @sessionTwo, @startTime, @endTime, @classDay)";
+               
+                string q1 = $"insert into {table} (sessionOne, sessionTwo, startTime, endTime, classDay) values (@sessionOne, @sessionTwo, @startTime, @endTime, @classDay)";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
 
@@ -103,6 +129,39 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal.Service
                 cmd1.Parameters.AddWithValue("@startTime", cs.startTime);
                 cmd1.Parameters.AddWithValue("@endTime", endTime);
                 cmd1.Parameters.AddWithValue("@classDay", cs.classDay);
+
+               
+                cmd1.ExecuteNonQuery();
+                temp1 = true;
+
+            }
+            catch (Exception ew)
+            {
+
+                throw;
+            }
+
+
+            return temp1;
+        }
+        public bool saveNonOverlappingSessions(NonOverlap cs)
+        {
+
+            bool temp1 = false;
+            try
+            {
+                Database.dbConnect con1 = new Database.dbConnect();
+                con1.openConnection();
+
+                string q1 = "insert into NotOverlap (sessionOne, sessionTwo, sOneId, sTwoId) values (@sessionOne, @sessionTwo, @sOneId, @sTwoId)";
+
+                SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
+
+
+                cmd1.Parameters.AddWithValue("@sessionOne", cs.sessionOne);
+                cmd1.Parameters.AddWithValue("@sessionTwo", cs.sessionTwo);
+                cmd1.Parameters.AddWithValue("@sOneId", cs.s1Id);
+                cmd1.Parameters.AddWithValue("@sTwoId", cs.s2Id);
 
 
                 cmd1.ExecuteNonQuery();

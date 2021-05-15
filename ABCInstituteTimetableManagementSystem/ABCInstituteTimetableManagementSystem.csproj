@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="MoreOptionsPortal\Service\ConsecutiveSession.cs" />
     <Compile Include="MoreOptionsPortal\Service\MoreOptionService.cs" />
+    <Compile Include="MoreOptionsPortal\Service\NonOverlap.cs" />
     <Compile Include="MoreOptionsPortal\Service\SessionInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
