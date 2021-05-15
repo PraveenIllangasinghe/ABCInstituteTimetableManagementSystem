@@ -577,12 +577,12 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         public void AddRoomForConsecutive() {
 
             Consecutive_session_combo_box.Items.Clear();
-            SqlDataAdapter sda = new SqlDataAdapter("select Id,sessionOne, sessionTwo from consecutive ", con);
+            SqlDataAdapter sda = new SqlDataAdapter("select Id,sessionOne, sessionTwo, startTime, endTime, classDay from consecutive ", con);
             DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
             foreach (DataRow dataRow in dataTable.Rows)
             {
-                Consecutive_session_combo_box.Items.Add(dataRow["Id"].ToString() + " - " + dataRow["sessionOne"].ToString() + " - " + dataRow["sessionTwo"].ToString());
+                Consecutive_session_combo_box.Items.Add(dataRow["Id"].ToString() + " - " + dataRow["sessionOne"].ToString() + " - " + dataRow["sessionTwo"].ToString() + " - " + dataRow["startTime"].ToString() + " - " + dataRow["endTime"].ToString() + " - " + dataRow["classDay"].ToString());
 
             }
 
