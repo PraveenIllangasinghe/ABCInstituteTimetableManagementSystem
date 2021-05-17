@@ -48,13 +48,13 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             InitializeComponent();
         }
 
-        public string connectionString = "Data Source=DESKTOP-5SU6VUS\\SQLEXPRESS;Initial Catalog=ABCInstituteDB;Integrated Security=True";
+        public string connectionString = (@"Server=tcp:abc-insstitute-server.database.windows.net,1433;Initial Catalog=abcinstitute-datbase;Persist Security Info=False;User ID=dbuser;Password=1qaz!QAZ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         private void AddLecturerBtn_Click(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Lecturer (ID,LecturerName,EmployeeID,Level,Building,Department,Faculty,Center,Rank) VALUES (4, @LecturerName, @EmployeeID, @Level, @Building, @Department, @Faculty, @Center, @Rank)", connection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Lecturer (ID,LecturerName,EmployeeID,Level,Building,Department,Faculty,Center,Rank) VALUES (11, @LecturerName, @EmployeeID, @Level, @Building, @Department, @Faculty, @Center, @Rank)", connection);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@LecturerName", TxtBoxLecturerNameAdd.Text);
             cmd.Parameters.AddWithValue("@EmployeeID", TxtBoxEmpIDAdd.Text);
@@ -449,7 +449,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
                 connect.Open();
                 if (connect.State == System.Data.ConnectionState.Open)
                 {
-                    string query = "INSERT INTO LecturerAvailableTime (ID,LecturerName,Day,StartTime,EndTime) VALUES (4,@LecName,@Day,@StartTime,@EndTime)";
+                    string query = "INSERT INTO LecturerAvailableTime (ID,LecturerName,Day,StartTime,EndTime) VALUES (6,@LecName,@Day,@StartTime,@EndTime)";
                     SqlCommand cmd = new SqlCommand(query, connect);
 
 
@@ -516,7 +516,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
                 //{
                 SqlConnection connection = new SqlConnection(connectionString);
 
-                SqlCommand sqlCommand = new SqlCommand("UPDATE LecturerAvailableTime SET LecturerName = @LecNameUpdated, Day = @DayUpdated, StartTime = @StartTimeUpdated, EndTime = @EndTimeUpdated WHERE ID = 4", connection);
+                SqlCommand sqlCommand = new SqlCommand("UPDATE LecturerAvailableTime SET LecturerName = @LecNameUpdated, Day = @DayUpdated, StartTime = @StartTimeUpdated, EndTime = @EndTimeUpdated WHERE ID = 6", connection);
                 sqlCommand.CommandType = CommandType.Text;
 
                 sqlCommand.Parameters.AddWithValue("@LecNameUpdated", ComboBoxLecNameAATime.SelectedItem);

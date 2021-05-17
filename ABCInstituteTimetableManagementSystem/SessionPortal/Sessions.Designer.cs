@@ -30,7 +30,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sessions));
-            this.button18 = new System.Windows.Forms.Button();
+            this.Manage_Session_Upd_Btn = new System.Windows.Forms.Button();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.button26 = new System.Windows.Forms.Button();
@@ -69,13 +69,13 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.M_num_duration = new System.Windows.Forms.NumericUpDown();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.button20 = new System.Windows.Forms.Button();
+            this.Manage_Session_Clear_Btn = new System.Windows.Forms.Button();
             this.metroLabel42 = new MetroFramework.Controls.MetroLabel();
-            this.button19 = new System.Windows.Forms.Button();
+            this.Manage_Session_Del_Btn = new System.Windows.Forms.Button();
             this.metroLabel41 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox6 = new MetroFramework.Controls.MetroComboBox();
+            this.MCB_Group_ID_Sess = new MetroFramework.Controls.MetroComboBox();
             this.Num_Duration_Add = new System.Windows.Forms.NumericUpDown();
             this.Session_Create_Btn = new System.Windows.Forms.Button();
             this.AddSessionsTabPage = new MetroFramework.Controls.MetroTabPage();
@@ -97,15 +97,6 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.CB_Lecturer_Add = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lecturer_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lecturer_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CB_Select_Sub = new System.Windows.Forms.ComboBox();
             this.Session_Search_Btn = new System.Windows.Forms.Button();
             this.CB_Select_Tag = new System.Windows.Forms.ComboBox();
@@ -114,15 +105,15 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.SessionTabControl = new MetroFramework.Controls.MetroTabControl();
             this.ManageSessionsTabPage = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel40 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox7 = new MetroFramework.Controls.MetroComboBox();
+            this.MCB_Tag_Sess = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox8 = new MetroFramework.Controls.MetroComboBox();
+            this.MCB_SubName = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox9 = new MetroFramework.Controls.MetroComboBox();
+            this.MCB_Sub_Code = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
-            this.metroComboBox10 = new MetroFramework.Controls.MetroComboBox();
+            this.MCB_Lecturer_Name = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.Mtxt_NoOfStudents = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
@@ -143,7 +134,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.M_num_duration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Duration_Add)).BeginInit();
             this.AddSessionsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Session_DataGridView)).BeginInit();
@@ -153,19 +144,20 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button18
+            // Manage_Session_Upd_Btn
             // 
-            this.button18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.button18.FlatAppearance.BorderSize = 0;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.Color.White;
-            this.button18.Location = new System.Drawing.Point(603, 440);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(109, 32);
-            this.button18.TabIndex = 98;
-            this.button18.Text = "Update";
-            this.button18.UseVisualStyleBackColor = false;
+            this.Manage_Session_Upd_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Manage_Session_Upd_Btn.FlatAppearance.BorderSize = 0;
+            this.Manage_Session_Upd_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Manage_Session_Upd_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Manage_Session_Upd_Btn.ForeColor = System.Drawing.Color.White;
+            this.Manage_Session_Upd_Btn.Location = new System.Drawing.Point(603, 440);
+            this.Manage_Session_Upd_Btn.Name = "Manage_Session_Upd_Btn";
+            this.Manage_Session_Upd_Btn.Size = new System.Drawing.Size(109, 32);
+            this.Manage_Session_Upd_Btn.TabIndex = 98;
+            this.Manage_Session_Upd_Btn.Text = "Update";
+            this.Manage_Session_Upd_Btn.UseVisualStyleBackColor = false;
+            this.Manage_Session_Upd_Btn.Click += new System.EventHandler(this.Manage_Session_Upd_Btn_Click);
             // 
             // metroLabel1
             // 
@@ -658,12 +650,12 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // numericUpDown3
+            // M_num_duration
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(632, 367);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(66, 20);
-            this.numericUpDown3.TabIndex = 101;
+            this.M_num_duration.Location = new System.Drawing.Point(632, 367);
+            this.M_num_duration.Name = "M_num_duration";
+            this.M_num_duration.Size = new System.Drawing.Size(66, 20);
+            this.M_num_duration.TabIndex = 101;
             // 
             // metroLabel15
             // 
@@ -676,19 +668,19 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel15.TabIndex = 97;
             this.metroLabel15.Text = "Manage Sessions";
             // 
-            // button20
+            // Manage_Session_Clear_Btn
             // 
-            this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.button20.FlatAppearance.BorderSize = 0;
-            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.ForeColor = System.Drawing.Color.White;
-            this.button20.Location = new System.Drawing.Point(457, 440);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(109, 32);
-            this.button20.TabIndex = 100;
-            this.button20.Text = "Clear";
-            this.button20.UseVisualStyleBackColor = false;
+            this.Manage_Session_Clear_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Manage_Session_Clear_Btn.FlatAppearance.BorderSize = 0;
+            this.Manage_Session_Clear_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Manage_Session_Clear_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Manage_Session_Clear_Btn.ForeColor = System.Drawing.Color.White;
+            this.Manage_Session_Clear_Btn.Location = new System.Drawing.Point(457, 440);
+            this.Manage_Session_Clear_Btn.Name = "Manage_Session_Clear_Btn";
+            this.Manage_Session_Clear_Btn.Size = new System.Drawing.Size(109, 32);
+            this.Manage_Session_Clear_Btn.TabIndex = 100;
+            this.Manage_Session_Clear_Btn.Text = "Clear";
+            this.Manage_Session_Clear_Btn.UseVisualStyleBackColor = false;
             // 
             // metroLabel42
             // 
@@ -699,19 +691,20 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel42.TabIndex = 82;
             this.metroLabel42.Text = "Select Lecturer(s)";
             // 
-            // button19
+            // Manage_Session_Del_Btn
             // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.button19.FlatAppearance.BorderSize = 0;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.ForeColor = System.Drawing.Color.White;
-            this.button19.Location = new System.Drawing.Point(742, 440);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(109, 32);
-            this.button19.TabIndex = 99;
-            this.button19.Text = "Delete";
-            this.button19.UseVisualStyleBackColor = false;
+            this.Manage_Session_Del_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Manage_Session_Del_Btn.FlatAppearance.BorderSize = 0;
+            this.Manage_Session_Del_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Manage_Session_Del_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Manage_Session_Del_Btn.ForeColor = System.Drawing.Color.White;
+            this.Manage_Session_Del_Btn.Location = new System.Drawing.Point(742, 440);
+            this.Manage_Session_Del_Btn.Name = "Manage_Session_Del_Btn";
+            this.Manage_Session_Del_Btn.Size = new System.Drawing.Size(109, 32);
+            this.Manage_Session_Del_Btn.TabIndex = 99;
+            this.Manage_Session_Del_Btn.Text = "Delete";
+            this.Manage_Session_Del_Btn.UseVisualStyleBackColor = false;
+            this.Manage_Session_Del_Btn.Click += new System.EventHandler(this.Manage_Session_Del_Btn_Click);
             // 
             // metroLabel41
             // 
@@ -722,14 +715,14 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel41.TabIndex = 83;
             this.metroLabel41.Text = "Selected Lecturer(s)";
             // 
-            // metroComboBox6
+            // MCB_Group_ID_Sess
             // 
-            this.metroComboBox6.FormattingEnabled = true;
-            this.metroComboBox6.ItemHeight = 23;
-            this.metroComboBox6.Location = new System.Drawing.Point(632, 175);
-            this.metroComboBox6.Name = "metroComboBox6";
-            this.metroComboBox6.Size = new System.Drawing.Size(219, 29);
-            this.metroComboBox6.TabIndex = 96;
+            this.MCB_Group_ID_Sess.FormattingEnabled = true;
+            this.MCB_Group_ID_Sess.ItemHeight = 23;
+            this.MCB_Group_ID_Sess.Location = new System.Drawing.Point(632, 175);
+            this.MCB_Group_ID_Sess.Name = "MCB_Group_ID_Sess";
+            this.MCB_Group_ID_Sess.Size = new System.Drawing.Size(219, 29);
+            this.MCB_Group_ID_Sess.TabIndex = 96;
             // 
             // Num_Duration_Add
             // 
@@ -954,52 +947,6 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel11.TabIndex = 2;
             this.metroLabel11.Text = "View Sessions";
             // 
-            // Duration
-            // 
-            this.Duration.HeaderText = "Duration";
-            this.Duration.Name = "Duration";
-            // 
-            // StudentCount
-            // 
-            this.StudentCount.HeaderText = "StudentCount";
-            this.StudentCount.Name = "StudentCount";
-            // 
-            // Tag
-            // 
-            this.Tag.HeaderText = "Tag";
-            this.Tag.Name = "Tag";
-            // 
-            // GroupID
-            // 
-            this.GroupID.HeaderText = "GroupID";
-            this.GroupID.Name = "GroupID";
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.HeaderText = "SubjectName";
-            this.SubjectName.Name = "SubjectName";
-            // 
-            // SubjectCode
-            // 
-            this.SubjectCode.HeaderText = "SubjectCode";
-            this.SubjectCode.Name = "SubjectCode";
-            // 
-            // Lecturer_2
-            // 
-            this.Lecturer_2.HeaderText = "Lecturer_2";
-            this.Lecturer_2.Name = "Lecturer_2";
-            // 
-            // Lecturer_1
-            // 
-            this.Lecturer_1.HeaderText = "Lecturer_1";
-            this.Lecturer_1.Name = "Lecturer_1";
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
             // CB_Select_Sub
             // 
             this.CB_Select_Sub.FormattingEnabled = true;
@@ -1036,20 +983,11 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             // 
             this.Session_DataGridView.AllowUserToOrderColumns = true;
             this.Session_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Session_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Lecturer_1,
-            this.Lecturer_2,
-            this.SubjectCode,
-            this.SubjectName,
-            this.GroupID,
-            this.Tag,
-            this.StudentCount,
-            this.Duration});
             this.Session_DataGridView.Location = new System.Drawing.Point(28, 117);
             this.Session_DataGridView.Name = "Session_DataGridView";
             this.Session_DataGridView.Size = new System.Drawing.Size(844, 374);
             this.Session_DataGridView.TabIndex = 3;
+            this.Session_DataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Session_DataGridView_CellClick);
             // 
             // ViewSessionsTabPage
             // 
@@ -1065,38 +1003,39 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.ViewSessionsTabPage.TabIndex = 0;
             this.ViewSessionsTabPage.Text = "View Sessions";
             this.ViewSessionsTabPage.VerticalScrollbarBarColor = true;
+            this.ViewSessionsTabPage.Click += new System.EventHandler(this.ViewSessionsTabPage_Click);
             // 
             // SessionTabControl
             // 
             this.SessionTabControl.Controls.Add(this.ViewSessionsTabPage);
-            this.SessionTabControl.Controls.Add(this.AddSessionsTabPage);
             this.SessionTabControl.Controls.Add(this.ManageSessionsTabPage);
+            this.SessionTabControl.Controls.Add(this.AddSessionsTabPage);
             this.SessionTabControl.Location = new System.Drawing.Point(193, 53);
             this.SessionTabControl.Name = "SessionTabControl";
-            this.SessionTabControl.SelectedIndex = 1;
+            this.SessionTabControl.SelectedIndex = 2;
             this.SessionTabControl.Size = new System.Drawing.Size(897, 546);
             this.SessionTabControl.TabIndex = 32;
             // 
             // ManageSessionsTabPage
             // 
-            this.ManageSessionsTabPage.Controls.Add(this.numericUpDown3);
-            this.ManageSessionsTabPage.Controls.Add(this.button18);
-            this.ManageSessionsTabPage.Controls.Add(this.button19);
+            this.ManageSessionsTabPage.Controls.Add(this.M_num_duration);
+            this.ManageSessionsTabPage.Controls.Add(this.Manage_Session_Upd_Btn);
+            this.ManageSessionsTabPage.Controls.Add(this.Manage_Session_Del_Btn);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel15);
-            this.ManageSessionsTabPage.Controls.Add(this.button20);
+            this.ManageSessionsTabPage.Controls.Add(this.Manage_Session_Clear_Btn);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel42);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel41);
-            this.ManageSessionsTabPage.Controls.Add(this.metroComboBox6);
+            this.ManageSessionsTabPage.Controls.Add(this.MCB_Group_ID_Sess);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel40);
-            this.ManageSessionsTabPage.Controls.Add(this.metroComboBox7);
+            this.ManageSessionsTabPage.Controls.Add(this.MCB_Tag_Sess);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel30);
-            this.ManageSessionsTabPage.Controls.Add(this.metroComboBox8);
+            this.ManageSessionsTabPage.Controls.Add(this.MCB_SubName);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel19);
-            this.ManageSessionsTabPage.Controls.Add(this.metroComboBox9);
+            this.ManageSessionsTabPage.Controls.Add(this.MCB_Sub_Code);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel18);
-            this.ManageSessionsTabPage.Controls.Add(this.metroComboBox10);
+            this.ManageSessionsTabPage.Controls.Add(this.MCB_Lecturer_Name);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel17);
-            this.ManageSessionsTabPage.Controls.Add(this.metroTextBox3);
+            this.ManageSessionsTabPage.Controls.Add(this.Mtxt_NoOfStudents);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel16);
             this.ManageSessionsTabPage.Controls.Add(this.metroTextBox4);
             this.ManageSessionsTabPage.HorizontalScrollbarBarColor = true;
@@ -1116,14 +1055,14 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel40.TabIndex = 84;
             this.metroLabel40.Text = "Subject Code";
             // 
-            // metroComboBox7
+            // MCB_Tag_Sess
             // 
-            this.metroComboBox7.FormattingEnabled = true;
-            this.metroComboBox7.ItemHeight = 23;
-            this.metroComboBox7.Location = new System.Drawing.Point(632, 85);
-            this.metroComboBox7.Name = "metroComboBox7";
-            this.metroComboBox7.Size = new System.Drawing.Size(219, 29);
-            this.metroComboBox7.TabIndex = 95;
+            this.MCB_Tag_Sess.FormattingEnabled = true;
+            this.MCB_Tag_Sess.ItemHeight = 23;
+            this.MCB_Tag_Sess.Location = new System.Drawing.Point(632, 85);
+            this.MCB_Tag_Sess.Name = "MCB_Tag_Sess";
+            this.MCB_Tag_Sess.Size = new System.Drawing.Size(219, 29);
+            this.MCB_Tag_Sess.TabIndex = 95;
             // 
             // metroLabel30
             // 
@@ -1134,14 +1073,14 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel30.TabIndex = 85;
             this.metroLabel30.Text = "Subject Name";
             // 
-            // metroComboBox8
+            // MCB_SubName
             // 
-            this.metroComboBox8.FormattingEnabled = true;
-            this.metroComboBox8.ItemHeight = 23;
-            this.metroComboBox8.Location = new System.Drawing.Point(197, 368);
-            this.metroComboBox8.Name = "metroComboBox8";
-            this.metroComboBox8.Size = new System.Drawing.Size(219, 29);
-            this.metroComboBox8.TabIndex = 94;
+            this.MCB_SubName.FormattingEnabled = true;
+            this.MCB_SubName.ItemHeight = 23;
+            this.MCB_SubName.Location = new System.Drawing.Point(197, 368);
+            this.MCB_SubName.Name = "MCB_SubName";
+            this.MCB_SubName.Size = new System.Drawing.Size(219, 29);
+            this.MCB_SubName.TabIndex = 94;
             // 
             // metroLabel19
             // 
@@ -1152,14 +1091,14 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel19.TabIndex = 86;
             this.metroLabel19.Text = "Tag";
             // 
-            // metroComboBox9
+            // MCB_Sub_Code
             // 
-            this.metroComboBox9.FormattingEnabled = true;
-            this.metroComboBox9.ItemHeight = 23;
-            this.metroComboBox9.Location = new System.Drawing.Point(197, 279);
-            this.metroComboBox9.Name = "metroComboBox9";
-            this.metroComboBox9.Size = new System.Drawing.Size(219, 29);
-            this.metroComboBox9.TabIndex = 93;
+            this.MCB_Sub_Code.FormattingEnabled = true;
+            this.MCB_Sub_Code.ItemHeight = 23;
+            this.MCB_Sub_Code.Location = new System.Drawing.Point(197, 279);
+            this.MCB_Sub_Code.Name = "MCB_Sub_Code";
+            this.MCB_Sub_Code.Size = new System.Drawing.Size(219, 29);
+            this.MCB_Sub_Code.TabIndex = 93;
             // 
             // metroLabel18
             // 
@@ -1170,14 +1109,14 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel18.TabIndex = 87;
             this.metroLabel18.Text = "Group ID";
             // 
-            // metroComboBox10
+            // MCB_Lecturer_Name
             // 
-            this.metroComboBox10.FormattingEnabled = true;
-            this.metroComboBox10.ItemHeight = 23;
-            this.metroComboBox10.Location = new System.Drawing.Point(197, 85);
-            this.metroComboBox10.Name = "metroComboBox10";
-            this.metroComboBox10.Size = new System.Drawing.Size(219, 29);
-            this.metroComboBox10.TabIndex = 92;
+            this.MCB_Lecturer_Name.FormattingEnabled = true;
+            this.MCB_Lecturer_Name.ItemHeight = 23;
+            this.MCB_Lecturer_Name.Location = new System.Drawing.Point(197, 85);
+            this.MCB_Lecturer_Name.Name = "MCB_Lecturer_Name";
+            this.MCB_Lecturer_Name.Size = new System.Drawing.Size(219, 29);
+            this.MCB_Lecturer_Name.TabIndex = 92;
             // 
             // metroLabel17
             // 
@@ -1188,12 +1127,12 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.metroLabel17.TabIndex = 88;
             this.metroLabel17.Text = "No of Students";
             // 
-            // metroTextBox3
+            // Mtxt_NoOfStudents
             // 
-            this.metroTextBox3.Location = new System.Drawing.Point(632, 275);
-            this.metroTextBox3.Name = "metroTextBox3";
-            this.metroTextBox3.Size = new System.Drawing.Size(219, 23);
-            this.metroTextBox3.TabIndex = 91;
+            this.Mtxt_NoOfStudents.Location = new System.Drawing.Point(632, 275);
+            this.Mtxt_NoOfStudents.Name = "Mtxt_NoOfStudents";
+            this.Mtxt_NoOfStudents.Size = new System.Drawing.Size(219, 23);
+            this.Mtxt_NoOfStudents.TabIndex = 91;
             // 
             // metroLabel16
             // 
@@ -1301,7 +1240,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.M_num_duration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Duration_Add)).EndInit();
             this.AddSessionsTabPage.ResumeLayout(false);
             this.AddSessionsTabPage.PerformLayout();
@@ -1319,7 +1258,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
         #endregion
 
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button Manage_Session_Upd_Btn;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Button button26;
@@ -1358,13 +1297,13 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown M_num_duration;
         private MetroFramework.Controls.MetroLabel metroLabel15;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button Manage_Session_Clear_Btn;
         private MetroFramework.Controls.MetroLabel metroLabel42;
-        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button Manage_Session_Del_Btn;
         private MetroFramework.Controls.MetroLabel metroLabel41;
-        private MetroFramework.Controls.MetroComboBox metroComboBox6;
+        private MetroFramework.Controls.MetroComboBox MCB_Group_ID_Sess;
         private System.Windows.Forms.NumericUpDown Num_Duration_Add;
         private System.Windows.Forms.Button Session_Create_Btn;
         private MetroFramework.Controls.MetroTabPage AddSessionsTabPage;
@@ -1386,15 +1325,6 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
         private MetroFramework.Controls.MetroComboBox CB_Lecturer_Add;
         private MetroFramework.Controls.MetroLabel metroLabel29;
         private MetroFramework.Controls.MetroLabel metroLabel11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentCount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lecturer_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lecturer_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.ComboBox CB_Select_Sub;
         private System.Windows.Forms.Button Session_Search_Btn;
         private System.Windows.Forms.ComboBox CB_Select_Tag;
@@ -1403,15 +1333,15 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
         private MetroFramework.Controls.MetroTabControl SessionTabControl;
         private MetroFramework.Controls.MetroTabPage ManageSessionsTabPage;
         private MetroFramework.Controls.MetroLabel metroLabel40;
-        private MetroFramework.Controls.MetroComboBox metroComboBox7;
+        private MetroFramework.Controls.MetroComboBox MCB_Tag_Sess;
         private MetroFramework.Controls.MetroLabel metroLabel30;
-        private MetroFramework.Controls.MetroComboBox metroComboBox8;
+        private MetroFramework.Controls.MetroComboBox MCB_SubName;
         private MetroFramework.Controls.MetroLabel metroLabel19;
-        private MetroFramework.Controls.MetroComboBox metroComboBox9;
+        private MetroFramework.Controls.MetroComboBox MCB_Sub_Code;
         private MetroFramework.Controls.MetroLabel metroLabel18;
-        private MetroFramework.Controls.MetroComboBox metroComboBox10;
+        private MetroFramework.Controls.MetroComboBox MCB_Lecturer_Name;
         private MetroFramework.Controls.MetroLabel metroLabel17;
-        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox Mtxt_NoOfStudents;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroTextBox metroTextBox4;
         private MetroFramework.Controls.MetroLabel metroLabel20;

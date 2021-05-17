@@ -43,7 +43,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             InitializeComponent();
         }
 
-        public string connectionString = "Data Source=DESKTOP-5SU6VUS\\SQLEXPRESS;Initial Catalog=ABCInstituteDB;Integrated Security=True";
+        public string connectionString = (@"Server=tcp:abc-insstitute-server.database.windows.net,1433;Initial Catalog=abcinstitute-datbase;Persist Security Info=False;User ID=dbuser;Password=1qaz!QAZ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         //Add Subjects****************************************************************************************
         private void SubjectAddBtn_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             connect.Open();
             if (connect.State == System.Data.ConnectionState.Open)
             {
-                string query = "INSERT INTO Subject (ID,SubjectCode,SubjectName,OfferedYear,OfferedSemester,NoOfLectureHours,NoOfTutorialHours,NoOfLabHours,NoOfEvaluationHours) VALUES (5,@SubjectCode,@SubjectName,@OfferedYear,@OfferedSemester,@NoOfLectureHours,@NoOfTutorialHours,@NoOfLabHours,@NoOfEvaluationHours)";
+                string query = "INSERT INTO Subject (ID,SubjectCode,SubjectName,OfferedYear,OfferedSemester,NoOfLectureHours,NoOfTutorialHours,NoOfLabHours,NoOfEvaluationHours) VALUES (7,@SubjectCode,@SubjectName,@OfferedYear,@OfferedSemester,@NoOfLectureHours,@NoOfTutorialHours,@NoOfLabHours,@NoOfEvaluationHours)";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 
                
@@ -127,8 +127,8 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
         private void SubjectsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SubjectCode = SubjectsDataGridView.CurrentRow.Cells[1].Value.ToString();
-            TxtBoxSubjectCodeUpdate.Text = SubjectsDataGridView.CurrentRow.Cells[1].Value.ToString();
-            TxtBoxSubjectNameUpdate.Text = SubjectsDataGridView.CurrentRow.Cells[2].Value.ToString();
+            TxtBoxSubjectCodeUpdate.Text = SubjectsDataGridView.CurrentRow.Cells[2].Value.ToString();
+            TxtBoxSubjectNameUpdate.Text = SubjectsDataGridView.CurrentRow.Cells[3].Value.ToString();
             ComboBoxOfferedYearUpdate.SelectedItem = SubjectsDataGridView.CurrentRow.Cells[3].Value;
 
             if (SubjectsDataGridView.CurrentRow.Cells[4].Value.ToString() == "1")
