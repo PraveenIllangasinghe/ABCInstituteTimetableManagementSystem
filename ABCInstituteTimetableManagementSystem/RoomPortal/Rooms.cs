@@ -47,7 +47,8 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             AddRoomForRESERVABLETime();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source = ELECTRA\SQLSERVER; Initial Catalog = LocationDB; Integrated Security = True");
+       // SqlConnection con = new SqlConnection(@"Data Source = ELECTRA\SQLSERVER; Initial Catalog = LocationDB; Integrated Security = True");
+        SqlConnection con = new SqlConnection(@"Server=tcp:abc-insstitute-server.database.windows.net,1433;Initial Catalog=abcinstitute-datbase;Persist Security Info=False;User ID=dbuser;Password=1qaz!QAZ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         SqlCommand cmd;
         SqlDataReader dr;
         String sql;
