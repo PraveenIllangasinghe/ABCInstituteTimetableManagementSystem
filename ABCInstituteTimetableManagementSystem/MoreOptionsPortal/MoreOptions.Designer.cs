@@ -79,6 +79,31 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.EndTimeDropdown = new MetroFramework.Controls.MetroComboBox();
+            this.StartTimeDropdown = new MetroFramework.Controls.MetroComboBox();
+            this.DayDropdown = new MetroFramework.Controls.MetroComboBox();
+            this.selectItemDropDown = new MetroFramework.Controls.MetroComboBox();
+            this.selectTypeDropDown = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel34 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.StartParlCombo = new MetroFramework.Controls.MetroComboBox();
+            this.btnclrParlSes = new MetroFramework.Controls.MetroTile();
+            this.btnParlSes = new MetroFramework.Controls.MetroTile();
+            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.SelctSes1ParaCombo = new MetroFramework.Controls.MetroComboBox();
+            this.SelctSes2ParaCombo = new MetroFramework.Controls.MetroComboBox();
+            this.DayParlCombo = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.btn_consec_search = new MetroFramework.Controls.MetroTile();
             this.ConsecDayCombo = new MetroFramework.Controls.MetroComboBox();
@@ -97,25 +122,14 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.btnAddConSessions = new MetroFramework.Controls.MetroTile();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.lblSelectSession1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
-            this.StartParlCombo = new MetroFramework.Controls.MetroComboBox();
-            this.btnclrParlSes = new MetroFramework.Controls.MetroTile();
-            this.btnParlSes = new MetroFramework.Controls.MetroTile();
-            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
-            this.SelctSes1ParaCombo = new MetroFramework.Controls.MetroComboBox();
-            this.SelctSes2ParaCombo = new MetroFramework.Controls.MetroComboBox();
-            this.DayParlCombo = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.NonOvrlpSesCombo2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.btnShoulOverClear = new MetroFramework.Controls.MetroTile();
             this.btnAddShoulOver = new MetroFramework.Controls.MetroTile();
             this.NonOvrlpSesCombo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.NonOvrlpSesCombo2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
+            this.SNATGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -131,10 +145,12 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
+            this.metroTabPage3.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConSessions)).BeginInit();
-            this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SNATGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // button10
@@ -745,17 +761,31 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(193, 57);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(974, 537);
             this.metroTabControl1.TabIndex = 61;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.SNATGrid);
+            this.metroTabPage1.Controls.Add(this.metroTile3);
+            this.metroTabPage1.Controls.Add(this.metroTile1);
+            this.metroTabPage1.Controls.Add(this.EndTimeDropdown);
+            this.metroTabPage1.Controls.Add(this.StartTimeDropdown);
+            this.metroTabPage1.Controls.Add(this.DayDropdown);
+            this.metroTabPage1.Controls.Add(this.selectItemDropDown);
+            this.metroTabPage1.Controls.Add(this.selectTypeDropDown);
+            this.metroTabPage1.Controls.Add(this.metroLabel34);
+            this.metroTabPage1.Controls.Add(this.metroLabel32);
+            this.metroTabPage1.Controls.Add(this.metroLabel31);
+            this.metroTabPage1.Controls.Add(this.metroLabel30);
+            this.metroTabPage1.Controls.Add(this.metroLabel28);
+            this.metroTabPage1.Controls.Add(this.metroLabel25);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
@@ -764,267 +794,199 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroTabPage1.Text = "Set Not Available Times";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
-            // metroTabPage2
+            // metroTile3
             // 
-            this.metroTabPage2.Controls.Add(this.btn_consec_search);
-            this.metroTabPage2.Controls.Add(this.ConsecDayCombo);
-            this.metroTabPage2.Controls.Add(this.ConsecStartTimeCombo);
-            this.metroTabPage2.Controls.Add(this.metroLabel20);
-            this.metroTabPage2.Controls.Add(this.metroLabel17);
-            this.metroTabPage2.Controls.Add(this.lblSelectSession2);
-            this.metroTabPage2.Controls.Add(this.metroLabel19);
-            this.metroTabPage2.Controls.Add(this.metroLabel18);
-            this.metroTabPage2.Controls.Add(this.SelectSession2Txt);
-            this.metroTabPage2.Controls.Add(this.SelectSession1Txt);
-            this.metroTabPage2.Controls.Add(this.SerchConSessionstxt);
-            this.metroTabPage2.Controls.Add(this.SerchByConSessionscombo);
-            this.metroTabPage2.Controls.Add(this.dataGridViewConSessions);
-            this.metroTabPage2.Controls.Add(this.metroTile2);
-            this.metroTabPage2.Controls.Add(this.btnAddConSessions);
-            this.metroTabPage2.Controls.Add(this.metroLabel16);
-            this.metroTabPage2.Controls.Add(this.lblSelectSession1);
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(966, 498);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Add Consecutive sessions ";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTile3.BackColor = System.Drawing.Color.Maroon;
+            this.metroTile3.Location = new System.Drawing.Point(399, 273);
+            this.metroTile3.Name = "metroTile3";
+            this.metroTile3.Size = new System.Drawing.Size(162, 41);
+            this.metroTile3.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile3.TabIndex = 64;
+            this.metroTile3.Text = "View";
+            this.metroTile3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile3.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
             // 
-            // btn_consec_search
+            // metroTile1
             // 
-            this.btn_consec_search.BackColor = System.Drawing.Color.Maroon;
-            this.btn_consec_search.Location = new System.Drawing.Point(844, 92);
-            this.btn_consec_search.Name = "btn_consec_search";
-            this.btn_consec_search.Size = new System.Drawing.Size(105, 29);
-            this.btn_consec_search.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btn_consec_search.TabIndex = 77;
-            this.btn_consec_search.Text = "Search";
-            this.btn_consec_search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_consec_search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btn_consec_search.Click += new System.EventHandler(this.btn_consec_search_Click);
+            this.metroTile1.BackColor = System.Drawing.Color.Maroon;
+            this.metroTile1.Location = new System.Drawing.Point(643, 273);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(161, 41);
+            this.metroTile1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTile1.TabIndex = 63;
+            this.metroTile1.Text = "Confirm";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // ConsecDayCombo
+            // EndTimeDropdown
             // 
-            this.ConsecDayCombo.FormattingEnabled = true;
-            this.ConsecDayCombo.ItemHeight = 23;
-            this.ConsecDayCombo.Items.AddRange(new object[] {
-            "Sunday",
-            "Monday ",
+            this.EndTimeDropdown.FormattingEnabled = true;
+            this.EndTimeDropdown.ItemHeight = 23;
+            this.EndTimeDropdown.Items.AddRange(new object[] {
+            "8.00 AM",
+            "8.30 AM",
+            "9.00 AM",
+            "9.30 AM",
+            "10.00 AM",
+            "10.30 AM",
+            "11.00 AM",
+            "11.30 AM",
+            "12.00 NOON",
+            "12.30 PM",
+            "1.00 PM",
+            "1.30 PM",
+            "2.00 PM",
+            "2.30 PM",
+            "3.00 PM",
+            "3.30 PM",
+            "4.00 PM",
+            "4.30 PM",
+            "5.00 PM",
+            "5.30 PM",
+            "6.00 PM",
+            "6.30 PM",
+            "7.00 PM",
+            "7.30 PM",
+            "8.00 PM",
+            "8.30 PM"});
+            this.EndTimeDropdown.Location = new System.Drawing.Point(683, 210);
+            this.EndTimeDropdown.Name = "EndTimeDropdown";
+            this.EndTimeDropdown.Size = new System.Drawing.Size(121, 29);
+            this.EndTimeDropdown.TabIndex = 12;
+            // 
+            // StartTimeDropdown
+            // 
+            this.StartTimeDropdown.FormattingEnabled = true;
+            this.StartTimeDropdown.ItemHeight = 23;
+            this.StartTimeDropdown.Items.AddRange(new object[] {
+            "8.00 AM",
+            "8.30 AM",
+            "9.00 AM",
+            "9.30 AM",
+            "10.00 AM",
+            "10.30 AM",
+            "11.00 AM",
+            "11.30 AM",
+            "12.00 NOON",
+            "12.30 PM",
+            "1.00 PM",
+            "1.30 PM",
+            "2.00 PM",
+            "2.30 PM",
+            "3.00 PM",
+            "3.30 PM",
+            "4.00 PM",
+            "4.30 PM",
+            "5.00 PM",
+            "5.30 PM",
+            "6.00 PM",
+            "6.30 PM",
+            "7.00 PM",
+            "7.30 PM",
+            "8.00 PM",
+            "8.30 PM"});
+            this.StartTimeDropdown.Location = new System.Drawing.Point(683, 161);
+            this.StartTimeDropdown.Name = "StartTimeDropdown";
+            this.StartTimeDropdown.Size = new System.Drawing.Size(121, 29);
+            this.StartTimeDropdown.TabIndex = 11;
+            // 
+            // DayDropdown
+            // 
+            this.DayDropdown.FormattingEnabled = true;
+            this.DayDropdown.ItemHeight = 23;
+            this.DayDropdown.Items.AddRange(new object[] {
+            "Monday",
             "Tuesday",
             "Wednesday",
             "Thursday",
             "Friday",
-            "Saturday"});
-            this.ConsecDayCombo.Location = new System.Drawing.Point(169, 276);
-            this.ConsecDayCombo.Name = "ConsecDayCombo";
-            this.ConsecDayCombo.Size = new System.Drawing.Size(134, 29);
-            this.ConsecDayCombo.TabIndex = 76;
+            "Saturday",
+            "Sunday"});
+            this.DayDropdown.Location = new System.Drawing.Point(297, 156);
+            this.DayDropdown.Name = "DayDropdown";
+            this.DayDropdown.Size = new System.Drawing.Size(121, 29);
+            this.DayDropdown.TabIndex = 10;
             // 
-            // ConsecStartTimeCombo
+            // selectItemDropDown
             // 
-            this.ConsecStartTimeCombo.FormattingEnabled = true;
-            this.ConsecStartTimeCombo.ItemHeight = 23;
-            this.ConsecStartTimeCombo.Items.AddRange(new object[] {
-            "8:30 AM",
-            "9:00 AM",
-            "9:30 AM",
-            "10:00 AM",
-            "10:30 AM",
-            "11:00 AM",
-            "11:30 AM",
-            "12:00 PM",
-            "12:30 PM",
-            "01:00 PM",
-            "01:30 PM",
-            "02:00 PM",
-            "02:30 PM",
-            "03:00 PM",
-            "03:30 PM",
-            "04:00 PM",
-            "04:30 PM",
-            "05:00 PM",
-            "05:30 PM",
-            "06:00 PM",
-            "06:30 PM",
-            "07:00 PM",
-            "07:30 PM"});
-            this.ConsecStartTimeCombo.Location = new System.Drawing.Point(169, 210);
-            this.ConsecStartTimeCombo.Name = "ConsecStartTimeCombo";
-            this.ConsecStartTimeCombo.Size = new System.Drawing.Size(134, 29);
-            this.ConsecStartTimeCombo.TabIndex = 75;
+            this.selectItemDropDown.FormattingEnabled = true;
+            this.selectItemDropDown.ItemHeight = 23;
+            this.selectItemDropDown.Location = new System.Drawing.Point(683, 101);
+            this.selectItemDropDown.Name = "selectItemDropDown";
+            this.selectItemDropDown.Size = new System.Drawing.Size(121, 29);
+            this.selectItemDropDown.TabIndex = 9;
             // 
-            // metroLabel20
+            // selectTypeDropDown
             // 
-            this.metroLabel20.AutoSize = true;
-            this.metroLabel20.BackColor = System.Drawing.Color.White;
-            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroLabel20.Location = new System.Drawing.Point(30, 220);
-            this.metroLabel20.Name = "metroLabel20";
-            this.metroLabel20.Size = new System.Drawing.Size(78, 19);
-            this.metroLabel20.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLabel20.TabIndex = 74;
-            this.metroLabel20.Text = "Start Time";
-            this.metroLabel20.UseStyleColors = true;
+            this.selectTypeDropDown.FormattingEnabled = true;
+            this.selectTypeDropDown.ItemHeight = 23;
+            this.selectTypeDropDown.Items.AddRange(new object[] {
+            "Lecturer",
+            "Session",
+            "Groups",
+            "SubGroups"});
+            this.selectTypeDropDown.Location = new System.Drawing.Point(297, 102);
+            this.selectTypeDropDown.Name = "selectTypeDropDown";
+            this.selectTypeDropDown.Size = new System.Drawing.Size(121, 29);
+            this.selectTypeDropDown.TabIndex = 8;
+            this.selectTypeDropDown.SelectedIndexChanged += new System.EventHandler(this.selectTypeDropDown_SelectedIndexChanged);
             // 
-            // metroLabel17
+            // metroLabel34
             // 
-            this.metroLabel17.AutoSize = true;
-            this.metroLabel17.BackColor = System.Drawing.Color.White;
-            this.metroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroLabel17.Location = new System.Drawing.Point(49, 276);
-            this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(35, 19);
-            this.metroLabel17.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLabel17.TabIndex = 73;
-            this.metroLabel17.Text = "Day";
-            this.metroLabel17.UseStyleColors = true;
+            this.metroLabel34.AutoSize = true;
+            this.metroLabel34.Location = new System.Drawing.Point(525, 212);
+            this.metroLabel34.Name = "metroLabel34";
+            this.metroLabel34.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel34.TabIndex = 7;
+            this.metroLabel34.Text = "End Time :";
+            this.metroLabel34.Click += new System.EventHandler(this.metroLabel34_Click);
             // 
-            // lblSelectSession2
+            // metroLabel32
             // 
-            this.lblSelectSession2.AutoSize = true;
-            this.lblSelectSession2.BackColor = System.Drawing.Color.White;
-            this.lblSelectSession2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblSelectSession2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblSelectSession2.Location = new System.Drawing.Point(30, 149);
-            this.lblSelectSession2.Name = "lblSelectSession2";
-            this.lblSelectSession2.Size = new System.Drawing.Size(114, 19);
-            this.lblSelectSession2.Style = MetroFramework.MetroColorStyle.Blue;
-            this.lblSelectSession2.TabIndex = 72;
-            this.lblSelectSession2.Text = "Select Session 2";
-            this.lblSelectSession2.UseStyleColors = true;
+            this.metroLabel32.AutoSize = true;
+            this.metroLabel32.Location = new System.Drawing.Point(525, 163);
+            this.metroLabel32.Name = "metroLabel32";
+            this.metroLabel32.Size = new System.Drawing.Size(77, 19);
+            this.metroLabel32.TabIndex = 6;
+            this.metroLabel32.Text = "Start Time :";
             // 
-            // metroLabel19
+            // metroLabel31
             // 
-            this.metroLabel19.AutoSize = true;
-            this.metroLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel19.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel19.Location = new System.Drawing.Point(260, 22);
-            this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(231, 25);
-            this.metroLabel19.TabIndex = 71;
-            this.metroLabel19.Text = "Add Consecutive Sessions";
+            this.metroLabel31.AutoSize = true;
+            this.metroLabel31.Location = new System.Drawing.Point(525, 101);
+            this.metroLabel31.Name = "metroLabel31";
+            this.metroLabel31.Size = new System.Drawing.Size(80, 19);
+            this.metroLabel31.TabIndex = 5;
+            this.metroLabel31.Text = "Select Item :";
             // 
-            // metroLabel18
+            // metroLabel30
             // 
-            this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(303, 36);
-            this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel18.TabIndex = 70;
+            this.metroLabel30.AutoSize = true;
+            this.metroLabel30.Location = new System.Drawing.Point(165, 163);
+            this.metroLabel30.Name = "metroLabel30";
+            this.metroLabel30.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel30.TabIndex = 4;
+            this.metroLabel30.Text = "Day :";
             // 
-            // SelectSession2Txt
+            // metroLabel28
             // 
-            this.SelectSession2Txt.FormattingEnabled = true;
-            this.SelectSession2Txt.ItemHeight = 23;
-            this.SelectSession2Txt.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.SelectSession2Txt.Location = new System.Drawing.Point(169, 149);
-            this.SelectSession2Txt.Name = "SelectSession2Txt";
-            this.SelectSession2Txt.Size = new System.Drawing.Size(292, 29);
-            this.SelectSession2Txt.TabIndex = 69;
+            this.metroLabel28.AutoSize = true;
+            this.metroLabel28.Location = new System.Drawing.Point(165, 101);
+            this.metroLabel28.Name = "metroLabel28";
+            this.metroLabel28.Size = new System.Drawing.Size(81, 19);
+            this.metroLabel28.TabIndex = 3;
+            this.metroLabel28.Text = "Select Type :";
             // 
-            // SelectSession1Txt
+            // metroLabel25
             // 
-            this.SelectSession1Txt.FormattingEnabled = true;
-            this.SelectSession1Txt.ItemHeight = 23;
-            this.SelectSession1Txt.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.SelectSession1Txt.Location = new System.Drawing.Point(169, 92);
-            this.SelectSession1Txt.Name = "SelectSession1Txt";
-            this.SelectSession1Txt.Size = new System.Drawing.Size(292, 29);
-            this.SelectSession1Txt.TabIndex = 68;
-            // 
-            // SerchConSessionstxt
-            // 
-            this.SerchConSessionstxt.Location = new System.Drawing.Point(704, 100);
-            this.SerchConSessionstxt.Multiline = true;
-            this.SerchConSessionstxt.Name = "SerchConSessionstxt";
-            this.SerchConSessionstxt.Size = new System.Drawing.Size(114, 20);
-            this.SerchConSessionstxt.TabIndex = 66;
-            this.SerchConSessionstxt.Text = "Search";
-            // 
-            // SerchByConSessionscombo
-            // 
-            this.SerchByConSessionscombo.FormattingEnabled = true;
-            this.SerchByConSessionscombo.Items.AddRange(new object[] {
-            "sessionOne",
-            "sessionTwo",
-            "startTime",
-            "endTime",
-            "classDay"});
-            this.SerchByConSessionscombo.Location = new System.Drawing.Point(553, 100);
-            this.SerchByConSessionscombo.Name = "SerchByConSessionscombo";
-            this.SerchByConSessionscombo.Size = new System.Drawing.Size(117, 21);
-            this.SerchByConSessionscombo.TabIndex = 65;
-            this.SerchByConSessionscombo.Text = "Search By...";
-            // 
-            // dataGridViewConSessions
-            // 
-            this.dataGridViewConSessions.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewConSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConSessions.Location = new System.Drawing.Point(511, 136);
-            this.dataGridViewConSessions.Name = "dataGridViewConSessions";
-            this.dataGridViewConSessions.Size = new System.Drawing.Size(438, 265);
-            this.dataGridViewConSessions.TabIndex = 64;
-            // 
-            // metroTile2
-            // 
-            this.metroTile2.Location = new System.Drawing.Point(49, 413);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(195, 45);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroTile2.TabIndex = 63;
-            this.metroTile2.Text = "Clear";
-            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            // 
-            // btnAddConSessions
-            // 
-            this.btnAddConSessions.BackColor = System.Drawing.Color.Maroon;
-            this.btnAddConSessions.Location = new System.Drawing.Point(49, 341);
-            this.btnAddConSessions.Name = "btnAddConSessions";
-            this.btnAddConSessions.Size = new System.Drawing.Size(195, 41);
-            this.btnAddConSessions.Style = MetroFramework.MetroColorStyle.Blue;
-            this.btnAddConSessions.TabIndex = 62;
-            this.btnAddConSessions.Text = "Add Consecutive Sessions";
-            this.btnAddConSessions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAddConSessions.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
-            this.btnAddConSessions.Click += new System.EventHandler(this.btnAddConSessions_Click);
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.BackColor = System.Drawing.Color.White;
-            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroLabel16.Location = new System.Drawing.Point(30, 183);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel16.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLabel16.TabIndex = 59;
-            this.metroLabel16.UseStyleColors = true;
-            // 
-            // lblSelectSession1
-            // 
-            this.lblSelectSession1.AutoSize = true;
-            this.lblSelectSession1.BackColor = System.Drawing.Color.White;
-            this.lblSelectSession1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblSelectSession1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblSelectSession1.Location = new System.Drawing.Point(30, 92);
-            this.lblSelectSession1.Name = "lblSelectSession1";
-            this.lblSelectSession1.Size = new System.Drawing.Size(114, 19);
-            this.lblSelectSession1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.lblSelectSession1.TabIndex = 60;
-            this.lblSelectSession1.Text = "Select Session 1";
-            this.lblSelectSession1.UseStyleColors = true;
+            this.metroLabel25.AutoSize = true;
+            this.metroLabel25.Location = new System.Drawing.Point(399, 32);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(148, 19);
+            this.metroLabel25.TabIndex = 2;
+            this.metroLabel25.Text = "Set Not Available Times";
             // 
             // metroTabPage3
             // 
@@ -1218,6 +1180,270 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroLabel22.Text = "Select Session 2";
             this.metroLabel22.UseStyleColors = true;
             // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.Controls.Add(this.btn_consec_search);
+            this.metroTabPage2.Controls.Add(this.ConsecDayCombo);
+            this.metroTabPage2.Controls.Add(this.ConsecStartTimeCombo);
+            this.metroTabPage2.Controls.Add(this.metroLabel20);
+            this.metroTabPage2.Controls.Add(this.metroLabel17);
+            this.metroTabPage2.Controls.Add(this.lblSelectSession2);
+            this.metroTabPage2.Controls.Add(this.metroLabel19);
+            this.metroTabPage2.Controls.Add(this.metroLabel18);
+            this.metroTabPage2.Controls.Add(this.SelectSession2Txt);
+            this.metroTabPage2.Controls.Add(this.SelectSession1Txt);
+            this.metroTabPage2.Controls.Add(this.SerchConSessionstxt);
+            this.metroTabPage2.Controls.Add(this.SerchByConSessionscombo);
+            this.metroTabPage2.Controls.Add(this.dataGridViewConSessions);
+            this.metroTabPage2.Controls.Add(this.metroTile2);
+            this.metroTabPage2.Controls.Add(this.btnAddConSessions);
+            this.metroTabPage2.Controls.Add(this.metroLabel16);
+            this.metroTabPage2.Controls.Add(this.lblSelectSession1);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(966, 498);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Add Consecutive sessions ";
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.Click += new System.EventHandler(this.metroTabPage2_Click);
+            // 
+            // btn_consec_search
+            // 
+            this.btn_consec_search.BackColor = System.Drawing.Color.Maroon;
+            this.btn_consec_search.Location = new System.Drawing.Point(844, 92);
+            this.btn_consec_search.Name = "btn_consec_search";
+            this.btn_consec_search.Size = new System.Drawing.Size(105, 29);
+            this.btn_consec_search.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btn_consec_search.TabIndex = 77;
+            this.btn_consec_search.Text = "Search";
+            this.btn_consec_search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_consec_search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btn_consec_search.Click += new System.EventHandler(this.btn_consec_search_Click);
+            // 
+            // ConsecDayCombo
+            // 
+            this.ConsecDayCombo.FormattingEnabled = true;
+            this.ConsecDayCombo.ItemHeight = 23;
+            this.ConsecDayCombo.Items.AddRange(new object[] {
+            "Sunday",
+            "Monday ",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"});
+            this.ConsecDayCombo.Location = new System.Drawing.Point(169, 276);
+            this.ConsecDayCombo.Name = "ConsecDayCombo";
+            this.ConsecDayCombo.Size = new System.Drawing.Size(134, 29);
+            this.ConsecDayCombo.TabIndex = 76;
+            // 
+            // ConsecStartTimeCombo
+            // 
+            this.ConsecStartTimeCombo.FormattingEnabled = true;
+            this.ConsecStartTimeCombo.ItemHeight = 23;
+            this.ConsecStartTimeCombo.Items.AddRange(new object[] {
+            "8:30 AM",
+            "9:00 AM",
+            "9:30 AM",
+            "10:00 AM",
+            "10:30 AM",
+            "11:00 AM",
+            "11:30 AM",
+            "12:00 PM",
+            "12:30 PM",
+            "01:00 PM",
+            "01:30 PM",
+            "02:00 PM",
+            "02:30 PM",
+            "03:00 PM",
+            "03:30 PM",
+            "04:00 PM",
+            "04:30 PM",
+            "05:00 PM",
+            "05:30 PM",
+            "06:00 PM",
+            "06:30 PM",
+            "07:00 PM",
+            "07:30 PM"});
+            this.ConsecStartTimeCombo.Location = new System.Drawing.Point(169, 210);
+            this.ConsecStartTimeCombo.Name = "ConsecStartTimeCombo";
+            this.ConsecStartTimeCombo.Size = new System.Drawing.Size(134, 29);
+            this.ConsecStartTimeCombo.TabIndex = 75;
+            // 
+            // metroLabel20
+            // 
+            this.metroLabel20.AutoSize = true;
+            this.metroLabel20.BackColor = System.Drawing.Color.White;
+            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel20.Location = new System.Drawing.Point(30, 220);
+            this.metroLabel20.Name = "metroLabel20";
+            this.metroLabel20.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel20.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel20.TabIndex = 74;
+            this.metroLabel20.Text = "Start Time";
+            this.metroLabel20.UseStyleColors = true;
+            // 
+            // metroLabel17
+            // 
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.BackColor = System.Drawing.Color.White;
+            this.metroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel17.Location = new System.Drawing.Point(49, 276);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(35, 19);
+            this.metroLabel17.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel17.TabIndex = 73;
+            this.metroLabel17.Text = "Day";
+            this.metroLabel17.UseStyleColors = true;
+            // 
+            // lblSelectSession2
+            // 
+            this.lblSelectSession2.AutoSize = true;
+            this.lblSelectSession2.BackColor = System.Drawing.Color.White;
+            this.lblSelectSession2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblSelectSession2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblSelectSession2.Location = new System.Drawing.Point(30, 149);
+            this.lblSelectSession2.Name = "lblSelectSession2";
+            this.lblSelectSession2.Size = new System.Drawing.Size(114, 19);
+            this.lblSelectSession2.Style = MetroFramework.MetroColorStyle.Blue;
+            this.lblSelectSession2.TabIndex = 72;
+            this.lblSelectSession2.Text = "Select Session 2";
+            this.lblSelectSession2.UseStyleColors = true;
+            // 
+            // metroLabel19
+            // 
+            this.metroLabel19.AutoSize = true;
+            this.metroLabel19.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel19.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel19.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel19.Location = new System.Drawing.Point(260, 22);
+            this.metroLabel19.Name = "metroLabel19";
+            this.metroLabel19.Size = new System.Drawing.Size(231, 25);
+            this.metroLabel19.TabIndex = 71;
+            this.metroLabel19.Text = "Add Consecutive Sessions";
+            // 
+            // metroLabel18
+            // 
+            this.metroLabel18.AutoSize = true;
+            this.metroLabel18.Location = new System.Drawing.Point(303, 36);
+            this.metroLabel18.Name = "metroLabel18";
+            this.metroLabel18.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel18.TabIndex = 70;
+            // 
+            // SelectSession2Txt
+            // 
+            this.SelectSession2Txt.FormattingEnabled = true;
+            this.SelectSession2Txt.ItemHeight = 23;
+            this.SelectSession2Txt.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.SelectSession2Txt.Location = new System.Drawing.Point(169, 149);
+            this.SelectSession2Txt.Name = "SelectSession2Txt";
+            this.SelectSession2Txt.Size = new System.Drawing.Size(292, 29);
+            this.SelectSession2Txt.TabIndex = 69;
+            // 
+            // SelectSession1Txt
+            // 
+            this.SelectSession1Txt.FormattingEnabled = true;
+            this.SelectSession1Txt.ItemHeight = 23;
+            this.SelectSession1Txt.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.SelectSession1Txt.Location = new System.Drawing.Point(169, 92);
+            this.SelectSession1Txt.Name = "SelectSession1Txt";
+            this.SelectSession1Txt.Size = new System.Drawing.Size(292, 29);
+            this.SelectSession1Txt.TabIndex = 68;
+            // 
+            // SerchConSessionstxt
+            // 
+            this.SerchConSessionstxt.Location = new System.Drawing.Point(704, 100);
+            this.SerchConSessionstxt.Multiline = true;
+            this.SerchConSessionstxt.Name = "SerchConSessionstxt";
+            this.SerchConSessionstxt.Size = new System.Drawing.Size(114, 20);
+            this.SerchConSessionstxt.TabIndex = 66;
+            this.SerchConSessionstxt.Text = "Search";
+            // 
+            // SerchByConSessionscombo
+            // 
+            this.SerchByConSessionscombo.FormattingEnabled = true;
+            this.SerchByConSessionscombo.Items.AddRange(new object[] {
+            "sessionOne",
+            "sessionTwo",
+            "startTime",
+            "endTime",
+            "classDay"});
+            this.SerchByConSessionscombo.Location = new System.Drawing.Point(553, 100);
+            this.SerchByConSessionscombo.Name = "SerchByConSessionscombo";
+            this.SerchByConSessionscombo.Size = new System.Drawing.Size(117, 21);
+            this.SerchByConSessionscombo.TabIndex = 65;
+            this.SerchByConSessionscombo.Text = "Search By...";
+            // 
+            // dataGridViewConSessions
+            // 
+            this.dataGridViewConSessions.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewConSessions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewConSessions.Location = new System.Drawing.Point(511, 136);
+            this.dataGridViewConSessions.Name = "dataGridViewConSessions";
+            this.dataGridViewConSessions.RowHeadersWidth = 51;
+            this.dataGridViewConSessions.Size = new System.Drawing.Size(438, 265);
+            this.dataGridViewConSessions.TabIndex = 64;
+            // 
+            // metroTile2
+            // 
+            this.metroTile2.Location = new System.Drawing.Point(49, 413);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(195, 45);
+            this.metroTile2.Style = MetroFramework.MetroColorStyle.Silver;
+            this.metroTile2.TabIndex = 63;
+            this.metroTile2.Text = "Clear";
+            this.metroTile2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            // 
+            // btnAddConSessions
+            // 
+            this.btnAddConSessions.BackColor = System.Drawing.Color.Maroon;
+            this.btnAddConSessions.Location = new System.Drawing.Point(49, 341);
+            this.btnAddConSessions.Name = "btnAddConSessions";
+            this.btnAddConSessions.Size = new System.Drawing.Size(195, 41);
+            this.btnAddConSessions.Style = MetroFramework.MetroColorStyle.Blue;
+            this.btnAddConSessions.TabIndex = 62;
+            this.btnAddConSessions.Text = "Add Consecutive Sessions";
+            this.btnAddConSessions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddConSessions.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnAddConSessions.Click += new System.EventHandler(this.btnAddConSessions_Click);
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.BackColor = System.Drawing.Color.White;
+            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel16.Location = new System.Drawing.Point(30, 183);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel16.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel16.TabIndex = 59;
+            this.metroLabel16.UseStyleColors = true;
+            // 
+            // lblSelectSession1
+            // 
+            this.lblSelectSession1.AutoSize = true;
+            this.lblSelectSession1.BackColor = System.Drawing.Color.White;
+            this.lblSelectSession1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblSelectSession1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblSelectSession1.Location = new System.Drawing.Point(30, 92);
+            this.lblSelectSession1.Name = "lblSelectSession1";
+            this.lblSelectSession1.Size = new System.Drawing.Size(114, 19);
+            this.lblSelectSession1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.lblSelectSession1.TabIndex = 60;
+            this.lblSelectSession1.Text = "Select Session 1";
+            this.lblSelectSession1.UseStyleColors = true;
+            // 
             // metroTabPage4
             // 
             this.metroTabPage4.Controls.Add(this.NonOvrlpSesCombo2);
@@ -1233,6 +1459,34 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroTabPage4.TabIndex = 3;
             this.metroTabPage4.Text = "Add Non overlapping sessions ";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
+            // 
+            // NonOvrlpSesCombo2
+            // 
+            this.NonOvrlpSesCombo2.FormattingEnabled = true;
+            this.NonOvrlpSesCombo2.ItemHeight = 23;
+            this.NonOvrlpSesCombo2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.NonOvrlpSesCombo2.Location = new System.Drawing.Point(172, 127);
+            this.NonOvrlpSesCombo2.Name = "NonOvrlpSesCombo2";
+            this.NonOvrlpSesCombo2.Size = new System.Drawing.Size(289, 29);
+            this.NonOvrlpSesCombo2.TabIndex = 84;
+            // 
+            // metroLabel33
+            // 
+            this.metroLabel33.AutoSize = true;
+            this.metroLabel33.BackColor = System.Drawing.Color.White;
+            this.metroLabel33.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel33.Location = new System.Drawing.Point(51, 131);
+            this.metroLabel33.Name = "metroLabel33";
+            this.metroLabel33.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel33.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel33.TabIndex = 83;
+            this.metroLabel33.Text = "Session Two";
+            this.metroLabel33.UseStyleColors = true;
             // 
             // btnShoulOverClear
             // 
@@ -1287,39 +1541,19 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroLabel29.Text = "Session One";
             this.metroLabel29.UseStyleColors = true;
             // 
-            // NonOvrlpSesCombo2
+            // SNATGrid
             // 
-            this.NonOvrlpSesCombo2.FormattingEnabled = true;
-            this.NonOvrlpSesCombo2.ItemHeight = 23;
-            this.NonOvrlpSesCombo2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.NonOvrlpSesCombo2.Location = new System.Drawing.Point(172, 127);
-            this.NonOvrlpSesCombo2.Name = "NonOvrlpSesCombo2";
-            this.NonOvrlpSesCombo2.Size = new System.Drawing.Size(289, 29);
-            this.NonOvrlpSesCombo2.TabIndex = 84;
-            // 
-            // metroLabel33
-            // 
-            this.metroLabel33.AutoSize = true;
-            this.metroLabel33.BackColor = System.Drawing.Color.White;
-            this.metroLabel33.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroLabel33.Location = new System.Drawing.Point(51, 131);
-            this.metroLabel33.Name = "metroLabel33";
-            this.metroLabel33.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel33.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLabel33.TabIndex = 83;
-            this.metroLabel33.Text = "Session Two";
-            this.metroLabel33.UseStyleColors = true;
+            this.SNATGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SNATGrid.Location = new System.Drawing.Point(165, 353);
+            this.SNATGrid.Name = "SNATGrid";
+            this.SNATGrid.Size = new System.Drawing.Size(639, 104);
+            this.SNATGrid.TabIndex = 66;
             // 
             // MoreOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 646);
+            this.ClientSize = new System.Drawing.Size(1167, 646);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -1342,13 +1576,16 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
+            this.metroTabPage3.ResumeLayout(false);
+            this.metroTabPage3.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConSessions)).EndInit();
-            this.metroTabPage3.ResumeLayout(false);
-            this.metroTabPage3.PerformLayout();
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SNATGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1441,5 +1678,19 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
         private MetroFramework.Controls.MetroTile btn_consec_search;
         private MetroFramework.Controls.MetroComboBox NonOvrlpSesCombo2;
         private MetroFramework.Controls.MetroLabel metroLabel33;
+        private MetroFramework.Controls.MetroComboBox EndTimeDropdown;
+        private MetroFramework.Controls.MetroComboBox StartTimeDropdown;
+        private MetroFramework.Controls.MetroComboBox DayDropdown;
+        private MetroFramework.Controls.MetroComboBox selectItemDropDown;
+        private MetroFramework.Controls.MetroComboBox selectTypeDropDown;
+        private MetroFramework.Controls.MetroLabel metroLabel34;
+        private MetroFramework.Controls.MetroLabel metroLabel32;
+        private MetroFramework.Controls.MetroLabel metroLabel31;
+        private MetroFramework.Controls.MetroLabel metroLabel30;
+        private MetroFramework.Controls.MetroLabel metroLabel28;
+        private MetroFramework.Controls.MetroLabel metroLabel25;
+        private MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile metroTile1;
+        private System.Windows.Forms.DataGridView SNATGrid;
     }
 }

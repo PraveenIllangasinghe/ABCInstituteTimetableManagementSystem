@@ -14,7 +14,7 @@ namespace ABCInstituteTimetableManagementSystem.Database
         SqlConnection con;
         private SqlCommand cmd;
 
-        public dbConnect()
+       public dbConnect()
         {
             conString = @"Data Source=(localdb)\Ishini;Initial Catalog=ABCInstitute;Integrated Security=True";
         }
