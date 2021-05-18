@@ -52,9 +52,32 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
         private void AddLecturerBtn_Click(object sender, EventArgs e)
         {
+
+            //Auto Increment Table Records****************************************************************************************************************************
+
             SqlConnection connection = new SqlConnection(connectionString);
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Lecturer (ID,LecturerName,EmployeeID,Level,Building,Department,Faculty,Center,Rank) VALUES (11, @LecturerName, @EmployeeID, @Level, @Building, @Department, @Faculty, @Center, @Rank)", connection);
+            connection.Open();
+            SqlCommand comm = connection.CreateCommand();
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = "SELECT COUNT(ID) AS ID FROM Lecturer";
+            comm.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(dt);
+
+            int nxt=0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                string next = dr["ID"].ToString();
+                nxt = Int16.Parse(next);
+                nxt = ++nxt;
+            }
+            connection.Close();
+
+            //*********************************************************************************************************************************************************
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO Lecturer (ID,LecturerName,EmployeeID,Level,Building,Department,Faculty,Center,Rank) VALUES (@AIVal, @LecturerName, @EmployeeID, @Level, @Building, @Department, @Faculty, @Center, @Rank)", connection);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@LecturerName", TxtBoxLecturerNameAdd.Text);
             cmd.Parameters.AddWithValue("@EmployeeID", TxtBoxEmpIDAdd.Text);
@@ -63,6 +86,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             cmd.Parameters.AddWithValue("@Department", ComboBoxDepartmentAdd.Text);
             cmd.Parameters.AddWithValue("@Faculty", ComboBoxFacultyAdd.Text);
             cmd.Parameters.AddWithValue("@Center", ComboBoxCenterAdd.Text);
+            cmd.Parameters.AddWithValue("@AIVal", nxt);
 
             if (ComboBoxLevelAdd.Text.Equals("Professor"))
             {
@@ -97,37 +121,6 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             cmd.ExecuteNonQuery();
 
             MessageBox.Show("Lecturer has been Added Successfully...");
-
-            /*SqlCommand command = new SqlCommand("SELECT TOP(1) LecturerID FROM Lecturers ORDER BY 1 DESC", connection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            reader.Read();
-
-            string data = reader["LecturerID"].ToString();
-
-            reader.Close();
-
-            connection.Close();
-
-            SqlCommand command2 = new SqlCommand("UPDATE Lecturers SET LecRank = @LecRank Where LecturerID = @LecturerID ", connection);
-            command2.CommandType = CommandType.Text;
-
-            command2.Parameters.AddWithValue("@LecRank", Lec_Rank + "." + data);
-
-            command2.Parameters.AddWithValue("@LecturerID", data);
-
-            connection.Open();
-
-            command2.ExecuteNonQuery();
-
-            connection.Close(); */
-
-            //GetLecturers();
-
-            //ClearFieldsAfterAdd();
-
-            //tabControlLecturers.SelectedTab = tabPageLecView;
 
             ClearFields();
             LecturerPortalTabControl.SelectedTab = ViewLecturersTabPage;
@@ -443,13 +436,38 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
         //Add Available Time****************************************************************************************
         private void AATimeSaveBtn_Click(object sender, EventArgs e)
         {
-           
-                SqlConnection connect = new SqlConnection(connectionString);
+
+            //Auto Increment Table Records****************************************************************************************************************************
+
+            SqlConnection sqlcon = new SqlConnection(connectionString);
+
+            sqlcon.Open();
+            SqlCommand comm = sqlcon.CreateCommand();
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = "SELECT COUNT(ID) AS ID FROM LecturerAvailableTime";
+            comm.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(dt);
+
+            int aat_nxt = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                string aat_next = dr["ID"].ToString();
+                aat_nxt = Int16.Parse(aat_next);
+                aat_nxt = ++aat_nxt;
+            }
+            sqlcon.Close();
+
+            //*********************************************************************************************************************************************************
+
+
+            SqlConnection connect = new SqlConnection(connectionString);
 
                 connect.Open();
                 if (connect.State == System.Data.ConnectionState.Open)
                 {
-                    string query = "INSERT INTO LecturerAvailableTime (ID,LecturerName,Day,StartTime,EndTime) VALUES (6,@LecName,@Day,@StartTime,@EndTime)";
+                    string query = "INSERT INTO LecturerAvailableTime (ID,LecturerName,Day,StartTime,EndTime) VALUES (@AutoIncAAT,@LecName,@Day,@StartTime,@EndTime)";
                     SqlCommand cmd = new SqlCommand(query, connect);
 
 
@@ -457,8 +475,9 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
                     cmd.Parameters.AddWithValue("@Day", ComboBoxDayAATime.SelectedItem);
                     cmd.Parameters.AddWithValue("@StartTime", ComboBoxStartTimeAATime.SelectedItem);
                     cmd.Parameters.AddWithValue("@EndTime", ComboBoxEndTimeAATime.SelectedItem);
+                    cmd.Parameters.AddWithValue("@AutoIncAAT", aat_nxt);
 
-                    cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                     MessageBox.Show("Lecturer Available Time has been Saved Successfully...");
 
                     ViewAvailableTime();
@@ -500,7 +519,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
         {
             PopulateLecNameAATime_ComboBox();
 
-            //ID = Convert.ToInt32(AddAvailableTimeDataGridView.CurrentRow.Cells[1].Value.ToString());
+            ID = Convert.ToInt32(AddAvailableTimeDataGridView.CurrentRow.Cells[0].Value.ToString());
             ComboBoxLecNameAATime.SelectedItem = AddAvailableTimeDataGridView.CurrentRow.Cells[1].Value;
             ComboBoxDayAATime.SelectedItem = AddAvailableTimeDataGridView.CurrentRow.Cells[2].Value;
             ComboBoxStartTimeAATime.SelectedItem = AddAvailableTimeDataGridView.CurrentRow.Cells[3].Value;
@@ -512,18 +531,17 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
         {
             if (val > 0)
             {
-                //if (IsValidUpdate())
-                //{
+
                 SqlConnection connection = new SqlConnection(connectionString);
 
-                SqlCommand sqlCommand = new SqlCommand("UPDATE LecturerAvailableTime SET LecturerName = @LecNameUpdated, Day = @DayUpdated, StartTime = @StartTimeUpdated, EndTime = @EndTimeUpdated WHERE ID = 6", connection);
+                SqlCommand sqlCommand = new SqlCommand("UPDATE LecturerAvailableTime SET LecturerName = @LecNameUpdated, Day = @DayUpdated, StartTime = @StartTimeUpdated, EndTime = @EndTimeUpdated WHERE ID = @ID", connection);
                 sqlCommand.CommandType = CommandType.Text;
 
                 sqlCommand.Parameters.AddWithValue("@LecNameUpdated", ComboBoxLecNameAATime.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@DayUpdated", ComboBoxDayAATime.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@StartTimeUpdated", ComboBoxStartTimeAATime.SelectedItem);
                 sqlCommand.Parameters.AddWithValue("@EndTimeUpdated", ComboBoxEndTimeAATime.SelectedItem);
-                //sqlCommand.Parameters.AddWithValue("@ID", this.ID);
+                sqlCommand.Parameters.AddWithValue("@ID", this.ID);
 
                 connection.Open();
 
@@ -533,12 +551,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
                 MessageBox.Show("Lecturer Available Time has been Updated Sucessfully", "Confirmation");
 
-                //GetSubjects();
-
-                //ClearFieldsAfterUpdate();
-
-                //tabControlSubjects.SelectedTab = tabPageSubView;
-                // }
+                
             }
             else
             {
@@ -565,11 +578,6 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
                     MessageBox.Show("Lecturer Available Time has been Deleted", "Confirmation");
 
-                    //GetSubjects();
-
-                    //ClearFieldsAfterUpdate();
-
-                    // tabControlSubjects.SelectedTab = tabPageSubView;
                 }
 
             }
@@ -667,6 +675,24 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             SubjectPortal.Subjects navSubPortal = new SubjectPortal.Subjects();
             navSubPortal.Show();
             this.Hide();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            //Close App******************************************
+
+            Application.Exit();
+
+            //***************************************************
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //Minimize App***************************************
+
+            this.WindowState = FormWindowState.Minimized;
+
+            //***************************************************
         }
     }
 }

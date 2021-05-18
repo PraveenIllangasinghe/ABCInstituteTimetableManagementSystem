@@ -1008,8 +1008,8 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             // SessionTabControl
             // 
             this.SessionTabControl.Controls.Add(this.ViewSessionsTabPage);
-            this.SessionTabControl.Controls.Add(this.ManageSessionsTabPage);
             this.SessionTabControl.Controls.Add(this.AddSessionsTabPage);
+            this.SessionTabControl.Controls.Add(this.ManageSessionsTabPage);
             this.SessionTabControl.Location = new System.Drawing.Point(193, 53);
             this.SessionTabControl.Name = "SessionTabControl";
             this.SessionTabControl.SelectedIndex = 2;
@@ -1188,6 +1188,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.SessionMinBtn.Size = new System.Drawing.Size(43, 38);
             this.SessionMinBtn.TabIndex = 10;
             this.SessionMinBtn.UseVisualStyleBackColor = true;
+            this.SessionMinBtn.Click += new System.EventHandler(this.SessionMinBtn_Click);
             // 
             // SessionCloseBtn
             // 
@@ -1200,6 +1201,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.SessionCloseBtn.Size = new System.Drawing.Size(43, 38);
             this.SessionCloseBtn.TabIndex = 9;
             this.SessionCloseBtn.UseVisualStyleBackColor = true;
+            this.SessionCloseBtn.Click += new System.EventHandler(this.SessionCloseBtn_Click);
             // 
             // panel2
             // 

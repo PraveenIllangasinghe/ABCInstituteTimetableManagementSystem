@@ -1082,6 +1082,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.SubjectMinimizeBtn.Size = new System.Drawing.Size(43, 38);
             this.SubjectMinimizeBtn.TabIndex = 10;
             this.SubjectMinimizeBtn.UseVisualStyleBackColor = true;
+            this.SubjectMinimizeBtn.Click += new System.EventHandler(this.SubjectMinimizeBtn_Click);
             // 
             // SubjectCloseBtn
             // 
@@ -1094,6 +1095,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.SubjectCloseBtn.Size = new System.Drawing.Size(43, 38);
             this.SubjectCloseBtn.TabIndex = 9;
             this.SubjectCloseBtn.UseVisualStyleBackColor = true;
+            this.SubjectCloseBtn.Click += new System.EventHandler(this.SubjectCloseBtn_Click);
             // 
             // panel2
             // 
@@ -1125,8 +1127,8 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             // SubjectPortalTabControl
             // 
             this.SubjectPortalTabControl.Controls.Add(this.ViewSubjectsTabPage);
-            this.SubjectPortalTabControl.Controls.Add(this.ManageSubjectsTabPage);
             this.SubjectPortalTabControl.Controls.Add(this.metroTabPage2);
+            this.SubjectPortalTabControl.Controls.Add(this.ManageSubjectsTabPage);
             this.SubjectPortalTabControl.Location = new System.Drawing.Point(194, 51);
             this.SubjectPortalTabControl.Name = "SubjectPortalTabControl";
             this.SubjectPortalTabControl.SelectedIndex = 2;

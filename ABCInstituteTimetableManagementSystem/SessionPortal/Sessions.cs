@@ -141,7 +141,8 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT SubjectName FROM Subject";
+            cmd.Parameters.AddWithValue("@SubjectCode", CB_SubCode_Add.Text);
+            cmd.CommandText = "SELECT SubjectName FROM Subject WHERE SubjectCode = @SubjectCode";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -491,7 +492,26 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             SessionTabControl.SelectedTab = ViewSessionsTabPage;
         }
 
+
         //****************************************************************************************************
+
+        private void SessionCloseBtn_Click(object sender, EventArgs e)
+        {
+            //Close App******************************************
+
+            Application.Exit();
+
+            //***************************************************
+        }
+
+        private void SessionMinBtn_Click(object sender, EventArgs e)
+        {
+            //Minimize App***************************************
+
+            this.WindowState = FormWindowState.Minimized;
+
+            //***************************************************
+        }
     }
 
 }

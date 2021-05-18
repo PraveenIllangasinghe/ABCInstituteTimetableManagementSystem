@@ -48,12 +48,38 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
         //Add Subjects****************************************************************************************
         private void SubjectAddBtn_Click(object sender, EventArgs e)
         {
+
+            //Auto Increment Table Records****************************************************************************************************************************
+
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            connection.Open();
+            SqlCommand comm = connection.CreateCommand();
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = "SELECT COUNT(ID) AS ID FROM Subject";
+            comm.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(dt);
+
+            int nxt = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                string next = dr["ID"].ToString();
+                nxt = Int16.Parse(next);
+                nxt = ++nxt;
+            }
+            connection.Close();
+
+            //*********************************************************************************************************************************************************
+
+
             SqlConnection connect = new SqlConnection(connectionString);
 
             connect.Open();
             if (connect.State == System.Data.ConnectionState.Open)
             {
-                string query = "INSERT INTO Subject (ID,SubjectCode,SubjectName,OfferedYear,OfferedSemester,NoOfLectureHours,NoOfTutorialHours,NoOfLabHours,NoOfEvaluationHours) VALUES (7,@SubjectCode,@SubjectName,@OfferedYear,@OfferedSemester,@NoOfLectureHours,@NoOfTutorialHours,@NoOfLabHours,@NoOfEvaluationHours)";
+                string query = "INSERT INTO Subject (ID,SubjectCode,SubjectName,OfferedYear,OfferedSemester,NoOfLectureHours,NoOfTutorialHours,NoOfLabHours,NoOfEvaluationHours) VALUES (@AutoInc,@SubjectCode,@SubjectName,@OfferedYear,@OfferedSemester,@NoOfLectureHours,@NoOfTutorialHours,@NoOfLabHours,@NoOfEvaluationHours)";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 
                
@@ -71,6 +97,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
                 cmd.Parameters.AddWithValue("@NoOfTutorialHours", SubjectNoOfTuteHrs.Value);
                 cmd.Parameters.AddWithValue("@NoOfLabHours", SubjectNoOfLabHrs.Value);
                 cmd.Parameters.AddWithValue("@NoOfEvaluationHours", SubjectNoOfEvalHrs.Value);
+                cmd.Parameters.AddWithValue("@AutoInc", nxt);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Subject has been Added Successfully...");
@@ -160,8 +187,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
         {
             if (val > 0)
             {
-                //if (IsValidUpdate())
-                //{
+                
                     SqlConnection connection = new SqlConnection(connectionString);
 
                     SqlCommand sqlCommand = new SqlCommand("UPDATE Subject SET SubjectCode = @UpdatedSubjectCode, SubjectName = @UpdatedSubjectName, OfferedYear = @UpdatedOfferedYear, OfferedSemester = @UpdatedOfferedSemester, NoOfLectureHours = @UpdatedNoOfLectureHours, NoOfTutorialHours = @UpdatedNoOfTutorialHours, NoOfLabHours = @UpdatedNoOfLabHours, NoOfEvaluationHours = @UpdatedNoOfEvalHours WHERE SubjectCode = @SubjectCode", connection);
@@ -183,7 +209,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
                     sqlCommand.Parameters.AddWithValue("@UpdatedNoOfEvalHours", NumUpDownEvalHrsUpdate.Text);
                     sqlCommand.Parameters.AddWithValue("@SubjectCode", this.SubjectCode);
 
-                    connection.Open();
+                connection.Open();
 
                     sqlCommand.ExecuteNonQuery();
 
@@ -191,12 +217,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
 
                     MessageBox.Show("Subject Information has been Updated Sucessfully", "Confirmation");
 
-                    //GetSubjects();
-
-                    //ClearFieldsAfterUpdate();
-
-                    //tabControlSubjects.SelectedTab = tabPageSubView;
-               // }
+                    
             }
             else
             {
@@ -230,11 +251,6 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
 
                     MessageBox.Show("Subject has been Deleted", "Confirmation");
 
-                    //GetSubjects();
-
-                    //ClearFieldsAfterUpdate();
-
-                   // tabControlSubjects.SelectedTab = tabPageSubView;
                 }
 
             }
@@ -308,6 +324,24 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             LecturerPortal.Lecturers navSubPortal = new LecturerPortal.Lecturers();
             navSubPortal.Show();
             this.Hide();
+        }
+
+        private void SubjectCloseBtn_Click(object sender, EventArgs e)
+        {
+            //Close App******************************************
+
+            Application.Exit();
+
+            //***************************************************
+        }
+
+        private void SubjectMinimizeBtn_Click(object sender, EventArgs e)
+        {
+            //Minimize App***************************************
+
+            this.WindowState = FormWindowState.Minimized;
+
+            //***************************************************
         }
     }
 }
