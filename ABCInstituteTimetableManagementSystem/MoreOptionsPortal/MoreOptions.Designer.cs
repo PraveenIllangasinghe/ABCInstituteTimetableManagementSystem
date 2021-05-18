@@ -110,12 +110,12 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.NonOvrlpSesCombo2 = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.btnShoulOverClear = new MetroFramework.Controls.MetroTile();
             this.btnAddShoulOver = new MetroFramework.Controls.MetroTile();
             this.NonOvrlpSesCombo = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
-            this.NonOvrlpSesCombo2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -745,12 +745,12 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(193, 57);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(974, 537);
             this.metroTabControl1.TabIndex = 61;
             // 
@@ -790,6 +790,7 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Add Consecutive sessions ";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            
             // 
             // btn_consec_search
             // 
@@ -941,6 +942,7 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.SelectSession1Txt.Name = "SelectSession1Txt";
             this.SelectSession1Txt.Size = new System.Drawing.Size(292, 29);
             this.SelectSession1Txt.TabIndex = 68;
+           
             // 
             // SerchConSessionstxt
             // 
@@ -1234,6 +1236,34 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroTabPage4.Text = "Add Non overlapping sessions ";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             // 
+            // NonOvrlpSesCombo2
+            // 
+            this.NonOvrlpSesCombo2.FormattingEnabled = true;
+            this.NonOvrlpSesCombo2.ItemHeight = 23;
+            this.NonOvrlpSesCombo2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.NonOvrlpSesCombo2.Location = new System.Drawing.Point(172, 127);
+            this.NonOvrlpSesCombo2.Name = "NonOvrlpSesCombo2";
+            this.NonOvrlpSesCombo2.Size = new System.Drawing.Size(289, 29);
+            this.NonOvrlpSesCombo2.TabIndex = 84;
+            // 
+            // metroLabel33
+            // 
+            this.metroLabel33.AutoSize = true;
+            this.metroLabel33.BackColor = System.Drawing.Color.White;
+            this.metroLabel33.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.metroLabel33.Location = new System.Drawing.Point(51, 131);
+            this.metroLabel33.Name = "metroLabel33";
+            this.metroLabel33.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel33.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel33.TabIndex = 83;
+            this.metroLabel33.Text = "Session Two";
+            this.metroLabel33.UseStyleColors = true;
+            // 
             // btnShoulOverClear
             // 
             this.btnShoulOverClear.BackColor = System.Drawing.Color.Maroon;
@@ -1286,34 +1316,6 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             this.metroLabel29.TabIndex = 63;
             this.metroLabel29.Text = "Session One";
             this.metroLabel29.UseStyleColors = true;
-            // 
-            // NonOvrlpSesCombo2
-            // 
-            this.NonOvrlpSesCombo2.FormattingEnabled = true;
-            this.NonOvrlpSesCombo2.ItemHeight = 23;
-            this.NonOvrlpSesCombo2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.NonOvrlpSesCombo2.Location = new System.Drawing.Point(172, 127);
-            this.NonOvrlpSesCombo2.Name = "NonOvrlpSesCombo2";
-            this.NonOvrlpSesCombo2.Size = new System.Drawing.Size(289, 29);
-            this.NonOvrlpSesCombo2.TabIndex = 84;
-            // 
-            // metroLabel33
-            // 
-            this.metroLabel33.AutoSize = true;
-            this.metroLabel33.BackColor = System.Drawing.Color.White;
-            this.metroLabel33.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroLabel33.Location = new System.Drawing.Point(51, 131);
-            this.metroLabel33.Name = "metroLabel33";
-            this.metroLabel33.Size = new System.Drawing.Size(89, 19);
-            this.metroLabel33.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLabel33.TabIndex = 83;
-            this.metroLabel33.Text = "Session Two";
-            this.metroLabel33.UseStyleColors = true;
             // 
             // MoreOptions
             // 

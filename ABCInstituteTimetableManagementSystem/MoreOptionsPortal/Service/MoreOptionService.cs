@@ -112,7 +112,7 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal.Service
                 Database.dbConnect con1 = new Database.dbConnect();
                 con1.openConnection();
 
-               
+
                 string q1 = $"insert into {table} (sessionOne, sessionTwo, startTime, endTime, classDay) values (@sessionOne, @sessionTwo, @startTime, @endTime, @classDay)";
 
                 SqlCommand cmd1 = new SqlCommand(q1, con1.getConnection());
@@ -130,7 +130,7 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal.Service
                 cmd1.Parameters.AddWithValue("@endTime", endTime);
                 cmd1.Parameters.AddWithValue("@classDay", cs.classDay);
 
-               
+
                 cmd1.ExecuteNonQuery();
                 temp1 = true;
 
