@@ -14,7 +14,7 @@ namespace ABCInstituteTimetableManagementSystem.Database
         SqlConnection con;
         private SqlCommand cmd;
 
-        public dbConnect()
+       public dbConnect()
         {
             conString = @"Server=tcp:abc-insstitute-server.database.windows.net,1433;Initial Catalog=abcinstitute-datbase;Persist Security Info=False;User ID=dbuser;Password=1qaz!QAZ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
