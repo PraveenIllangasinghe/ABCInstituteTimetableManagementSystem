@@ -18,7 +18,7 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
         public MoreOptions()
         {
             InitializeComponent();
-            //fetchSessionData();
+            fetchSessionData();
         }
 
         Service.SessionInfo sessionInfo;
