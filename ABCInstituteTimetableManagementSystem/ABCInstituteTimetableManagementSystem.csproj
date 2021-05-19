@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\dbConnect.cs" />
     <Compile Include="GenerateTimetablePortal\GenerateTimetables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,10 @@
     <Compile Include="MoreOptionsPortal\MoreOptions.Designer.cs">
       <DependentUpon>MoreOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="MoreOptionsPortal\Service\ConsecutiveSession.cs" />
+    <Compile Include="MoreOptionsPortal\Service\MoreOptionService.cs" />
+    <Compile Include="MoreOptionsPortal\Service\NonOverlap.cs" />
+    <Compile Include="MoreOptionsPortal\Service\SessionInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomPortal\Rooms.cs">
@@ -107,10 +112,22 @@
     <Compile Include="StatisticsPortal\Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentGroupPortal\Service\AllDetails.cs" />
+    <Compile Include="StudentGroupPortal\Service\GroupId.cs" />
+    <Compile Include="StudentGroupPortal\Service\GroupIDsServices.cs" />
+    <Compile Include="StudentGroupPortal\Service\GroupNumbers.cs" />
+    <Compile Include="StudentGroupPortal\Service\GroupNumberService.cs" />
+    <Compile Include="StudentGroupPortal\Service\Program.cs" />
+    <Compile Include="StudentGroupPortal\Service\ProgrammeService.cs" />
+    <Compile Include="StudentGroupPortal\Service\SubGroupId.cs" />
+    <Compile Include="StudentGroupPortal\Service\SubGroupNo.cs" />
+    <Compile Include="StudentGroupPortal\Service\SubGroupNoService.cs" />
+    <Compile Include="StudentGroupPortal\Service\YearSemester.cs" />
+    <Compile Include="StudentGroupPortal\Service\YearSemesterService.cs" />
     <Compile Include="StudentGroupPortal\StudentGroups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentGroupPortal\StudentGroups.Designer.cs">
+    <Compile Include="StudentGroupPortal\StudentGroups.designer.cs">
       <DependentUpon>StudentGroups.cs</DependentUpon>
     </Compile>
     <Compile Include="SubjectPortal\Subjects.cs">
@@ -119,6 +136,8 @@
     <Compile Include="SubjectPortal\Subjects.Designer.cs">
       <DependentUpon>Subjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="TagPortal\Service\TagName.cs" />
+    <Compile Include="TagPortal\Service\TagNameService.cs" />
     <Compile Include="TagPortal\Tags.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +165,9 @@
     <EmbeddedResource Include="LocationPortal\Locations.resx">
       <DependentUpon>Locations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MoreOptionsPortal\MoreOptions.resx">
+      <DependentUpon>MoreOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -170,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WorkingDaysPortal\WorkingDays.resx">
       <DependentUpon>WorkingDays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentGroupPortal\StudentGroups.resx">
+      <DependentUpon>StudentGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagPortal\Tags.resx">
+      <DependentUpon>Tags.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
