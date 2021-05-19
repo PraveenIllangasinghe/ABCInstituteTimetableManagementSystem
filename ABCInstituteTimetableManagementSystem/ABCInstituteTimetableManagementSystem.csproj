@@ -168,6 +168,9 @@
     <EmbeddedResource Include="StatisticsPortal\Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WorkingDaysPortal\WorkingDays.resx">
+      <DependentUpon>WorkingDays.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
