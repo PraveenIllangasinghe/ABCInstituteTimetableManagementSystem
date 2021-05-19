@@ -85,7 +85,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
             con.Open();
             cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT DISTINCT TagName FROM  TagTable";
+            cmd.CommandText = "SELECT DISTINCT TagName FROM Tags";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da1 = new SqlDataAdapter(cmd);
@@ -285,7 +285,7 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         {
 
             subTag_combo_box.Items.Clear();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT DISTINCT TagName FROM  TagTable", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT DISTINCT TagName FROM Tags", con);
             DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
             foreach (DataRow dataRow in dataTable.Rows)

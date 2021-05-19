@@ -66,7 +66,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT count(GenGroupNumber) as grpcount from GenGroupNum_Table";
+            cmd.CommandText = "SELECT count(groupNumber) as grpcount from GroupNo";
             cmd.ExecuteNonQuery();
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
@@ -90,8 +90,8 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
 
             DataSet ds = new DataSet();
             con.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter("select p.ProgrammeName as Programme, count(g.GenGroupNumber) as Grpcount  " +
-                "from Programme_Table p, GenGroupNum_Table g where p.id = g.ProgrammeRef group by p.ProgrammeName", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("select p.programme as Programme, count(g.groupNumber) as Grpcount  " +
+                "from Progrmme p, GroupNo g where p.id = g.id group by p.programme", con);
             adapt.Fill(ds, "Grpcount");
             Programme_GropCount_Chart.DataSource = ds.Tables["Grpcount"];
 
@@ -114,12 +114,12 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
 
             DataSet ds = new DataSet();
             con.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter("Select Year ,COUNT(Code) as subyrcount from Subjects_Table GROUP BY Year", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("Select OfferedYear ,COUNT(SubjectCode) as subyrcount from Subject GROUP BY OfferedYear", con);
             adapt.Fill(ds, "subyrcount");
             Subject_Year_Chart.DataSource = ds.Tables["subyrcount"];
 
 
-            Subject_Year_Chart.Series["Academic Year"].XValueMember = "Year";
+            Subject_Year_Chart.Series["Academic Year"].XValueMember = "OfferedYear";
             Subject_Year_Chart.Series["Academic Year"].YValueMembers = "subyrcount";
             Subject_Year_Chart.Series["Academic Year"].ChartType = SeriesChartType.Bar;
 
@@ -136,7 +136,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT COUNT(Code) as subCount FROM Subjects_Table";
+            cmd.CommandText = "SELECT COUNT(SubjectCode) as subCount FROM Subject";
             cmd.ExecuteNonQuery();
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
@@ -163,7 +163,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
 
             DataSet ds = new DataSet();
             con.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter("Select Faculty,COUNT(ID) as c from Lecturer_table GROUP BY Faculty", con);
+            SqlDataAdapter adapt = new SqlDataAdapter("Select Faculty,COUNT(ID) as c from Lecturer GROUP BY Faculty", con);
             adapt.Fill(ds, "Faculty");
             Lecture_Faculty_Chart.DataSource = ds.Tables["Faculty"];
 
@@ -187,7 +187,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT COUNT(ID) as lecCount FROM Lecturer_table";
+            cmd.CommandText = "SELECT COUNT(ID) as lecCount FROM Lecturer";
             cmd.ExecuteNonQuery();
             SqlDataReader dr;
             dr = cmd.ExecuteReader();
