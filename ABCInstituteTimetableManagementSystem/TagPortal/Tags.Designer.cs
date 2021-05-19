@@ -69,6 +69,7 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.button2 = new System.Windows.Forms.Button();
             this.sg_home_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.HomeMinimizeBtn = new System.Windows.Forms.Button();
             this.HomeCloseBtn = new System.Windows.Forms.Button();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
@@ -85,7 +86,9 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.StdntGrp_SrchByTag = new System.Windows.Forms.ComboBox();
             this.StdntGrp_TagBtnClear = new MetroFramework.Controls.MetroTile();
             this.StdntGrp_BtnAddTag = new MetroFramework.Controls.MetroTile();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.TGBack = new System.Windows.Forms.Button();
+            this.TGmin = new System.Windows.Forms.Button();
+            this.TGCl = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -597,8 +600,11 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(53)))));
+            this.panel2.Controls.Add(this.TGBack);
             this.panel2.Controls.Add(this.metroLabel11);
+            this.panel2.Controls.Add(this.TGmin);
             this.panel2.Controls.Add(this.HomeMinimizeBtn);
+            this.panel2.Controls.Add(this.TGCl);
             this.panel2.Controls.Add(this.HomeCloseBtn);
             this.panel2.Controls.Add(this.metroLabel15);
             this.panel2.Controls.Add(this.button12);
@@ -608,6 +614,20 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(920, 43);
             this.panel2.TabIndex = 3;
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.CustomBackground = true;
+            this.metroLabel11.CustomForeColor = true;
+            this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(157)))), ((int)(((byte)(169)))));
+            this.metroLabel11.Location = new System.Drawing.Point(342, 9);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(106, 25);
+            this.metroLabel11.TabIndex = 38;
+            this.metroLabel11.Text = "Tags Portal";
             // 
             // HomeMinimizeBtn
             // 
@@ -691,6 +711,7 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.btn_Tag_search.Text = "Search";
             this.btn_Tag_search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Tag_search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btn_Tag_search.UseVisualStyleBackColor = false;
             this.btn_Tag_search.Click += new System.EventHandler(this.btn_Tag_search_Click);
             // 
             // StdntGrp_tagCombo
@@ -740,6 +761,7 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.StdntGrp_TagBtnDelete.Text = "Delete";
             this.StdntGrp_TagBtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_TagBtnDelete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_TagBtnDelete.UseVisualStyleBackColor = false;
             this.StdntGrp_TagBtnDelete.Click += new System.EventHandler(this.StdntGrp_TagBtnDelete_Click);
             // 
             // StdntGrp_TagBtnEdit
@@ -753,6 +775,7 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.StdntGrp_TagBtnEdit.Text = "Edit Details";
             this.StdntGrp_TagBtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_TagBtnEdit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_TagBtnEdit.UseVisualStyleBackColor = false;
             this.StdntGrp_TagBtnEdit.Click += new System.EventHandler(this.StdntGrp_TagBtnEdit_Click);
             // 
             // StdntGrp_TagTable
@@ -788,6 +811,7 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.StdntGrp_TagBtnClear.Text = "Clear";
             this.StdntGrp_TagBtnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_TagBtnClear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_TagBtnClear.UseVisualStyleBackColor = false;
             // 
             // StdntGrp_BtnAddTag
             // 
@@ -800,21 +824,45 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
             this.StdntGrp_BtnAddTag.Text = "Add Tag";
             this.StdntGrp_BtnAddTag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_BtnAddTag.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_BtnAddTag.UseVisualStyleBackColor = false;
             this.StdntGrp_BtnAddTag.Click += new System.EventHandler(this.StdntGrp_BtnAddTag_Click);
             // 
-            // metroLabel11
+            // TGBack
             // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.CustomBackground = true;
-            this.metroLabel11.CustomForeColor = true;
-            this.metroLabel11.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(157)))), ((int)(((byte)(169)))));
-            this.metroLabel11.Location = new System.Drawing.Point(342, 9);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(106, 25);
-            this.metroLabel11.TabIndex = 38;
-            this.metroLabel11.Text = "Tags Portal";
+            this.TGBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TGBack.FlatAppearance.BorderSize = 0;
+            this.TGBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TGBack.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgBackBtn;
+            this.TGBack.Location = new System.Drawing.Point(10, 5);
+            this.TGBack.Name = "TGBack";
+            this.TGBack.Size = new System.Drawing.Size(43, 38);
+            this.TGBack.TabIndex = 61;
+            this.TGBack.UseVisualStyleBackColor = true;
+            this.TGBack.Click += new System.EventHandler(this.TGBack_Click);
+            // 
+            // TGmin
+            // 
+            this.TGmin.BackgroundImage = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgMinimizeApp;
+            this.TGmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TGmin.FlatAppearance.BorderSize = 0;
+            this.TGmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TGmin.Location = new System.Drawing.Point(720, 3);
+            this.TGmin.Name = "TGmin";
+            this.TGmin.Size = new System.Drawing.Size(43, 38);
+            this.TGmin.TabIndex = 60;
+            this.TGmin.UseVisualStyleBackColor = true;
+            // 
+            // TGCl
+            // 
+            this.TGCl.BackgroundImage = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgCloseApp;
+            this.TGCl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TGCl.FlatAppearance.BorderSize = 0;
+            this.TGCl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TGCl.Location = new System.Drawing.Point(759, 3);
+            this.TGCl.Name = "TGCl";
+            this.TGCl.Size = new System.Drawing.Size(43, 38);
+            this.TGCl.TabIndex = 59;
+            this.TGCl.UseVisualStyleBackColor = true;
             // 
             // Tags
             // 
@@ -916,5 +964,8 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
         private MetroFramework.Controls.MetroTile StdntGrp_TagBtnClear;
         private MetroFramework.Controls.MetroTile StdntGrp_BtnAddTag;
         private MetroFramework.Controls.MetroLabel metroLabel11;
+        private System.Windows.Forms.Button TGBack;
+        private System.Windows.Forms.Button TGmin;
+        private System.Windows.Forms.Button TGCl;
     }
 }

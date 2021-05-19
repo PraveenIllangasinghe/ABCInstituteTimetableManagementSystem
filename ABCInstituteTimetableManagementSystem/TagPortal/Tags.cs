@@ -119,5 +119,12 @@ namespace ABCInstituteTimetableManagementSystem.TagPortal
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void TGBack_Click(object sender, EventArgs e)
+        {
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
+        }
     }
 }

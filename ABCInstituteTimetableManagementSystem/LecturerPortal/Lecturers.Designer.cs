@@ -29,9 +29,9 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lecturers));
             this.ManageLecturersTabPage = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
@@ -188,6 +188,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.ManageLecturersTabPage.Controls.Add(this.metroLabel17);
             this.ManageLecturersTabPage.Controls.Add(this.metroLabel18);
             this.ManageLecturersTabPage.Controls.Add(this.metroLabel19);
+            this.ManageLecturersTabPage.Enabled = true;
             this.ManageLecturersTabPage.HorizontalScrollbarBarColor = true;
             this.ManageLecturersTabPage.Location = new System.Drawing.Point(4, 35);
             this.ManageLecturersTabPage.Name = "ManageLecturersTabPage";
@@ -195,6 +196,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.ManageLecturersTabPage.TabIndex = 5;
             this.ManageLecturersTabPage.Text = "Manage Lecturers";
             this.ManageLecturersTabPage.VerticalScrollbarBarColor = true;
+            this.ManageLecturersTabPage.Visible = false;
             // 
             // metroLabel11
             // 
@@ -474,6 +476,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.metroTabPage5.Controls.Add(this.metroLabel47);
             this.metroTabPage5.Controls.Add(this.metroLabel48);
             this.metroTabPage5.Controls.Add(this.ComboBoxFacultyAdd);
+            this.metroTabPage5.Enabled = true;
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage5.Name = "metroTabPage5";
@@ -481,6 +484,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.metroTabPage5.TabIndex = 4;
             this.metroTabPage5.Text = "Add Lecturers";
             this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.Visible = false;
             // 
             // LecRankGenBtn
             // 
@@ -711,33 +715,33 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             // LecturersDataGridView
             // 
             this.LecturersDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LecturersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LecturersDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.LecturersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LecturersDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LecturersDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.LecturersDataGridView.Location = new System.Drawing.Point(34, 116);
             this.LecturersDataGridView.Name = "LecturersDataGridView";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LecturersDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LecturersDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.LecturersDataGridView.Size = new System.Drawing.Size(827, 370);
             this.LecturersDataGridView.TabIndex = 25;
             this.LecturersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LecturersDataGridView_CellClick);
@@ -1278,6 +1282,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.ViewLecturersTabPage.Controls.Add(this.SearchBtnViewLec);
             this.ViewLecturersTabPage.Controls.Add(this.metroLabel38);
             this.ViewLecturersTabPage.Controls.Add(this.LecturersDataGridView);
+            this.ViewLecturersTabPage.Enabled = true;
             this.ViewLecturersTabPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewLecturersTabPage.HorizontalScrollbarBarColor = true;
             this.ViewLecturersTabPage.Location = new System.Drawing.Point(4, 35);
@@ -1286,6 +1291,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.ViewLecturersTabPage.TabIndex = 2;
             this.ViewLecturersTabPage.Text = "View Lecturers";
             this.ViewLecturersTabPage.VerticalScrollbarBarColor = true;
+            this.ViewLecturersTabPage.Visible = true;
             this.ViewLecturersTabPage.Click += new System.EventHandler(this.ViewLecturersTabPage_Click);
             // 
             // LecturerPortalTabControl
@@ -1296,6 +1302,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.LecturerPortalTabControl.Controls.Add(this.ManageLecturersTabPage);
             this.LecturerPortalTabControl.Location = new System.Drawing.Point(193, 53);
             this.LecturerPortalTabControl.Name = "LecturerPortalTabControl";
+            this.LecturerPortalTabControl.Padding = new System.Drawing.Point(6, 8);
             this.LecturerPortalTabControl.SelectedIndex = 0;
             this.LecturerPortalTabControl.Size = new System.Drawing.Size(887, 556);
             this.LecturerPortalTabControl.TabIndex = 5;
@@ -1316,6 +1323,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.AddAv.Controls.Add(this.metroLabel32);
             this.AddAv.Controls.Add(this.ComboBoxLecNameAATime);
             this.AddAv.Controls.Add(this.metroLabel33);
+            this.AddAv.Enabled = true;
             this.AddAv.HorizontalScrollbarBarColor = true;
             this.AddAv.Location = new System.Drawing.Point(4, 35);
             this.AddAv.Name = "AddAv";
@@ -1323,6 +1331,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.AddAv.TabIndex = 8;
             this.AddAv.Text = "Add Available Time";
             this.AddAv.VerticalScrollbarBarColor = true;
+            this.AddAv.Visible = false;
             this.AddAv.Click += new System.EventHandler(this.AddAv_Click);
             // 
             // AATimeUpdateBtn
@@ -1535,6 +1544,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             this.button12.Size = new System.Drawing.Size(43, 38);
             this.button12.TabIndex = 11;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button10
             // 

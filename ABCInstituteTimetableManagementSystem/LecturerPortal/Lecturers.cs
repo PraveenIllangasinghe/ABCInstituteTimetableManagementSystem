@@ -694,5 +694,16 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
             //***************************************************
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            //Back to Home***************************************
+
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
+
+            //****************************************************
+        }
     }
 }

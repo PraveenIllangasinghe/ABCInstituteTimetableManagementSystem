@@ -814,6 +814,9 @@ namespace ABCInstituteTimetableManagementSystem.RoomPortal
         private void button6_Click(object sender, EventArgs e)
         {
             //home back
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
         }
     }
 }

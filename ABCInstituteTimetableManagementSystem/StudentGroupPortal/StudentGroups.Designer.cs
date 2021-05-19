@@ -150,6 +150,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.ViewDtlsSearchBy = new System.Windows.Forms.ComboBox();
             this.ViewDtlsGridView = new System.Windows.Forms.DataGridView();
             this.SaveBtn = new MetroFramework.Controls.MetroButton();
+            this.backSG = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -678,6 +679,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(25)))), ((int)(((byte)(53)))));
+            this.panel2.Controls.Add(this.backSG);
             this.panel2.Controls.Add(this.HomeMinimizeBtn);
             this.panel2.Controls.Add(this.HomeCloseBtn);
             this.panel2.Controls.Add(this.metroLabel15);
@@ -774,6 +776,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabControlStudent.Controls.Add(this.tabViewDetails);
             this.tabControlStudent.Location = new System.Drawing.Point(220, 53);
             this.tabControlStudent.Name = "tabControlStudent";
+            this.tabControlStudent.Padding = new System.Drawing.Point(6, 8);
             this.tabControlStudent.SelectedIndex = 0;
             this.tabControlStudent.Size = new System.Drawing.Size(875, 537);
             this.tabControlStudent.Style = MetroFramework.MetroColorStyle.Blue;
@@ -793,6 +796,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabYearSem.Controls.Add(this.StdntGrp_BtnEdit);
             this.tabYearSem.Controls.Add(this.StdntGrp_SemLbl);
             this.tabYearSem.Controls.Add(this.StdntGrp_YearLbl);
+            this.tabYearSem.Enabled = true;
             this.tabYearSem.HorizontalScrollbarBarColor = true;
             this.tabYearSem.Location = new System.Drawing.Point(4, 35);
             this.tabYearSem.Name = "tabYearSem";
@@ -801,6 +805,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabYearSem.TabIndex = 0;
             this.tabYearSem.Text = "Year Semester";
             this.tabYearSem.VerticalScrollbarBarColor = true;
+            this.tabYearSem.Visible = true;
             this.tabYearSem.Click += new System.EventHandler(this.tabYearSem_Click);
             // 
             // btn_Yr_search
@@ -814,6 +819,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.btn_Yr_search.Text = "Search";
             this.btn_Yr_search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Yr_search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btn_Yr_search.UseVisualStyleBackColor = false;
             this.btn_Yr_search.Click += new System.EventHandler(this.btn_Yr_search_Click);
             // 
             // StdntGrp_SemTxt
@@ -911,6 +917,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.BtnAddYearSem.Text = "Add Year Semester";
             this.BtnAddYearSem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnAddYearSem.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.BtnAddYearSem.UseVisualStyleBackColor = false;
             this.BtnAddYearSem.Click += new System.EventHandler(this.BtnAddYearSem_Click);
             // 
             // StdntGrp_BtnEdit
@@ -966,6 +973,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.TabProgramme.Controls.Add(this.StdntGrp_SrchByProgram);
             this.TabProgramme.Controls.Add(this.StdntGrp_PrgrmBtnClear);
             this.TabProgramme.Controls.Add(this.StdntGrp_BtnAddProgram);
+            this.TabProgramme.Enabled = true;
             this.TabProgramme.HorizontalScrollbarBarColor = true;
             this.TabProgramme.Location = new System.Drawing.Point(4, 35);
             this.TabProgramme.Name = "TabProgramme";
@@ -973,6 +981,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.TabProgramme.TabIndex = 2;
             this.TabProgramme.Text = "Programme";
             this.TabProgramme.VerticalScrollbarBarColor = true;
+            this.TabProgramme.Visible = false;
             // 
             // btn_prog_search
             // 
@@ -985,6 +994,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.btn_prog_search.Text = "Search";
             this.btn_prog_search.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_prog_search.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btn_prog_search.UseVisualStyleBackColor = false;
             this.btn_prog_search.Click += new System.EventHandler(this.btn_prog_search_Click);
             // 
             // StdntGrp_prgrmTxt
@@ -1036,6 +1046,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_ProgrmBtnDelete.Text = "Delete";
             this.StdntGrp_ProgrmBtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_ProgrmBtnDelete.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_ProgrmBtnDelete.UseVisualStyleBackColor = false;
             this.StdntGrp_ProgrmBtnDelete.Click += new System.EventHandler(this.StdntGrp_ProgrmBtnDelete_Click);
             // 
             // StdntGrp_PrgramBtnEdit
@@ -1049,6 +1060,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_PrgramBtnEdit.Text = "Edit Details";
             this.StdntGrp_PrgramBtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_PrgramBtnEdit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_PrgramBtnEdit.UseVisualStyleBackColor = false;
             this.StdntGrp_PrgramBtnEdit.Click += new System.EventHandler(this.StdntGrp_PrgramBtnEdit_Click);
             // 
             // StdntGrp_progrmTable
@@ -1084,6 +1096,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_PrgrmBtnClear.Text = "Clear";
             this.StdntGrp_PrgrmBtnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_PrgrmBtnClear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_PrgrmBtnClear.UseVisualStyleBackColor = false;
             // 
             // StdntGrp_BtnAddProgram
             // 
@@ -1096,6 +1109,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_BtnAddProgram.Text = "Add Programme";
             this.StdntGrp_BtnAddProgram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_BtnAddProgram.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_BtnAddProgram.UseVisualStyleBackColor = false;
             this.StdntGrp_BtnAddProgram.Click += new System.EventHandler(this.StdntGrp_BtnAddProgram_Click);
             // 
             // tabGrpNo
@@ -1110,6 +1124,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabGrpNo.Controls.Add(this.StdntGrp_BtnAddGrpNo);
             this.tabGrpNo.Controls.Add(this.StdntGrp_BtnEditGrpNo);
             this.tabGrpNo.Controls.Add(this.StdntGrp_GrpNumLbl);
+            this.tabGrpNo.Enabled = true;
             this.tabGrpNo.HorizontalScrollbarBarColor = true;
             this.tabGrpNo.Location = new System.Drawing.Point(4, 35);
             this.tabGrpNo.Name = "tabGrpNo";
@@ -1117,6 +1132,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabGrpNo.TabIndex = 3;
             this.tabGrpNo.Text = "Group Numbers";
             this.tabGrpNo.VerticalScrollbarBarColor = true;
+            this.tabGrpNo.Visible = false;
             this.tabGrpNo.Click += new System.EventHandler(this.tabGrpNo_Click);
             // 
             // BtnSearchGN
@@ -1130,6 +1146,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.BtnSearchGN.Text = "Search";
             this.BtnSearchGN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnSearchGN.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.BtnSearchGN.UseVisualStyleBackColor = false;
             this.BtnSearchGN.Click += new System.EventHandler(this.BtnSearchGN_Click);
             // 
             // GrpNoCombo
@@ -1199,6 +1216,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_BtnDeleteGrpNo.Text = "Delete";
             this.StdntGrp_BtnDeleteGrpNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_BtnDeleteGrpNo.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_BtnDeleteGrpNo.UseVisualStyleBackColor = false;
             this.StdntGrp_BtnDeleteGrpNo.Click += new System.EventHandler(this.StdntGrp_BtnDeleteGrpNo_Click);
             // 
             // StdntGrp_GrpNoBtnClear
@@ -1212,6 +1230,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_GrpNoBtnClear.Text = "Clear";
             this.StdntGrp_GrpNoBtnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_GrpNoBtnClear.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_GrpNoBtnClear.UseVisualStyleBackColor = false;
             // 
             // StdntGrp_BtnAddGrpNo
             // 
@@ -1224,6 +1243,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_BtnAddGrpNo.Text = "Add Group Number";
             this.StdntGrp_BtnAddGrpNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_BtnAddGrpNo.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_BtnAddGrpNo.UseVisualStyleBackColor = false;
             this.StdntGrp_BtnAddGrpNo.Click += new System.EventHandler(this.StdntGrp_BtnAddGrpNo_Click);
             // 
             // StdntGrp_BtnEditGrpNo
@@ -1237,6 +1257,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_BtnEditGrpNo.Text = "Edit Details";
             this.StdntGrp_BtnEditGrpNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_BtnEditGrpNo.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_BtnEditGrpNo.UseVisualStyleBackColor = false;
             this.StdntGrp_BtnEditGrpNo.Click += new System.EventHandler(this.StdntGrp_BtnEditGrpNo_Click);
             // 
             // StdntGrp_GrpNumLbl
@@ -1265,6 +1286,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabSubGroupNo.Controls.Add(this.StdntGrp_SubGrpNumbtn);
             this.tabSubGroupNo.Controls.Add(this.StdntGrp_SubGrpNumEdit);
             this.tabSubGroupNo.Controls.Add(this.StdntGrp_SubGrpNumLbl);
+            this.tabSubGroupNo.Enabled = true;
             this.tabSubGroupNo.HorizontalScrollbarBarColor = true;
             this.tabSubGroupNo.Location = new System.Drawing.Point(4, 35);
             this.tabSubGroupNo.Name = "tabSubGroupNo";
@@ -1272,6 +1294,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabSubGroupNo.TabIndex = 4;
             this.tabSubGroupNo.Text = "Sub Group Numbers";
             this.tabSubGroupNo.VerticalScrollbarBarColor = true;
+            this.tabSubGroupNo.Visible = false;
             // 
             // btnSubGrpNoSearch
             // 
@@ -1284,6 +1307,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.btnSubGrpNoSearch.Text = "Search";
             this.btnSubGrpNoSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubGrpNoSearch.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnSubGrpNoSearch.UseVisualStyleBackColor = false;
             this.btnSubGrpNoSearch.Click += new System.EventHandler(this.btnSubGrpNoSearch_Click);
             // 
             // SuGrpCombo
@@ -1341,6 +1365,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_SubGrpNumDlt.Text = "Delete";
             this.StdntGrp_SubGrpNumDlt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_SubGrpNumDlt.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_SubGrpNumDlt.UseVisualStyleBackColor = false;
             this.StdntGrp_SubGrpNumDlt.Click += new System.EventHandler(this.StdntGrp_SubGrpNumDlt_Click);
             // 
             // StdntGrp_SubGrpNumClr
@@ -1354,6 +1379,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_SubGrpNumClr.Text = "Clear";
             this.StdntGrp_SubGrpNumClr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_SubGrpNumClr.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_SubGrpNumClr.UseVisualStyleBackColor = false;
             // 
             // StdntGrp_SubGrpNumbtn
             // 
@@ -1366,6 +1392,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_SubGrpNumbtn.Text = "Add Sub Group Number";
             this.StdntGrp_SubGrpNumbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_SubGrpNumbtn.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_SubGrpNumbtn.UseVisualStyleBackColor = false;
             this.StdntGrp_SubGrpNumbtn.Click += new System.EventHandler(this.StdntGrp_SubGrpNumbtn_Click);
             // 
             // StdntGrp_SubGrpNumEdit
@@ -1379,6 +1406,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.StdntGrp_SubGrpNumEdit.Text = "Edit Details";
             this.StdntGrp_SubGrpNumEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StdntGrp_SubGrpNumEdit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.StdntGrp_SubGrpNumEdit.UseVisualStyleBackColor = false;
             this.StdntGrp_SubGrpNumEdit.Click += new System.EventHandler(this.StdntGrp_SubGrpNumEdit_Click);
             // 
             // StdntGrp_SubGrpNumLbl
@@ -1417,6 +1445,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabGenGrpIDs.Controls.Add(this.BtnSaveGrpID);
             this.tabGenGrpIDs.Controls.Add(this.lblProgrm);
             this.tabGenGrpIDs.Controls.Add(this.GenarateTabYS);
+            this.tabGenGrpIDs.Enabled = true;
             this.tabGenGrpIDs.HorizontalScrollbarBarColor = true;
             this.tabGenGrpIDs.Location = new System.Drawing.Point(4, 35);
             this.tabGenGrpIDs.Name = "tabGenGrpIDs";
@@ -1425,6 +1454,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabGenGrpIDs.Tag = "";
             this.tabGenGrpIDs.Text = "Generate Group IDs";
             this.tabGenGrpIDs.VerticalScrollbarBarColor = true;
+            this.tabGenGrpIDs.Visible = false;
             // 
             // GenrtSemCombo
             // 
@@ -1463,6 +1493,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.gnrateSubGrpID.Text = "Genarate";
             this.gnrateSubGrpID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.gnrateSubGrpID.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.gnrateSubGrpID.UseVisualStyleBackColor = false;
             this.gnrateSubGrpID.Click += new System.EventHandler(this.gnrateSubGrpID_Click);
             // 
             // btnGenarateGrpID
@@ -1476,6 +1507,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.btnGenarateGrpID.Text = "Genarate";
             this.btnGenarateGrpID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnGenarateGrpID.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnGenarateGrpID.UseVisualStyleBackColor = false;
             this.btnGenarateGrpID.Click += new System.EventHandler(this.btnGenarateGrpID_Click);
             // 
             // btnSaveSubGrpID
@@ -1489,6 +1521,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.btnSaveSubGrpID.Text = "Save Sub Group ID";
             this.btnSaveSubGrpID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveSubGrpID.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.btnSaveSubGrpID.UseVisualStyleBackColor = false;
             this.btnSaveSubGrpID.Click += new System.EventHandler(this.btnSaveSubGrpID_Click);
             // 
             // GnrtSubGroIDTxtbox
@@ -1662,6 +1695,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.BtnSaveGrpID.Text = "Save Group ID";
             this.BtnSaveGrpID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnSaveGrpID.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.BtnSaveGrpID.UseVisualStyleBackColor = false;
             this.BtnSaveGrpID.Click += new System.EventHandler(this.BtnSaveGrpID_Click);
             // 
             // lblProgrm
@@ -1699,6 +1733,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabViewDetails.Controls.Add(this.ViewDtlsSearch);
             this.tabViewDetails.Controls.Add(this.ViewDtlsSearchBy);
             this.tabViewDetails.Controls.Add(this.ViewDtlsGridView);
+            this.tabViewDetails.Enabled = true;
             this.tabViewDetails.HorizontalScrollbarBarColor = true;
             this.tabViewDetails.Location = new System.Drawing.Point(4, 35);
             this.tabViewDetails.Name = "tabViewDetails";
@@ -1706,6 +1741,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.tabViewDetails.TabIndex = 7;
             this.tabViewDetails.Text = "View Details";
             this.tabViewDetails.VerticalScrollbarBarColor = true;
+            this.tabViewDetails.Visible = false;
             // 
             // viewAllBtnFind
             // 
@@ -1718,6 +1754,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.viewAllBtnFind.Text = "Find All";
             this.viewAllBtnFind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.viewAllBtnFind.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.viewAllBtnFind.UseVisualStyleBackColor = false;
             this.viewAllBtnFind.Click += new System.EventHandler(this.viewAllBtnFind_Click);
             // 
             // BtnFind
@@ -1731,6 +1768,7 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.BtnFind.Text = "Find";
             this.BtnFind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnFind.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.BtnFind.UseVisualStyleBackColor = false;
             this.BtnFind.Click += new System.EventHandler(this.BtnFind_Click);
             // 
             // ViewDtlsSearch
@@ -1777,6 +1815,19 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
             this.SaveBtn.TabIndex = 10;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // backSG
+            // 
+            this.backSG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.backSG.FlatAppearance.BorderSize = 0;
+            this.backSG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backSG.Image = global::ABCInstituteTimetableManagementSystem.Properties.Resources.imgBackBtn;
+            this.backSG.Location = new System.Drawing.Point(3, 5);
+            this.backSG.Name = "backSG";
+            this.backSG.Size = new System.Drawing.Size(43, 38);
+            this.backSG.TabIndex = 40;
+            this.backSG.UseVisualStyleBackColor = true;
+            this.backSG.Click += new System.EventHandler(this.backSG_Click);
             // 
             // StudentGroups
             // 
@@ -1953,5 +2004,6 @@ namespace ABCInstituteTimetableManagementSystem.StudentGroupPortal
         private MetroFramework.Controls.MetroTile btnSubGrpNoSearch;
         private System.Windows.Forms.ComboBox StdntGrp_SrchBySubGrpNo;
         private MetroFramework.Controls.MetroTile viewAllBtnFind;
+        private System.Windows.Forms.Button backSG;
     }
 }

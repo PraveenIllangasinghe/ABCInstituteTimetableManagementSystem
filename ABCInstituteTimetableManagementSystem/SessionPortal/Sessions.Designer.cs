@@ -767,6 +767,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.AddSessionsTabPage.Controls.Add(this.metroLabel28);
             this.AddSessionsTabPage.Controls.Add(this.CB_Lecturer_Add);
             this.AddSessionsTabPage.Controls.Add(this.metroLabel29);
+            this.AddSessionsTabPage.Enabled = true;
             this.AddSessionsTabPage.HorizontalScrollbarBarColor = true;
             this.AddSessionsTabPage.Location = new System.Drawing.Point(4, 35);
             this.AddSessionsTabPage.Name = "AddSessionsTabPage";
@@ -774,6 +775,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.AddSessionsTabPage.TabIndex = 1;
             this.AddSessionsTabPage.Text = "Add Sessions";
             this.AddSessionsTabPage.VerticalScrollbarBarColor = true;
+            this.AddSessionsTabPage.Visible = false;
             // 
             // Session_Clear_Btn
             // 
@@ -996,6 +998,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.ViewSessionsTabPage.Controls.Add(this.CB_Select_Tag);
             this.ViewSessionsTabPage.Controls.Add(this.Session_DataGridView);
             this.ViewSessionsTabPage.Controls.Add(this.metroLabel11);
+            this.ViewSessionsTabPage.Enabled = true;
             this.ViewSessionsTabPage.HorizontalScrollbarBarColor = true;
             this.ViewSessionsTabPage.Location = new System.Drawing.Point(4, 35);
             this.ViewSessionsTabPage.Name = "ViewSessionsTabPage";
@@ -1003,15 +1006,17 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.ViewSessionsTabPage.TabIndex = 0;
             this.ViewSessionsTabPage.Text = "View Sessions";
             this.ViewSessionsTabPage.VerticalScrollbarBarColor = true;
+            this.ViewSessionsTabPage.Visible = false;
             this.ViewSessionsTabPage.Click += new System.EventHandler(this.ViewSessionsTabPage_Click);
             // 
             // SessionTabControl
             // 
             this.SessionTabControl.Controls.Add(this.ViewSessionsTabPage);
-            this.SessionTabControl.Controls.Add(this.AddSessionsTabPage);
             this.SessionTabControl.Controls.Add(this.ManageSessionsTabPage);
+            this.SessionTabControl.Controls.Add(this.AddSessionsTabPage);
             this.SessionTabControl.Location = new System.Drawing.Point(193, 53);
             this.SessionTabControl.Name = "SessionTabControl";
+            this.SessionTabControl.Padding = new System.Drawing.Point(6, 8);
             this.SessionTabControl.SelectedIndex = 2;
             this.SessionTabControl.Size = new System.Drawing.Size(897, 546);
             this.SessionTabControl.TabIndex = 32;
@@ -1038,6 +1043,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.ManageSessionsTabPage.Controls.Add(this.Mtxt_NoOfStudents);
             this.ManageSessionsTabPage.Controls.Add(this.metroLabel16);
             this.ManageSessionsTabPage.Controls.Add(this.metroTextBox4);
+            this.ManageSessionsTabPage.Enabled = true;
             this.ManageSessionsTabPage.HorizontalScrollbarBarColor = true;
             this.ManageSessionsTabPage.Location = new System.Drawing.Point(4, 35);
             this.ManageSessionsTabPage.Name = "ManageSessionsTabPage";
@@ -1045,6 +1051,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.ManageSessionsTabPage.TabIndex = 4;
             this.ManageSessionsTabPage.Text = "Manage Sessions";
             this.ManageSessionsTabPage.VerticalScrollbarBarColor = true;
+            this.ManageSessionsTabPage.Visible = true;
             // 
             // metroLabel40
             // 
@@ -1176,6 +1183,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.SessionBackBtn.Size = new System.Drawing.Size(43, 38);
             this.SessionBackBtn.TabIndex = 11;
             this.SessionBackBtn.UseVisualStyleBackColor = true;
+            this.SessionBackBtn.Click += new System.EventHandler(this.SessionBackBtn_Click);
             // 
             // SessionMinBtn
             // 

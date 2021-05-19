@@ -48,9 +48,37 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
         private void Session_Create_Btn_Click(object sender, EventArgs e)
         {
+
+
+            //Auto Increment Table Records****************************************************************************************************************************
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+            SqlCommand comm = conn.CreateCommand();
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = "SELECT COUNT(ID) AS ID FROM Session";
+            comm.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comm);
+            da.Fill(dt);
+
+            int nxt = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                string next = dr["ID"].ToString();
+                nxt = Int16.Parse(next);
+                nxt = ++nxt;
+            }
+            conn.Close();
+
+            //*********************************************************************************************************************************************************
+
+
+
             SqlConnection connection = new SqlConnection(connectionString);
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Session (ID,LecturerName,SubjectCode,SubjectName,Tag,GroupID,StudentCount,Duration) VALUES (8, @LecturerName, @SubjectCode, @SubjectName, @Tag, @GroupID, @StudentCount, @Duration)", connection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Session (ID,LecturerName,SubjectCode,SubjectName,Tag,GroupID,StudentCount,Duration) VALUES (@AISessID, @LecturerName, @SubjectCode, @SubjectName, @Tag, @GroupID, @StudentCount, @Duration)", connection);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@LecturerName", CB_Lecturer_Add.Text);
             cmd.Parameters.AddWithValue("@SubjectCode", CB_SubCode_Add.Text);
@@ -59,6 +87,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             cmd.Parameters.AddWithValue("@GroupID", CB_Group_Add.Text);
             cmd.Parameters.AddWithValue("@StudentCount", Txt_NoOfStudents_Add.Text);
             cmd.Parameters.AddWithValue("@Duration", Num_Duration_Add.Value);
+            cmd.Parameters.AddWithValue("@AISessID", nxt);
 
             connection.Open();
             cmd.ExecuteNonQuery();
@@ -511,6 +540,17 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             this.WindowState = FormWindowState.Minimized;
 
             //***************************************************
+        }
+
+        private void SessionBackBtn_Click(object sender, EventArgs e)
+        {
+            //Back to Home***************************************
+
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
+
+            //****************************************************
         }
     }
 

@@ -475,5 +475,12 @@ namespace ABCInstituteTimetableManagementSystem.MoreOptionsPortal
             SNATGrid.AutoGenerateColumns = true;
             SNATGrid.DataSource = dataTable;
         }
+
+        private void backMO_Click(object sender, EventArgs e)
+        {
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
+        }
     }
 }

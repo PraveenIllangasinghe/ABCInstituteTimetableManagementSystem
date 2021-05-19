@@ -819,6 +819,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.metroTabPage2.Controls.Add(this.metroLabel22);
             this.metroTabPage2.Controls.Add(this.metroLabel25);
             this.metroTabPage2.Controls.Add(this.SubjectNoOfLecHrs);
+            this.metroTabPage2.Enabled = true;
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
@@ -826,6 +827,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Add Subjects";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.Visible = false;
             // 
             // SubjectRadioBtnSemesterTwo
             // 
@@ -1050,6 +1052,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.ViewSubjectsTabPage.Controls.Add(this.metroLabel40);
             this.ViewSubjectsTabPage.Controls.Add(this.SearchTxtBoxViewSubjects);
             this.ViewSubjectsTabPage.Controls.Add(this.SubjectsDataGridView);
+            this.ViewSubjectsTabPage.Enabled = true;
             this.ViewSubjectsTabPage.HorizontalScrollbarBarColor = true;
             this.ViewSubjectsTabPage.Location = new System.Drawing.Point(4, 35);
             this.ViewSubjectsTabPage.Name = "ViewSubjectsTabPage";
@@ -1057,6 +1060,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.ViewSubjectsTabPage.TabIndex = 0;
             this.ViewSubjectsTabPage.Text = "View Subjects";
             this.ViewSubjectsTabPage.VerticalScrollbarBarColor = true;
+            this.ViewSubjectsTabPage.Visible = false;
             this.ViewSubjectsTabPage.Click += new System.EventHandler(this.ViewSubjectsTabPage_Click);
             // 
             // SubjectBackBtn
@@ -1070,6 +1074,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.SubjectBackBtn.Size = new System.Drawing.Size(43, 38);
             this.SubjectBackBtn.TabIndex = 11;
             this.SubjectBackBtn.UseVisualStyleBackColor = true;
+            this.SubjectBackBtn.Click += new System.EventHandler(this.SubjectBackBtn_Click);
             // 
             // SubjectMinimizeBtn
             // 
@@ -1127,10 +1132,11 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             // SubjectPortalTabControl
             // 
             this.SubjectPortalTabControl.Controls.Add(this.ViewSubjectsTabPage);
-            this.SubjectPortalTabControl.Controls.Add(this.metroTabPage2);
             this.SubjectPortalTabControl.Controls.Add(this.ManageSubjectsTabPage);
+            this.SubjectPortalTabControl.Controls.Add(this.metroTabPage2);
             this.SubjectPortalTabControl.Location = new System.Drawing.Point(194, 51);
             this.SubjectPortalTabControl.Name = "SubjectPortalTabControl";
+            this.SubjectPortalTabControl.Padding = new System.Drawing.Point(6, 8);
             this.SubjectPortalTabControl.SelectedIndex = 2;
             this.SubjectPortalTabControl.Size = new System.Drawing.Size(887, 556);
             this.SubjectPortalTabControl.TabIndex = 6;
@@ -1158,6 +1164,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.ManageSubjectsTabPage.Controls.Add(this.metroLabel11);
             this.ManageSubjectsTabPage.Controls.Add(this.metroLabel17);
             this.ManageSubjectsTabPage.Controls.Add(this.metroLabel18);
+            this.ManageSubjectsTabPage.Enabled = true;
             this.ManageSubjectsTabPage.HorizontalScrollbarBarColor = true;
             this.ManageSubjectsTabPage.Location = new System.Drawing.Point(4, 35);
             this.ManageSubjectsTabPage.Name = "ManageSubjectsTabPage";
@@ -1165,6 +1172,7 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             this.ManageSubjectsTabPage.TabIndex = 2;
             this.ManageSubjectsTabPage.Text = "Manage Subjects";
             this.ManageSubjectsTabPage.VerticalScrollbarBarColor = true;
+            this.ManageSubjectsTabPage.Visible = true;
             // 
             // NumUpDownLecHrsUpdate
             // 

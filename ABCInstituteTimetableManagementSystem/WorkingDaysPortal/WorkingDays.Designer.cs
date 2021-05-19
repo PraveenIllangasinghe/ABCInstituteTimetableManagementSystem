@@ -191,6 +191,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage1.Controls.Add(this.wdGrid);
             this.metroTabPage1.Controls.Add(this.refreshWD);
             this.metroTabPage1.Controls.Add(this.metroLabel38);
+            this.metroTabPage1.Enabled = true;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
@@ -198,6 +199,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "View Working Days and Hours";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.Visible = true;
             // 
             // metroLabel15
             // 
@@ -261,6 +263,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage5.Controls.Add(this.dayDropdownTS);
             this.metroTabPage5.Controls.Add(this.metroLabel18);
             this.metroTabPage5.Controls.Add(this.metroLabel11);
+            this.metroTabPage5.Enabled = true;
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage5.Name = "metroTabPage5";
@@ -268,6 +271,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage5.TabIndex = 4;
             this.metroTabPage5.Text = "Time Slot";
             this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.Visible = false;
             // 
             // button18
             // 
@@ -396,6 +400,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.button12.Size = new System.Drawing.Size(43, 38);
             this.button12.TabIndex = 11;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // metroLabel20
             // 
@@ -613,6 +618,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(193, 54);
             this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.Padding = new System.Drawing.Point(6, 8);
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(887, 556);
             this.metroTabControl1.TabIndex = 10;
@@ -632,6 +638,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage3.Controls.Add(this.button17);
             this.metroTabPage3.Controls.Add(this.metroLabel14);
             this.metroTabPage3.Controls.Add(this.metroLabel13);
+            this.metroTabPage3.Enabled = true;
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage3.Name = "metroTabPage3";
@@ -639,6 +646,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Working Days";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.Visible = false;
             // 
             // metroTabPage2
             // 
@@ -654,6 +662,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage2.Controls.Add(this.metroLabel40);
             this.metroTabPage2.Controls.Add(this.metroLabel41);
             this.metroTabPage2.Controls.Add(this.noWorkingDaysNUD);
+            this.metroTabPage2.Enabled = true;
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage2.Name = "metroTabPage2";
@@ -661,6 +670,7 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Number of working days";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.Visible = false;
             // 
             // metroLabel24
             // 

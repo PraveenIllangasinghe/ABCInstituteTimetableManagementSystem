@@ -312,5 +312,12 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
         {
             //home back
         }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
+        }
     }
 }

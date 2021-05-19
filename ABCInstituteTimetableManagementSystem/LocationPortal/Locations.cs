@@ -748,6 +748,9 @@ namespace ABCInstituteTimetableManagementSystem.LocationPortal
         private void button6_Click(object sender, EventArgs e)
         {
             //back button to navigate home
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
         }
     }
 }

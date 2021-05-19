@@ -29,15 +29,15 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.button6 = new System.Windows.Forms.Button();
@@ -84,22 +84,22 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.Lecture_Faculty_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Lecturer_count_label = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.Subject_Year_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.StudentGroupCount_Label = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.Programme_GropCount_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Subject_Count_Label = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.Lecture_Faculty_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Subject_Year_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.Programme_GropCount_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -116,13 +116,13 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Lecture_Faculty_Chart)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Subject_Year_Chart)).BeginInit();
             this.metroTabPage5.SuspendLayout();
             this.metroPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Lecture_Faculty_Chart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Subject_Year_Chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Programme_GropCount_Chart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,6 +163,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.button6.Size = new System.Drawing.Size(43, 38);
             this.button6.TabIndex = 2;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // button5
             // 
@@ -708,6 +709,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             // 
             this.metroTabPage1.Controls.Add(this.metroLabel3);
             this.metroTabPage1.Controls.Add(this.metroPanel1);
+            this.metroTabPage1.Enabled = true;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage1.Name = "metroTabPage1";
@@ -716,6 +718,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroTabPage1.Text = "Lectures";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarSize = 12;
+            this.metroTabPage1.Visible = false;
             // 
             // metroLabel3
             // 
@@ -747,6 +750,24 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // Lecture_Faculty_Chart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.Lecture_Faculty_Chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Lecture_Faculty_Chart.Legends.Add(legend1);
+            this.Lecture_Faculty_Chart.Location = new System.Drawing.Point(187, 118);
+            this.Lecture_Faculty_Chart.Name = "Lecture_Faculty_Chart";
+            this.Lecture_Faculty_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Faculty";
+            this.Lecture_Faculty_Chart.Series.Add(series1);
+            this.Lecture_Faculty_Chart.Size = new System.Drawing.Size(495, 388);
+            this.Lecture_Faculty_Chart.TabIndex = 10;
+            this.Lecture_Faculty_Chart.Text = "chart2";
+            // 
             // Lecturer_count_label
             // 
             this.Lecturer_count_label.AutoSize = true;
@@ -774,11 +795,12 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             // metroTabControl1
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.FontWeight = MetroFramework.MetroTabControlWeight.Regular;
             this.metroTabControl1.Location = new System.Drawing.Point(235, 49);
             this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.Padding = new System.Drawing.Point(6, 8);
             this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(820, 564);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
@@ -788,6 +810,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             // 
             this.metroTabPage4.Controls.Add(this.metroLabel5);
             this.metroTabPage4.Controls.Add(this.metroPanel2);
+            this.metroTabPage4.Enabled = true;
             this.metroTabPage4.HorizontalScrollbarBarColor = true;
             this.metroTabPage4.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage4.Name = "metroTabPage4";
@@ -796,6 +819,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroTabPage4.Text = "Student  Group";
             this.metroTabPage4.VerticalScrollbarBarColor = true;
             this.metroTabPage4.VerticalScrollbarSize = 12;
+            this.metroTabPage4.Visible = false;
             // 
             // metroLabel5
             // 
@@ -827,6 +851,24 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
+            // Subject_Year_Chart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.Subject_Year_Chart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.Subject_Year_Chart.Legends.Add(legend3);
+            this.Subject_Year_Chart.Location = new System.Drawing.Point(116, 101);
+            this.Subject_Year_Chart.Name = "Subject_Year_Chart";
+            this.Subject_Year_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Legend = "Legend1";
+            series3.Name = "Academic Year";
+            this.Subject_Year_Chart.Series.Add(series3);
+            this.Subject_Year_Chart.Size = new System.Drawing.Size(495, 388);
+            this.Subject_Year_Chart.TabIndex = 14;
+            this.Subject_Year_Chart.Text = "chart3";
+            // 
             // StudentGroupCount_Label
             // 
             this.StudentGroupCount_Label.AutoSize = true;
@@ -854,6 +896,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             // metroTabPage5
             // 
             this.metroTabPage5.Controls.Add(this.metroPanel3);
+            this.metroTabPage5.Enabled = true;
             this.metroTabPage5.HorizontalScrollbarBarColor = true;
             this.metroTabPage5.Location = new System.Drawing.Point(4, 35);
             this.metroTabPage5.Name = "metroTabPage5";
@@ -862,6 +905,7 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroTabPage5.Text = "Subjects";
             this.metroTabPage5.VerticalScrollbarBarColor = true;
             this.metroTabPage5.VerticalScrollbarSize = 12;
+            this.metroTabPage5.Visible = true;
             // 
             // metroPanel3
             // 
@@ -881,6 +925,24 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // Programme_GropCount_Chart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.Programme_GropCount_Chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.Programme_GropCount_Chart.Legends.Add(legend2);
+            this.Programme_GropCount_Chart.Location = new System.Drawing.Point(133, 98);
+            this.Programme_GropCount_Chart.Name = "Programme_GropCount_Chart";
+            this.Programme_GropCount_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "Programme";
+            this.Programme_GropCount_Chart.Series.Add(series2);
+            this.Programme_GropCount_Chart.Size = new System.Drawing.Size(495, 388);
+            this.Programme_GropCount_Chart.TabIndex = 14;
+            this.Programme_GropCount_Chart.Text = "chart1";
             // 
             // Subject_Count_Label
             // 
@@ -918,60 +980,6 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroLabel8.Text = "Year VS Subjects Count";
             this.metroLabel8.UseStyleColors = true;
             // 
-            // Lecture_Faculty_Chart
-            // 
-            chartArea10.Name = "ChartArea1";
-            this.Lecture_Faculty_Chart.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.Lecture_Faculty_Chart.Legends.Add(legend10);
-            this.Lecture_Faculty_Chart.Location = new System.Drawing.Point(187, 118);
-            this.Lecture_Faculty_Chart.Name = "Lecture_Faculty_Chart";
-            this.Lecture_Faculty_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series10.Legend = "Legend1";
-            series10.Name = "Faculty";
-            this.Lecture_Faculty_Chart.Series.Add(series10);
-            this.Lecture_Faculty_Chart.Size = new System.Drawing.Size(495, 388);
-            this.Lecture_Faculty_Chart.TabIndex = 10;
-            this.Lecture_Faculty_Chart.Text = "chart2";
-            // 
-            // Subject_Year_Chart
-            // 
-            chartArea11.Name = "ChartArea1";
-            this.Subject_Year_Chart.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.Subject_Year_Chart.Legends.Add(legend11);
-            this.Subject_Year_Chart.Location = new System.Drawing.Point(116, 101);
-            this.Subject_Year_Chart.Name = "Subject_Year_Chart";
-            this.Subject_Year_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series11.Legend = "Legend1";
-            series11.Name = "Academic Year";
-            this.Subject_Year_Chart.Series.Add(series11);
-            this.Subject_Year_Chart.Size = new System.Drawing.Size(495, 388);
-            this.Subject_Year_Chart.TabIndex = 14;
-            this.Subject_Year_Chart.Text = "chart3";
-            // 
-            // Programme_GropCount_Chart
-            // 
-            chartArea12.Name = "ChartArea1";
-            this.Programme_GropCount_Chart.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.Programme_GropCount_Chart.Legends.Add(legend12);
-            this.Programme_GropCount_Chart.Location = new System.Drawing.Point(133, 98);
-            this.Programme_GropCount_Chart.Name = "Programme_GropCount_Chart";
-            this.Programme_GropCount_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series12.Legend = "Legend1";
-            series12.Name = "Programme";
-            this.Programme_GropCount_Chart.Series.Add(series12);
-            this.Programme_GropCount_Chart.Size = new System.Drawing.Size(495, 388);
-            this.Programme_GropCount_Chart.TabIndex = 14;
-            this.Programme_GropCount_Chart.Text = "chart1";
-            // 
             // Visualizingstatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1005,16 +1013,16 @@ namespace ABCInstituteTimetableManagementSystem.StatisticsPortal
             this.metroTabPage1.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Lecture_Faculty_Chart)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Subject_Year_Chart)).EndInit();
             this.metroTabPage5.ResumeLayout(false);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Lecture_Faculty_Chart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Subject_Year_Chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Programme_GropCount_Chart)).EndInit();
             this.ResumeLayout(false);
 

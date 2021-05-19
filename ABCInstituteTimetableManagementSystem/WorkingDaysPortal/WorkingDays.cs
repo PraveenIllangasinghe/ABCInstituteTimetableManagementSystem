@@ -359,5 +359,12 @@ namespace ABCInstituteTimetableManagementSystem.WorkingDaysPortal
             viewWorkingTime();
             viewTimeSlot();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form1 navSubPortal = new Form1();
+            navSubPortal.Show();
+            this.Hide();
+        }
     }
 }
