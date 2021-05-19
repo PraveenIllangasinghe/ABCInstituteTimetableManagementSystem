@@ -16,7 +16,7 @@ namespace ABCInstituteTimetableManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RoomPortal.ManageRoomsSessions());
+            Application.Run(new Form1());
         }
     }
 }
