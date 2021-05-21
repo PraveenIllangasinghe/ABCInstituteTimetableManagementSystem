@@ -156,6 +156,9 @@
     <Compile Include="WorkingDaysPortal\WorkingDays.Designer.cs">
       <DependentUpon>WorkingDays.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GenerateTimetablePortal\GenerateTimetables.resx">
+      <DependentUpon>GenerateTimetables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home\HomeUI.resx">
       <DependentUpon>HomeUI.cs</DependentUpon>
     </EmbeddedResource>

@@ -446,12 +446,12 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             comm.CommandType = CommandType.Text;
             comm.CommandText = "SELECT COUNT(ID) AS ID FROM LecturerAvailableTime";
             comm.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(comm);
-            da.Fill(dt);
+            DataTable d_table = new DataTable();
+            SqlDataAdapter d_adatpter = new SqlDataAdapter(comm);
+            d_adatpter.Fill(d_table);
 
             int aat_nxt = 0;
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow dr in d_table.Rows)
             {
                 string aat_next = dr["ID"].ToString();
                 aat_nxt = Int16.Parse(aat_next);
