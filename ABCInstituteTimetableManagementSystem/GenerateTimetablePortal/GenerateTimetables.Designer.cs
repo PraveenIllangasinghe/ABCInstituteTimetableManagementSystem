@@ -728,6 +728,7 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.GenSGTimeTBbtn.TabIndex = 2;
             this.GenSGTimeTBbtn.Text = "Generate";
             this.GenSGTimeTBbtn.UseVisualStyleBackColor = true;
+            this.GenSGTimeTBbtn.Click += new System.EventHandler(this.GenSGTimeTBbtn_Click);
             // 
             // DataGridSGTimeTable
             // 
