@@ -54,18 +54,21 @@ namespace ABCInstituteTimetableManagementSystem.SubjectPortal
             SqlConnection connection = new SqlConnection(connectionString);
 
             connection.Open();
+
             SqlCommand comm = connection.CreateCommand();
             comm.CommandType = CommandType.Text;
             comm.CommandText = "SELECT COUNT(ID) AS ID FROM Subject";
+
             comm.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(comm);
-            da.Fill(dt);
+            DataTable data_t = new DataTable();
+
+            SqlDataAdapter data_a = new SqlDataAdapter(comm);
+            data_a.Fill(data_t);
 
             int nxt = 0;
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                string next = dr["ID"].ToString();
+                string next = data_r["ID"].ToString();
                 nxt = Int16.Parse(next);
                 nxt = ++nxt;
             }

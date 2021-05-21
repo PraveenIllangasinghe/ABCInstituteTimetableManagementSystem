@@ -105,13 +105,13 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             num_of_mins = 30;
             num_of_hrs = 8;
 
-            String query1 = "select SubjectName,GroupID,SubjectCode,Tag,Duration,'1' from Session";
+            String sql = "select SubjectName,GroupID,SubjectCode,Tag,Duration,'1' from Session";
 
-            SqlCommand cmd = new SqlCommand(query1, con);
+            SqlCommand cmd = new SqlCommand(sql, con);
             con.Open();
-            DataTable dt = new DataTable();
-            SqlDataReader sdr = cmd.ExecuteReader();
-            dt.Load(sdr);
+            DataTable data = new DataTable();
+            SqlDataReader reader = cmd.ExecuteReader();
+            data.Load(reader);
 
             con.Close();
 
@@ -136,18 +136,20 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
 
             for (int i = 0; i < grid.GetLength(0); i++)
             {
+
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
                     grid[i, j] = "  ";
                 }
+
             }
 
             
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow row in data.Rows)
             {
                 sw = new System.IO.StringWriter();
 
-                foreach (DataColumn col in dt.Columns)
+                foreach (DataColumn col in data.Columns)
                 {
                     sw.Write(row[col].ToString() + "\n");
                 }
@@ -168,6 +170,7 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
 
                     grid[colm, rw] = output;
                     colm++;
+
                 }
                 catch (Exception exception)
                 {
@@ -177,11 +180,11 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
 
             do
             {
-                foreach (DataGridViewRow row in DataGridLecturerTimeTable.Rows)
+                foreach (DataGridViewRow gdr in DataGridLecturerTimeTable.Rows)
                 {
                     try
                     {
-                        DataGridLecturerTimeTable.Rows.Remove(row);
+                        DataGridLecturerTimeTable.Rows.Remove(gdr);
                     }
                     catch (Exception) { }
                 }
@@ -215,31 +218,33 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
                 DataGridLecturerTimeTable.Rows.Add(row);
             }
 
+            //Select slots of given lecturer
+            String remv = "select Distinct SubjectName from Session where LecturerName LIKE '%" + ComboBoxLecTimeTB.Text + "%'";
 
-            String query2 = "select Distinct SubjectName from Session where LecturerName LIKE '%" + ComboBoxLecTimeTB.Text + "%'";
-
-            SqlCommand cmdd = new SqlCommand(query2, con);
+            SqlCommand cmdd = new SqlCommand(remv, con);
             con.Open();
-            DataTable dtt = new DataTable();
-            SqlDataReader sdrr = cmdd.ExecuteReader();
-            dtt.Load(sdrr);
+            DataTable data2 = new DataTable();
+            SqlDataReader reader2 = cmdd.ExecuteReader();
+            data2.Load(reader2);
 
             con.Close();
             string lec = "";
 
 
-            foreach (DataRow drr in dtt.Rows)
+            foreach (DataRow drr in data2.Rows)
             {
                 lec = drr["SubjectName"].ToString();
             }
 
-            for (int k = 0; k < grid.GetLength(0); k++)
+            //set null values
+            for (int i = 0; i < grid.GetLength(0); i++)
             {
-                for (int l = 0; l < grid.GetLength(1); l++)
+                for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    if (!(grid[k, l].ToString().Contains(lec))) {
+                    //remove other lecturers' slots
+                    if (!(grid[i, j].ToString().Contains(lec))) {
 
-                        DataGridLecturerTimeTable.Rows[k].Cells[l].Value = DBNull.Value;
+                        DataGridLecturerTimeTable.Rows[i].Cells[j].Value = DBNull.Value;
 
                     }
                     
@@ -247,7 +252,38 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             }
         }
 
+        private void ComboBoxSGTimeTB_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        public void PopulateComboBoxStuTimeTB()
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            ComboBoxSGTimeTB.Items.Clear();
+            connection.Open();
+            SqlCommand cmd = connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT groupId FROM SubGroups";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                ComboBoxSGTimeTB.Items.Add(dr["groupId"].ToString());
+            }
+
+            connection.Close();
+        }
+
+        private void ComboBoxSGTimeTB_DropDown(object sender, EventArgs e)
+        {
+            PopulateComboBoxStuTimeTB();
+        }
     }
     
 }

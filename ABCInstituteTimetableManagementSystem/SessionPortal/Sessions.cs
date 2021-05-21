@@ -46,6 +46,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
         public string connectionString = (@"Server=tcp:abc-insstitute-server.database.windows.net,1433;Initial Catalog=abcinstitute-datbase;Persist Security Info=False;User ID=dbuser;Password=1qaz!QAZ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
+        //Add new session*********************************************************************************************************************************************
         private void Session_Create_Btn_Click(object sender, EventArgs e)
         {
 
@@ -57,16 +58,19 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             conn.Open();
             SqlCommand comm = conn.CreateCommand();
             comm.CommandType = CommandType.Text;
+
             comm.CommandText = "SELECT COUNT(ID) AS ID FROM Session";
             comm.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(comm);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+            SqlDataAdapter d_adapt = new SqlDataAdapter(comm);
+
+            d_adapt.Fill(data_t);
 
             int nxt = 0;
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_row in data_t.Rows)
             {
-                string next = dr["ID"].ToString();
+                string next = data_row["ID"].ToString();
                 nxt = Int16.Parse(next);
                 nxt = ++nxt;
             }
@@ -92,6 +96,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             connection.Open();
             cmd.ExecuteNonQuery();
 
+            //Success msg*************************************************************************
             MessageBox.Show("Session has been Created Successfully...");
 
             ClearFields();
@@ -100,7 +105,7 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
 
 
-        //Clear Fields
+        //Clear Fields*****************************************************************************
         public void ClearFields()
         {
             CB_Lecturer_Add.SelectedIndex = -1;
@@ -119,19 +124,22 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             SqlConnection connection = new SqlConnection(connectionString);
 
             CB_Lecturer_Add.Items.Clear();
+
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT LecturerName FROM Lecturer";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                CB_Lecturer_Add.Items.Add(dr["LecturerName"].ToString());
+                CB_Lecturer_Add.Items.Add(data_r["LecturerName"].ToString());
             }
 
             connection.Close();
@@ -144,18 +152,21 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             CB_SubCode_Add.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT SubjectCode FROM Subject";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            DataTable data_t = new DataTable();
+
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                CB_SubCode_Add.Items.Add(dr["SubjectCode"].ToString());
+                CB_SubCode_Add.Items.Add(data_r["SubjectCode"].ToString());
             }
 
             connection.Close();
@@ -170,17 +181,19 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.Parameters.AddWithValue("@SubjectCode", CB_SubCode_Add.Text);
             cmd.CommandText = "SELECT SubjectName FROM Subject WHERE SubjectCode = @SubjectCode";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                CB_SubName_Add.Items.Add(dr["SubjectName"].ToString());
+                CB_SubName_Add.Items.Add(data_r["SubjectName"].ToString());
             }
 
             connection.Close();
@@ -193,17 +206,19 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
             CB_Tag_Add.Items.Clear();
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
+
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT TagName FROM Tags";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            DataTable data_t = new DataTable();
+
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                CB_Tag_Add.Items.Add(dr["TagName"].ToString());
+                CB_Tag_Add.Items.Add(data_r["TagName"].ToString());
             }
 
             connection.Close();
@@ -216,19 +231,43 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             CB_Group_Add.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT groupId FROM SubGroups";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
 
-
-            foreach (DataRow dr in dt.Rows)
+            if (CB_Tag_Add.SelectedItem.ToString().Contains("Tutorial") || CB_Tag_Add.ToString().Contains("Lecture"))
             {
-                CB_Group_Add.Items.Add(dr["groupId"].ToString());
+                cmd.CommandText = "SELECT groupId FROM SubGroups";
+                cmd.ExecuteNonQuery();
+
+                DataTable data_t = new DataTable();
+                SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+                data_a.Fill(data_t);
+
+
+                foreach (DataRow data_r in data_t.Rows)
+                {
+                    CB_Group_Add.Items.Add(data_r["groupId"].ToString());
+                }
             }
+
+            else
+            {
+                cmd.CommandText = "SELECT subGroupId FROM SubGroups";
+                cmd.ExecuteNonQuery();
+
+                DataTable data_t = new DataTable();
+                SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+                data_a.Fill(data_t);
+
+
+                foreach (DataRow data_r in data_t.Rows)
+                {
+                    CB_Group_Add.Items.Add(data_r["subGroupId"].ToString());
+                }
+
+            }
+
 
             connection.Close();
         }
@@ -333,18 +372,20 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             MCB_Lecturer_Name.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT LecturerName FROM Lecturer";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                MCB_Lecturer_Name.Items.Add(dr["LecturerName"].ToString());
+                MCB_Lecturer_Name.Items.Add(data_r["LecturerName"].ToString());
             }
 
             connection.Close();
@@ -357,18 +398,21 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             MCB_Sub_Code.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT SubjectCode FROM Subject";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                MCB_Sub_Code.Items.Add(dr["SubjectCode"].ToString());
+                MCB_Sub_Code.Items.Add(data_r["SubjectCode"].ToString());
             }
 
             connection.Close();
@@ -381,18 +425,21 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             MCB_SubName.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
+
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT SubjectName FROM Subject";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                MCB_SubName.Items.Add(dr["SubjectName"].ToString());
+                MCB_SubName.Items.Add(data_r["SubjectName"].ToString());
             }
 
             connection.Close();
@@ -404,18 +451,22 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             MCB_Tag_Sess.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT TagName FROM Tags";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                MCB_Tag_Sess.Items.Add(dr["TagName"].ToString());
+                MCB_Tag_Sess.Items.Add(data_r["TagName"].ToString());
             }
 
             connection.Close();
@@ -428,18 +479,21 @@ namespace ABCInstituteTimetableManagementSystem.SessionPortal
 
             MCB_Group_ID_Sess.Items.Clear();
             connection.Open();
+
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT groupId FROM SubGroups";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            DataTable data_t = new DataTable();
+
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                MCB_Group_ID_Sess.Items.Add(dr["groupId"].ToString());
+                MCB_Group_ID_Sess.Items.Add(data_r["groupId"].ToString());
             }
 
             connection.Close();

@@ -75,13 +75,13 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.GenLecturerTabPage = new System.Windows.Forms.TabPage();
-            this.GenGroupTabPage = new System.Windows.Forms.TabPage();
-            this.ComboBoxLecTimeTB = new System.Windows.Forms.ComboBox();
-            this.ComboBoxSGTimeTB = new System.Windows.Forms.ComboBox();
-            this.DataGridLecturerTimeTable = new System.Windows.Forms.DataGridView();
-            this.DataGridSGTimeTable = new System.Windows.Forms.DataGridView();
             this.GenLecTimeTBbtn = new System.Windows.Forms.Button();
+            this.DataGridLecturerTimeTable = new System.Windows.Forms.DataGridView();
+            this.ComboBoxLecTimeTB = new System.Windows.Forms.ComboBox();
+            this.GenGroupTabPage = new System.Windows.Forms.TabPage();
             this.GenSGTimeTBbtn = new System.Windows.Forms.Button();
+            this.DataGridSGTimeTable = new System.Windows.Forms.DataGridView();
+            this.ComboBoxSGTimeTB = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -98,8 +98,8 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.GenLecturerTabPage.SuspendLayout();
-            this.GenGroupTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridLecturerTimeTable)).BeginInit();
+            this.GenGroupTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSGTimeTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -680,6 +680,33 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.GenLecturerTabPage.Text = "Lecturers";
             this.GenLecturerTabPage.UseVisualStyleBackColor = true;
             // 
+            // GenLecTimeTBbtn
+            // 
+            this.GenLecTimeTBbtn.Location = new System.Drawing.Point(585, 35);
+            this.GenLecTimeTBbtn.Name = "GenLecTimeTBbtn";
+            this.GenLecTimeTBbtn.Size = new System.Drawing.Size(75, 23);
+            this.GenLecTimeTBbtn.TabIndex = 2;
+            this.GenLecTimeTBbtn.Text = "Generate";
+            this.GenLecTimeTBbtn.UseVisualStyleBackColor = true;
+            this.GenLecTimeTBbtn.Click += new System.EventHandler(this.GenLecTimeTBbtn_Click);
+            // 
+            // DataGridLecturerTimeTable
+            // 
+            this.DataGridLecturerTimeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridLecturerTimeTable.Location = new System.Drawing.Point(23, 80);
+            this.DataGridLecturerTimeTable.Name = "DataGridLecturerTimeTable";
+            this.DataGridLecturerTimeTable.Size = new System.Drawing.Size(835, 426);
+            this.DataGridLecturerTimeTable.TabIndex = 1;
+            // 
+            // ComboBoxLecTimeTB
+            // 
+            this.ComboBoxLecTimeTB.FormattingEnabled = true;
+            this.ComboBoxLecTimeTB.Location = new System.Drawing.Point(323, 35);
+            this.ComboBoxLecTimeTB.Name = "ComboBoxLecTimeTB";
+            this.ComboBoxLecTimeTB.Size = new System.Drawing.Size(217, 21);
+            this.ComboBoxLecTimeTB.TabIndex = 0;
+            this.ComboBoxLecTimeTB.DropDown += new System.EventHandler(this.ComboBoxLecTimeTB_DropDown);
+            // 
             // GenGroupTabPage
             // 
             this.GenGroupTabPage.Controls.Add(this.GenSGTimeTBbtn);
@@ -693,30 +720,14 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.GenGroupTabPage.Text = "Student Groups";
             this.GenGroupTabPage.UseVisualStyleBackColor = true;
             // 
-            // ComboBoxLecTimeTB
+            // GenSGTimeTBbtn
             // 
-            this.ComboBoxLecTimeTB.FormattingEnabled = true;
-            this.ComboBoxLecTimeTB.Location = new System.Drawing.Point(323, 35);
-            this.ComboBoxLecTimeTB.Name = "ComboBoxLecTimeTB";
-            this.ComboBoxLecTimeTB.Size = new System.Drawing.Size(217, 21);
-            this.ComboBoxLecTimeTB.TabIndex = 0;
-            this.ComboBoxLecTimeTB.DropDown += new System.EventHandler(this.ComboBoxLecTimeTB_DropDown);
-            // 
-            // ComboBoxSGTimeTB
-            // 
-            this.ComboBoxSGTimeTB.FormattingEnabled = true;
-            this.ComboBoxSGTimeTB.Location = new System.Drawing.Point(326, 35);
-            this.ComboBoxSGTimeTB.Name = "ComboBoxSGTimeTB";
-            this.ComboBoxSGTimeTB.Size = new System.Drawing.Size(216, 21);
-            this.ComboBoxSGTimeTB.TabIndex = 0;
-            // 
-            // DataGridLecturerTimeTable
-            // 
-            this.DataGridLecturerTimeTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridLecturerTimeTable.Location = new System.Drawing.Point(23, 80);
-            this.DataGridLecturerTimeTable.Name = "DataGridLecturerTimeTable";
-            this.DataGridLecturerTimeTable.Size = new System.Drawing.Size(835, 426);
-            this.DataGridLecturerTimeTable.TabIndex = 1;
+            this.GenSGTimeTBbtn.Location = new System.Drawing.Point(589, 32);
+            this.GenSGTimeTBbtn.Name = "GenSGTimeTBbtn";
+            this.GenSGTimeTBbtn.Size = new System.Drawing.Size(75, 23);
+            this.GenSGTimeTBbtn.TabIndex = 2;
+            this.GenSGTimeTBbtn.Text = "Generate";
+            this.GenSGTimeTBbtn.UseVisualStyleBackColor = true;
             // 
             // DataGridSGTimeTable
             // 
@@ -726,24 +737,15 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.DataGridSGTimeTable.Size = new System.Drawing.Size(833, 416);
             this.DataGridSGTimeTable.TabIndex = 1;
             // 
-            // GenLecTimeTBbtn
+            // ComboBoxSGTimeTB
             // 
-            this.GenLecTimeTBbtn.Location = new System.Drawing.Point(585, 35);
-            this.GenLecTimeTBbtn.Name = "GenLecTimeTBbtn";
-            this.GenLecTimeTBbtn.Size = new System.Drawing.Size(75, 23);
-            this.GenLecTimeTBbtn.TabIndex = 2;
-            this.GenLecTimeTBbtn.Text = "Generate";
-            this.GenLecTimeTBbtn.UseVisualStyleBackColor = true;
-            this.GenLecTimeTBbtn.Click += new System.EventHandler(this.GenLecTimeTBbtn_Click);
-            // 
-            // GenSGTimeTBbtn
-            // 
-            this.GenSGTimeTBbtn.Location = new System.Drawing.Point(589, 32);
-            this.GenSGTimeTBbtn.Name = "GenSGTimeTBbtn";
-            this.GenSGTimeTBbtn.Size = new System.Drawing.Size(75, 23);
-            this.GenSGTimeTBbtn.TabIndex = 2;
-            this.GenSGTimeTBbtn.Text = "Generate";
-            this.GenSGTimeTBbtn.UseVisualStyleBackColor = true;
+            this.ComboBoxSGTimeTB.FormattingEnabled = true;
+            this.ComboBoxSGTimeTB.Location = new System.Drawing.Point(326, 35);
+            this.ComboBoxSGTimeTB.Name = "ComboBoxSGTimeTB";
+            this.ComboBoxSGTimeTB.Size = new System.Drawing.Size(216, 21);
+            this.ComboBoxSGTimeTB.TabIndex = 0;
+            this.ComboBoxSGTimeTB.DropDown += new System.EventHandler(this.ComboBoxSGTimeTB_DropDown);
+            this.ComboBoxSGTimeTB.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSGTimeTB_SelectedIndexChanged);
             // 
             // GenerateTimetables
             // 
@@ -776,8 +778,8 @@ namespace ABCInstituteTimetableManagementSystem.GenerateTimetablePortal
             this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.GenLecturerTabPage.ResumeLayout(false);
-            this.GenGroupTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridLecturerTimeTable)).EndInit();
+            this.GenGroupTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridSGTimeTable)).EndInit();
             this.ResumeLayout(false);
 

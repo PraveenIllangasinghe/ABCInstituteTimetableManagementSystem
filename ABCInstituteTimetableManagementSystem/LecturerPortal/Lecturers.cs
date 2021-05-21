@@ -60,16 +60,19 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             connection.Open();
             SqlCommand comm = connection.CreateCommand();
             comm.CommandType = CommandType.Text;
+
             comm.CommandText = "SELECT COUNT(ID) AS ID FROM Lecturer";
             comm.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(comm);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+
+            SqlDataAdapter data_a = new SqlDataAdapter(comm);
+            data_a.Fill(data_t);
 
             int nxt=0;
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                string next = dr["ID"].ToString();
+                string next = data_r["ID"].ToString();
                 nxt = Int16.Parse(next);
                 nxt = ++nxt;
             }
@@ -88,6 +91,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             cmd.Parameters.AddWithValue("@Center", ComboBoxCenterAdd.Text);
             cmd.Parameters.AddWithValue("@AIVal", nxt);
 
+            //Give a number based on position
             if (ComboBoxLevelAdd.Text.Equals("Professor"))
             {
                 level = 1;
@@ -126,6 +130,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             LecturerPortalTabControl.SelectedTab = ViewLecturersTabPage;
         }
 
+        //Generate Rank of lecturers
         private void LecRankGenBtn_Click(object sender, EventArgs e)
         {
             String ConcatLevel = "";
@@ -165,13 +170,14 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
         }
 
-
+        //View Lec tab page click event********************************************
         private void ViewLecturersTabPage_Click(object sender, EventArgs e)
         {
             ViewLecturers();
             LecturerPortalTabControl.SelectedTab = ViewLecturersTabPage;
         }
 
+        //Load Lecturers***********************************************************
         private void Lecturers_Load(object sender, EventArgs e)
         {
             ViewLecturers();
@@ -244,6 +250,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             LecturerPortalTabControl.SelectedTab = ManageLecturersTabPage;
         }
 
+        //Update Lecturer Info***********************************************************************************************
         private void ManageLecUpdateBtn_Click(object sender, EventArgs e)
         {
             if (val > 0)
@@ -298,14 +305,6 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
                 connection.Close();
 
                 MessageBox.Show("Lecturer Information has been Updated Sucessfully", "Confirmation");
-
-                //GetSubjects();
-
-                //ClearFieldsAfterUpdate();
-
-                //tabControlSubjects.SelectedTab = tabPageSubView;
-                // }
-
 
                 ClearUpdateFields();
                 LecturerPortalTabControl.SelectedTab = ViewLecturersTabPage;
@@ -373,11 +372,6 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
                     MessageBox.Show("Lecturer has been Deleted", "Confirmation");
 
-                    //GetSubjects();
-
-                    //ClearFieldsAfterUpdate();
-
-                    // tabControlSubjects.SelectedTab = tabPageSubView;
 
                 }
 
@@ -412,16 +406,18 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             connection.Open();
             SqlCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
+
             cmd.CommandText = "SELECT LecturerName FROM Lecturer";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+
+            DataTable data_t = new DataTable();
+            SqlDataAdapter data_a = new SqlDataAdapter(cmd);
+            data_a.Fill(data_t);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow data_r in data_t.Rows)
             {
-                ComboBoxLecNameAATime.Items.Add(dr["LecturerName"].ToString());
+                ComboBoxLecNameAATime.Items.Add(data_r["LecturerName"].ToString());
             }
 
             connection.Close();
@@ -442,18 +438,21 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             SqlConnection sqlcon = new SqlConnection(connectionString);
 
             sqlcon.Open();
+
             SqlCommand comm = sqlcon.CreateCommand();
             comm.CommandType = CommandType.Text;
+
             comm.CommandText = "SELECT COUNT(ID) AS ID FROM LecturerAvailableTime";
             comm.ExecuteNonQuery();
             DataTable d_table = new DataTable();
             SqlDataAdapter d_adatpter = new SqlDataAdapter(comm);
+
             d_adatpter.Fill(d_table);
 
             int aat_nxt = 0;
-            foreach (DataRow dr in d_table.Rows)
+            foreach (DataRow d_row in d_table.Rows)
             {
-                string aat_next = dr["ID"].ToString();
+                string aat_next = d_row["ID"].ToString();
                 aat_nxt = Int16.Parse(aat_next);
                 aat_nxt = ++aat_nxt;
             }
@@ -487,14 +486,14 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
         }
         //******************************************************************************************************
 
-
+        //Add available time button click event*****************************************************************************
         private void AddAv_Click(object sender, EventArgs e)
         {
             ViewAvailableTime();
         }
 
 
-        //View Subjects**********************************************************
+        //View Available time of lecturers************************************************************************************************************************
         private void ViewAvailableTime()
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -515,6 +514,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
 
         }
 
+        //Insert available time of lecturers*************************************************************************************************************************
         private void AddAvailableTimeDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             PopulateLecNameAATime_ComboBox();
@@ -527,6 +527,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             val = 1;
         }
 
+        //Update available time of lecturers************************************************************************************************************************
         private void AATimeUpdateBtn_Click(object sender, EventArgs e)
         {
             if (val > 0)
@@ -559,6 +560,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             }
         }
 
+        //Delete Available time of lecturers*************************************************************************************************************************
         private void AATimeDeleteBtn_Click(object sender, EventArgs e)
         {
             if (val > 0)
@@ -589,6 +591,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             ViewAvailableTime();
         }
 
+        //Load data to Combobox on dropdown event********************************************************************************************************
         private void ComboBoxSearchViewLec_DropDown(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
@@ -599,19 +602,21 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "SELECT LecturerName FROM Lecturer";
             cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
+            DataTable d_tab = new DataTable();
+            SqlDataAdapter d_adapt = new SqlDataAdapter(cmd);
+            d_adapt.Fill(d_tab);
 
 
-            foreach (DataRow dr in dt.Rows)
+            foreach (DataRow d_rw in d_tab.Rows)
             {
-                ComboBoxSearchViewLec.Items.Add(dr["LecturerName"].ToString());
+                ComboBoxSearchViewLec.Items.Add(d_rw["LecturerName"].ToString());
             }
 
             connection.Close();
         }
+        //*********************************************************************************************************************************************
 
+        //Search Lecturer button click event************************************************************************************************************
         private void SearchBtnViewLec_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connectionString);
@@ -630,7 +635,9 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             LecturersDataGridView.AutoGenerateColumns = true;
             LecturersDataGridView.DataSource = dataTable;
         }
+        //**********************************************************************************************************************************************
 
+        //Method to clear input fields
         public void ClearFields()
         {
             TxtBoxEmpIDAdd.Clear();
@@ -643,6 +650,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             TxtBoxRankAdd.Clear();
         }
 
+        //Clear button action in Add Lecturer tab
         private void AddLecturerClearBtn_Click(object sender, EventArgs e)
         {
             ClearFields();
@@ -660,6 +668,7 @@ namespace ABCInstituteTimetableManagementSystem.LecturerPortal
             TxtBoxRankUpdate.Clear();
         }
 
+        //Clear button action in Manage Lecturer tab
         private void ManageLecClearBtn_Click(object sender, EventArgs e)
         {
             ClearUpdateFields();
